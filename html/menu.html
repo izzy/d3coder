@@ -1,0 +1,144 @@
+<!-- 
+/** 
+ * @version 0.3
+ * @author Maik Kulbe <info@linux-web-development.de>
+ * @copyright (c) 2010 Maik Kulbe
+ */
+ -->
+<link rel="stylesheet" type="text/css" media="screen" href="../styles/menu.css" />
+
+<div id="optionsFrame">
+	<div id="status"></div>
+	<div id="options">
+		<div id="message">
+			<h1>Message Type:</h1> 
+		
+			<div class="inputs">
+				<div>
+					<input type="radio" name="message_type" id="message_type1" value="alert"/>
+					Using alert()
+				</div>
+				<div>
+					<input type="radio" name="message_type" id="message_type2" value="notifications"/>
+					Using native notifications
+				</div>
+				<div>
+					<input type="radio" name="message_type" id="message_type3" value="console"/>
+					Log to console
+				</div>
+				<div>
+					<input type="radio" name="message_type" id="message_type4" value="div"/>
+					Adding an HTML element to the bottom of the site
+				</div>
+			</div>
+		</div>
+		<div id="context-menu" style="display:none">
+			<h1>Activate Functions:</h1>
+	
+			You can turn the different functions in the context menu on and off. 
+	
+			<div class="inputs">
+				<div>
+					<input type="checkbox" name="functions_rot13" id="functions_rot13" checked="checked" />
+					<label for="functions_rot13">Rot13</label>
+				</div>
+				<div>
+					<input type="checkbox" name="functions_timestamp" id="functions_timestamp" checked="checked" />
+					<label for="functions_timestamp">Timestamp conversion</label>
+				</div>
+				<div>
+					<input type="checkbox" name="functions_bin2hex" id="functions_bin2hex" checked="checked" />
+					<label for="functions_bin2hex">bin2hex</label>
+				</div>
+				<div>
+					<input type="checkbox" name="functions_html_entity_decode" id="functions_html_entity_decode" checked="checked" />
+					<label for="functions_html_entity_decode">HTML entity decode</label>
+				</div>
+				<div>
+					<input type="checkbox" name="functions_htmlentities" id="functions_htmlentities" checked="checked" />
+					<label for=functions_htmlentities>HTML entities</label>
+				</div>
+				<div>
+					<input type="checkbox" name="functions_htmlspecialchars" id="functions_htmlspecialchars" checked="checked" />
+					<label for="functions_htmlspecialchars">HTML special chars encode</label>
+				</div>
+				<div>
+					<input type="checkbox" name="functions_htmlspecialchars_decode" id="functions_htmlspecialchars_decode" checked="checked" />
+					<label for="functions_htmlspecialchars_decode">HTML special chars decode</label>
+				</div>
+				<div>
+					<input type="checkbox" name="functions_md5" id="functions_md5" checked="checked" />
+					<label for="functions_md5">MD5</label>
+				</div>
+				<div>
+					<input type="checkbox" name="functions_sha1" id="functions_sha1" checked="checked" />
+					<label for="functions_sha1">SHA1</label>
+				</div>
+				<div>
+					<input type="checkbox" name="functions_crc32" id="functions_crc32" checked="checked" />
+					<label for="functions_crc32">CRC32</label>
+				</div>
+				<div>
+					<input type="checkbox" name="functions_quoted_printable_decode" id="functions_quoted_printable_decode" checked="checked" />
+					<label for="functions_quoted_printable_decode">quoted printable decode</label>
+				</div>
+				<div>
+					<input type="checkbox" name="functions_quoted_printable_encode" id="functions_quoted_printable_encode" checked="checked" />
+					<label for="functions_quoted_printable_encode">Quoted printable encode</label>
+				</div>
+				<div>
+					<input type="checkbox" name="functions_escapeshellarg" id="functions_escapeshellarg" checked="checked" />
+					<label for="functions_escapeshellarg">Escapeshellarg</label>
+				</div>
+				<div>
+					<input type="checkbox" name="functions_base64_encode" id="functions_base64_encode" checked="checked" />
+					<label for="functions_base64_encode">Base64 encode</label>
+				</div>
+				<div>
+					<input type="checkbox" name="functions_base64_decode" id="functions_base64_decode" checked="checked" />
+					<label for="functions_base64_decode">Base64 decode</label>
+				</div>
+			</div>
+		</div>
+		<div id="misc" style="display:none">
+			<h1>Miscellaneous:</h1>
+	
+			Placeholder for things. Your idea could be here - just drop me a feature request on the extension page, <a href="http://www.linux-web-development.de/chrome-extensions">linux-web-development.de</a> or via mail.
+		</div>
+		<div id="credits" style="display:none">
+			<h1>Credits</h1>
+			This extension was developed by Maik Kulbe &lt;<a href="mailto:info@linux-web-development.de">info@linux-web-development.de</a>&gt;
+				
+			Special thanks for several functions to the php.js team, they did a great job on porting some of the most important functions to JS.
+			
+			<blockquote>php.js is dual licensed under the MIT and GPL licenses.
+
+			This means you may use php.js under the terms of either the <a href="http://phpjs.org/pages/license/#MIT" >MIT License</a> or the <a href="http://phpjs.org/licenses/GPL-LICENSE.txt" >Gnu General Public License (GPL) Version 2</a>.</blockquote>
+		</div>
+		
+		<div id="footer">
+			<p>Thank you for using d3coder. If you like this plugin feel free to comment on <a href="http://www.linux-web-development.de/chrome-extensions">linux-web-development.de</a> and/or flattr me there :)</p>
+			<p>&copy; 2010 Maik Kulbe &lt;<a href="mailto:info@linux-web-development.de">info@linux-web-development.de</a>&gt;</p>
+		</div>
+		
+	</div>
+	
+</div>
+
+<div id="menubar">
+	<h1 id="menubar-title">d3coder</h1>
+	<ul id="menu">
+		<li id="message-tab" class="active" onclick="D3menu.messageTabShow();">Message</li>
+		<li id="context-menu-tab" onclick="D3menu.contextMenuTabShow();">Menu</li>
+		<li id="misc-tab" onclick="D3menu.miscTabShow();">Misc..</li>
+		<li id="credits-tab" onclick="D3menu.creditsTabShow();">Credits</li>
+	</ul>
+	
+	<p id="buttons">
+		All options are saved when you change them.
+	</p>
+</div>
+
+
+<script type="text/javascript" src="../js/mootools.js"></script>
+<script type="text/javascript" src="../js/menu.js"></script>
