@@ -1,5 +1,5 @@
 /** 
- * @version 0.3
+ * @version 0.4
  * @author Maik Kulbe <info@linux-web-development.de>
  * @copyright (c) 2010 Maik Kulbe
  */
@@ -62,6 +62,40 @@ var D3 =
 	createPopup: function(title, text)
 	{
 		var type = localStorage.getItem("message_type");
+		if(localStorage.getItem("history_save") == "1") {
+		    if(localStorage.getItem("history_content")) {
+		        var content = JSON.parse(localStorage.getItem("history_content"));
+		        if(content.itemsCount == 15) {
+		            var tmp = { 
+		                        "itemsCount": "15",
+		                        "items" : []
+		                      };
+		            for(var i=0;i<=13;i++) {
+		                tmp.items[i] = {
+                                           "title":    title,
+                                           "text":     text
+                                      };
+		            }
+		        } else {
+		            content.itemsCount = content.itemsCount++;
+		            content.items[content.itemsCount-1] = {
+                		                "title":    title,
+                                        "text":     text
+		                              };
+		        }
+		    } else {
+		        var content = {
+		            "itemsCount": "1",
+		            "items": [
+    		                      {
+    		                          "title":    title,
+    		                          "text":     text
+    		                      }
+		                     ]
+		        };
+		        localStorage.setItem("history_content", JSON.stringify(content));
+		    }
+		}
 		switch (type) {
 			case 'console':
 				

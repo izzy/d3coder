@@ -1,5 +1,5 @@
 /** 
- * @version 0.3
+ * @version 0.4
  * @author Maik Kulbe <info@linux-web-development.de>
  * @copyright (c) 2010 Maik Kulbe
  */
@@ -35,7 +35,8 @@ var D3menu =
 		 	       "functions_quoted_printable_encode",
 		 	       "functions_escapeshellarg",
 		 	       "functions_base64_encode",
-		 	       "functions_base64_decode"),
+		 	       "functions_base64_decode",
+		 	       "history_save"),
 		
  /**
   * initialization to collect startup errors
@@ -52,14 +53,21 @@ var D3menu =
  
  checkInstall: function() {
      if(!localStorage.getItem('D3installed'+this.version) || localStorage.getItem('D3installed'+this.version) != 'true') {
-         localStorage.setItem("message_type", "notifications");
-         localStorage.setItem("message_type1", "0"); 
-         localStorage.setItem("message_type2", "1"); 
-         localStorage.setItem("message_type3", "0"); 
-         localStorage.setItem("message_type4", "0"); 
+         if(!localStorage.getItem("message_type")) 
+             localStorage.setItem("message_type", "alert");
+         if(!localStorage.getItem("message_type1"))
+             localStorage.setItem("message_type1", "1"); 
+         if(!localStorage.getItem("message_type2"))
+             localStorage.setItem("message_type2", "0");
+         if(!localStorage.getItem("message_type3"))
+             localStorage.setItem("message_type3", "0");
+         if(!localStorage.getItem("message_type4"))
+             localStorage.setItem("message_type4", "0");
          
          D3menu.checkboxes.each(function(el){
-             localStorage.setItem(el, "1"); 
+             if(localStorage.getItem(el) === false) {
+                 localStorage.setItem(el, "1");
+             }
          });
          localStorage.setItem('D3installed'+this.version, 'true');
          if(localStorage.getItem('D3lastversion')) {
