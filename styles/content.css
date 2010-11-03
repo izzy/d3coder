@@ -1,10 +1,11 @@
 /** 
- * @version 0.3
+ * @version 0.4
  * @author Maik Kulbe <info@linux-web-development.de>
  * @copyright (c) 2010 Maik Kulbe
  */
 #D3-inject 
 {
+	z-index:				1000;
 	position:				fixed;
 	width:					100%;
 	height:					200px;
@@ -18,6 +19,7 @@
 
 #D3-inject-close
 {
+	z-index:				1001;	
 	position:				fixed;
 	bottom:					200px;
 	left:					10px;
@@ -26,4 +28,9 @@
 #D3-inject-heading
 {
 	font-size: 				15px;
+}
+
+#D3-inject, #D3-inject-heading, #D3-inject-close, .D3-inject-heading
+{
+	color:					black !important;	
 }

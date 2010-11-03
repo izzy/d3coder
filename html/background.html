@@ -1,6 +1,6 @@
 <!--
 /**
- * @version 0.3
+ * @version 0.4
  * @author Maik Kulbe <info@linux-web-development.de>
  * @copyright (c) 2010 Maik Kulbe
  */ --> 
@@ -34,17 +34,6 @@ if(localStorage.getItem("functions_rot13") == '1') {
 		};
 
     var idRot=chrome.contextMenus.create(menu);
-}
-
-if(localStorage.getItem("functions_timestamp") == '1') {
-	menu = {
-			"title"		: "Unix timestamp to date conversion", 
-			"parentId"	: idMain,
-			"contexts"	: ["selection", "editable"],
-			"onclick"	: function(info, tab){D3.createPopup("Timestamp to Date", D3.timestampToDate(info.selectionText));}
-		};
-	
-	var idTimestamp=chrome.contextMenus.create(menu);
 }
 
 if(localStorage.getItem("functions_timestamp") == '1') {
@@ -130,6 +119,17 @@ if(localStorage.getItem("functions_sha1") == '1') {
 			"parentId"	: idMain,
 			"contexts"	: ["selection", "editable"],
 			"onclick"	: function(info, tab){D3.createPopup("SHA1", D3.sha1(info.selectionText));}
+		};
+	
+	var idTimestamp=chrome.contextMenus.create(menu);
+}
+
+if(localStorage.getItem("functions_crc32") == '1') {
+	menu = {
+			"title"		: "CRC32", 
+			"parentId"	: idMain,
+			"contexts"	: ["selection", "editable"],
+			"onclick"	: function(info, tab){D3.createPopup("CRC32", D3.crc32(info.selectionText));}
 		};
 	
 	var idTimestamp=chrome.contextMenus.create(menu);
