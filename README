@@ -1,0 +1,17 @@
+CHANGELOG
+=============================
+
+0.4
+Instant change of context menu items after removing/adding functions
+History for encodings/decodings available 
+
+0.3:
+Re-designed the options page to fit better into Chrome
+Removed save and cancel button on options page
+Changes made on the options page are saved immediately
+Added DIV-output
+Added Console.log()-output
+
+0.2:
+Moved the options from browser action to options page
+Fixed the image for HTML5 notifications
