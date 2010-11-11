@@ -14,49 +14,57 @@ var D3 =
 	//icon: "popupIcon.png",
 	icon: "../images/icon128.png",
 	/**
-	  * Version number
-	  * 
-	  * @var String
-	  */
-	version: "0.3",
-	 /**
-	  * list all functions so we can use this while saving
-	  * @var Array 
-	  */
-	checkboxes: Array("functions_rot13",
-			 	       "functions_timestamp",
-			 	       "functions_crc32",
-			 	       "functions_bin2hex",
-			 	       "functions_html_entity_decode",
-			 	       "functions_htmlentities",
-			 	       "functions_htmlspecialchars",
-			 	       "functions_htmlspecialchars_decode",
-			 	       "functions_md5",
-			 	       "functions_sha1",
-			 	       "functions_quoted_printable_decode",
-			 	       "functions_quoted_printable_encode",
-			 	       "functions_escapeshellarg",
-			 	       "functions_base64_encode",
-			 	       "functions_base64_decode"),
+     * Version number
+     * 
+     * @var String
+     */
+   version: "0.4",
+    /**
+     * list all functions so we can use this while saving
+     * @var Array 
+     */
+   checkboxes: Array( "functions_rot13",
+                      "functions_timestamp",
+                      "functions_crc32",
+                      "functions_bin2hex",
+                      "functions_html_entity_decode",
+                      "functions_htmlentities",
+                      "functions_htmlspecialchars",
+                      "functions_htmlspecialchars_decode",
+                      "functions_md5",
+                      "functions_sha1",
+                      "functions_quoted_printable_decode",
+                      "functions_quoted_printable_encode",
+                      "functions_escapeshellarg",
+                      "functions_base64_encode",
+                      "functions_base64_decode",
+                      "functions_unserialize"),
 			 	       
 	checkInstall: function() {
-	     if(!localStorage.getItem('D3installed'+this.version) || localStorage.getItem('D3installed'+this.version) != 'true') {
-	         localStorage.setItem("message_type", "notifications");
-	         localStorage.setItem("message_type1", "0"); 
-	         localStorage.setItem("message_type2", "1"); 
-	         localStorage.setItem("message_type3", "0"); 
-	         localStorage.setItem("message_type4", "0"); 
-	         
-	         this.checkboxes.each(function(el){
-	             localStorage.setItem(el, "1"); 
-	         });
-	         localStorage.setItem('D3installed'+this.version, 'true');
-	         if(localStorage.getItem('D3lastversion')) {
-	        	 localStorage.removeItem('D3installed'+localStorage.getItem('lastversion'));
-	         }
-	         localStorage.setItem('D3lastversion',this.version);
-	         
-	     }   
+        if(!localStorage.getItem('D3installed'+this.version) || localStorage.getItem('D3installed'+this.version) != 'true') {
+            if(!localStorage.getItem("message_type")) 
+                localStorage.setItem("message_type", "alert");
+            if(!localStorage.getItem("message_type1"))
+                localStorage.setItem("message_type1", "1"); 
+            if(!localStorage.getItem("message_type2"))
+                localStorage.setItem("message_type2", "0");
+            if(!localStorage.getItem("message_type3"))
+                localStorage.setItem("message_type3", "0");
+            if(!localStorage.getItem("message_type4"))
+                localStorage.setItem("message_type4", "0");
+            
+            D3menu.checkboxes.each(function(el){
+                if(localStorage.getItem(el) != "0" && localStorage.getItem(el) != "1") {
+                    localStorage.setItem(el, "1");
+                }
+            });
+            localStorage.setItem('D3installed'+this.version, 'true');
+            if(localStorage.getItem('D3lastversion')) {
+                localStorage.removeItem('D3installed'+localStorage.getItem('lastversion'));
+            }
+            localStorage.setItem('D3lastversion',this.version);
+            
+        }   
 	 },
 	
 	createPopup: function(title, text)
@@ -864,6 +872,137 @@ var D3 =
 	    
 	    return hash_map;
 	},
+	unserialize: function (data) {
+	    var that = this;
+	    var utf8Overhead = function(chr) {
+	        var code = chr.charCodeAt(0);
+	        if (code < 0x0080) {
+	            return 0;
+	        }
+	        if (code < 0x0800) {
+	             return 1;
+	        }
+	        return 2;
+	    };
+
+
+	    var error = function (type, msg, filename, line){throw new that.window[type](msg, filename, line);};
+	    var read_until = function (data, offset, stopchr){
+	        var buf = [];
+	        var chr = data.slice(offset, offset + 1);
+	        var i = 2;
+	        while (chr != stopchr) {
+	            if ((i+offset) > data.length) {
+	                error('Error', 'Invalid');
+	            }
+	            buf.push(chr);
+	            chr = data.slice(offset + (i - 1),offset + i);
+	            i += 1;
+	        }
+	        return [buf.length, buf.join('')];
+	    };
+	    var read_chrs = function (data, offset, length){
+	        var buf;
+
+	        buf = [];
+	        for (var i = 0;i < length;i++){
+	            var chr = data.slice(offset + (i - 1),offset + i);
+	            buf.push(chr);
+	            length -= utf8Overhead(chr); 
+	        }
+	        return [buf.length, buf.join('')];
+	    };
+	    var _unserialize = function (data, offset){
+	        var readdata;
+	        var readData;
+	        var chrs = 0;
+	        var ccount;
+	        var stringlength;
+	        var keyandchrs;
+	        var keys;
+
+	        if (!offset) {offset = 0;}
+	        var dtype = (data.slice(offset, offset + 1)).toLowerCase();
+
+	        var dataoffset = offset + 2;
+	        var typeconvert = function(x) {return x;};
+
+	        switch (dtype){
+	            case 'i':
+	                typeconvert = function (x) {return parseInt(x, 10);};
+	                readData = read_until(data, dataoffset, ';');
+	                chrs = readData[0];
+	                readdata = readData[1];
+	                dataoffset += chrs + 1;
+	            break;
+	            case 'b':
+	                typeconvert = function (x) {return parseInt(x, 10) !== 0;};
+	                readData = read_until(data, dataoffset, ';');
+	                chrs = readData[0];
+	                readdata = readData[1];
+	                dataoffset += chrs + 1;
+	            break;
+	            case 'd':
+	                typeconvert = function (x) {return parseFloat(x);};
+	                readData = read_until(data, dataoffset, ';');
+	                chrs = readData[0];
+	                readdata = readData[1];
+	                dataoffset += chrs + 1;
+	            break;
+	            case 'n':
+	                readdata = null;
+	            break;
+	            case 's':
+	                ccount = read_until(data, dataoffset, ':');
+	                chrs = ccount[0];
+	                stringlength = ccount[1];
+	                dataoffset += chrs + 2;
+
+	                readData = read_chrs(data, dataoffset+1, parseInt(stringlength, 10));
+	                chrs = readData[0];
+	                readdata = readData[1];
+	                dataoffset += chrs + 2;
+	                if (chrs != parseInt(stringlength, 10) && chrs != readdata.length){
+	                    error('SyntaxError', 'String length mismatch');
+	                }
+
+	                // Length was calculated on an utf-8 encoded string
+	                // so wait with decoding
+	                readdata = that.utf8_decode(readdata);
+	            break;
+	            case 'a':
+	                readdata = {};
+
+	                keyandchrs = read_until(data, dataoffset, ':');
+	                chrs = keyandchrs[0];
+	                keys = keyandchrs[1];
+	                dataoffset += chrs + 2;
+
+	                for (var i = 0; i < parseInt(keys, 10); i++){
+	                    var kprops = _unserialize(data, dataoffset);
+	                    var kchrs = kprops[1];
+	                    var key = kprops[2];
+	                    dataoffset += kchrs;
+
+	                    var vprops = _unserialize(data, dataoffset);
+	                    var vchrs = vprops[1];
+	                    var value = vprops[2];
+	                    dataoffset += vchrs;
+
+	                    readdata[key] = value;
+	                }
+
+	                dataoffset += 1;
+	            break;
+	            default:
+	                error('SyntaxError', 'Unknown / Unhandled data type(s): ' + dtype);
+	            break;
+	        }
+	        return [dtype, dataoffset - offset, typeconvert(readdata)];
+	    };
+	    
+	    return _unserialize((data+''), 0)[2];
+	},
 	utf8_encode: function ( argString ) {
 	    var string = (argString+''); // .replace(/\r\n/g, "\n").replace(/\r/g, "\n");
 	 
@@ -1108,5 +1247,16 @@ var D3 =
     	    
     	    var idBase64decode=chrome.contextMenus.create(menu);
     	}
+    	
+    	if(localStorage.getItem("functions_unserialize") == '1') {
+            menu = {
+                    "title"     : "Unserialize", 
+                    "parentId"  : idMain,
+                    "contexts"  : ["selection", "editable"],
+                    "onclick"   : function(info, tab){D3.createPopup("Unserialize", D3.unserialize(info.selectionText));}
+                };
+            
+            var idBase64decode=chrome.contextMenus.create(menu);
+        }
 	}
 };
