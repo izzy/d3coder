@@ -11,7 +11,7 @@ var D3menu =
   * 
   * @var String
   */
- version: "0.3",
+ version: "0.4",
  /**
   * list all message types so we can use this while saving
   * @var Array 
@@ -36,7 +36,8 @@ var D3menu =
 		 	       "functions_escapeshellarg",
 		 	       "functions_base64_encode",
 		 	       "functions_base64_decode",
-		 	       "history_save"),
+                   "functions_unserialize"/*,
+		 	       "history_save"*/),
 		
  /**
   * initialization to collect startup errors
@@ -65,7 +66,7 @@ var D3menu =
              localStorage.setItem("message_type4", "0");
          
          D3menu.checkboxes.each(function(el){
-             if(localStorage.getItem(el) === false) {
+             if(localStorage.getItem(el) != "0" && localStorage.getItem(el) != "1") {
                  localStorage.setItem(el, "1");
              }
          });
@@ -103,7 +104,6 @@ var D3menu =
 		 
 		 localStorage.setItem(option, value); 
 	 });
-	 alertText ? alert("d3coder:\n\nSettings changed successfully\n\nBe aware: If you enabled and/or disabled functions, you need to reload the extension under the extensions tab(chome://extensions)!\nAt the moment there is no other way to work around this, sorry.") : null;
  },
 
  /**

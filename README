@@ -4,6 +4,7 @@ CHANGELOG
 0.4
 Instant change of context menu items after removing/adding functions
 History for encodings/decodings available 
+Added function unserialize
 
 0.3:
 Re-designed the options page to fit better into Chrome
