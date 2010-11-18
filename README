@@ -1,6 +1,12 @@
 CHANGELOG
 =============================
 
+0.4.2
+Fixed output of serialize function
+
+0.4.1
+Fixed broken output
+
 0.4
 Instant change of context menu items after removing/adding functions
 Div-output is now resizable in height
