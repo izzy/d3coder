@@ -53,7 +53,7 @@ var D3 =
             if(!localStorage.getItem("message_type4"))
                 localStorage.setItem("message_type4", "0");
             
-            D3menu.checkboxes.each(function(el){
+            D3.checkboxes.each(function(el){
                 if(localStorage.getItem(el) != "0" && localStorage.getItem(el) != "1") {
                     localStorage.setItem(el, "1");
                 }
