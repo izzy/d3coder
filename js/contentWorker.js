@@ -14,27 +14,43 @@ D3content = {
     		if(!$('D3-inject')) {
 			    var infoDiv = new Element('div').set({
 			        //Any other property uses Element:setProperty.
-			        'id': 'D3-inject'
+			        'id': 'D3-inject',
+			        'class': 'content'
 			    });
+			    var backUrl = chrome.extension.getURL("images/grip.png");
+			    var resizeHandle = new Element('div').set({
+                    'id': 'D3-inject_handle',
+                    'class': 'handle vertical',
+                    'background': 'background: #333 url(\'' + backUrl + '\') no-repeat;'
+                });
 			    var heading = new Element('h1').set({
 			    	'id': 'D3-inject-heading',
 			    	'text': 'd3coder Output:'
 			    });
+			    var closeElem = new Element('a').set({
+                    'id': 'D3-inject-close',
+                    'text': 'CLOSE [X]'
+                });
+			    
+			    $(document.body).grab(resizeHandle);
 			    $(document.body).grab(infoDiv);
+			    $('D3-inject').grab(closeElem);
 			    $('D3-inject').grab(heading);
 		        $('D3-inject').grab(hr);
 
-			    var closeElem = new Element('a').set({
-			    	'id': 'D3-inject-close',
-			    	'text': 'CLOSE [X]'
-			    });
-		
-			    $(document.body).grab(closeElem);
-		
 			    $('D3-inject-close').addEvent('click', function(){
+                    $('D3-inject_handle').destroy();
 			    	$('D3-inject').destroy();
 			    	$('D3-inject-close').destroy();
 			    });
+			    
+			    centerBottomResize = new Resizable('D3-inject_handle',{
+			        invert: true,
+			        mode: 'vertical',
+			        cookie: 'centerBottomResize'
+			    });
+
+			    ResizableLimits.attach();
 			} else {
 			    var infoDiv = $('D3-inject');
 			}
