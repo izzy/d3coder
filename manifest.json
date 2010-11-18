@@ -1,6 +1,6 @@
 {
   "name": "d3coder", 
-  "version": "0.4",
+  "version": "0.4.1",
   "description": "Encoding/Decoding Plugin for various types of encoding like base64, rot13 or unix timestamp conversion",
   "options_page": "html/menu.html",
   "permissions": ["contextMenus","notifications","tabs","http://*/*"],

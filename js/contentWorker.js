@@ -59,7 +59,7 @@ D3content = {
 	            'text': title
 	        });
 	        
-	        var infoText = new Element('p').set({
+	        var infoText = new Element('pre').set({
 	            'class': 'D3-inject-text',
 	            'text': text
 	        });

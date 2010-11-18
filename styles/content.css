@@ -15,6 +15,7 @@
 	border-top: 			1px solid grey;
 	overflow: 				auto;
 	-webkit-box-shadow:		0px 0px 30px #000;
+	text-align:             left !important;
 }
 
 #D3-inject-close
@@ -48,7 +49,7 @@ div.handle.vertical {
 	left: 0;
 }
 #D3-inject_handle {
-    bottom: 100px;
+    bottom: 200px;
     z-index: 1002;
     position: fixed;
 }
