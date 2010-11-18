@@ -3,7 +3,9 @@ CHANGELOG
 
 0.4
 Instant change of context menu items after removing/adding functions
-History for encodings/decodings available 
+Div-output is now resizable in height
+Added function base64 encode
+Added function base64 decode 
 Added function unserialize
 
 0.3:
@@ -16,3 +18,22 @@ Added Console.log()-output
 0.2:
 Moved the options from browser action to options page
 Fixed the image for HTML5 notifications
+
+0.1:
+Output via alert() and native HTML5 Notifications
+Functions:
+- Timestamp decoding
+- rot13 en-/decoding
+- base64 encoding
+- base64 decoding
+- CRC32 hashing
+- MD5 hashing
+- SHA1 hashing
+- bin2hex
+- HTML entity encoding
+- HTML entity decoding
+- HTML specialchars encoding
+- HTML specialchars decoding
+- Quoted printable decoding
+- Quoted printable encoding
+- Escapeshellarg

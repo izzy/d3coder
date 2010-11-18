@@ -36,8 +36,7 @@ var D3menu =
 		 	       "functions_escapeshellarg",
 		 	       "functions_base64_encode",
 		 	       "functions_base64_decode",
-                   "functions_unserialize"/*,
-		 	       "history_save"*/),
+                   "functions_unserialize"),
 		
  /**
   * initialization to collect startup errors
@@ -47,7 +46,7 @@ var D3menu =
 	    D3menu.checkInstall();
 		D3menu.restore_options();
 	} catch(e) {
-		alert("An error accured:" + e + "\n\n Feel free to report errors to "+
+		alert("An error accured:\n" + e + "\n\n Feel free to report errors to "+
 				"info@linux-web-development.de so I can fix them.");
 	}
  },

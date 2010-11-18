@@ -70,7 +70,7 @@ var D3 =
 	createPopup: function(title, text)
 	{
 		var type = localStorage.getItem("message_type");
-		if(localStorage.getItem("history_save") == "1") {
+		/*if(localStorage.getItem("history_save") == "1") {
 		    if(localStorage.getItem("history_content")) {
 		        var content = JSON.parse(localStorage.getItem("history_content"));
 		        if(content.itemsCount == 15) {
@@ -103,7 +103,7 @@ var D3 =
 		        };
 		        localStorage.setItem("history_content", JSON.stringify(content));
 		    }
-		}
+		}*/
 		switch (type) {
 			case 'console':
 				
@@ -122,6 +122,7 @@ var D3 =
 				break;
 			case 'alert': 
 				alert(title + '\n\n' + text);
+				console.log(text);
 				break;
 			case 'div':
 				chrome.tabs.insertCSS(null, {file: "styles/content.css"});
@@ -1069,7 +1070,8 @@ var D3 =
 	
 	createContextMenu: function() {
 	    if(D3.menus[0]) {
-	        chrome.contextMenus.remove(D3.menus[0]);
+	        return;
+	        chrome.contextMenus.removeAll();
 	    }
 	    
 	    var menu = 
@@ -1088,7 +1090,7 @@ var D3 =
     	            "title"     : "Rot13 Decode", 
     	            "parentId"  : idMain,
     	            "contexts"  : ["selection", "editable"],
-    	            "onclick"   : function(info, tab){D3.createPopup("rot13", D3.rot13decode(info.selectionText));}
+    	            "onclick"   : function(info, tab){D3.createPopup("rot13", D3.rot13decode(info.selectionText));} 
     	        };
     
     	    var idRot13=chrome.contextMenus.create(menu);
