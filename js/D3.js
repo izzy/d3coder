@@ -248,9 +248,8 @@ var D3 =
         }
 
         return string;
-}
-    }
-	html_entity_decode: function (string, quote_style) {
+    },
+    html_entity_decode: function (string, quote_style) {
 	    var hash_map = {}, symbol = '', tmp_str = '', entity = '';
 	    tmp_str = string.toString();
 	    
