@@ -11,7 +11,7 @@ var D3menu =
   * 
   * @var String
   */
- version: "0.4",
+ version: "0.5",
  /**
   * list all message types so we can use this while saving
   * @var Array 
@@ -25,6 +25,7 @@ var D3menu =
 		 	       "functions_timestamp",
 		 	       "functions_crc32",
 		 	       "functions_bin2hex",
+		 	       "functions_bin2txt",
 		 	       "functions_html_entity_decode",
 		 	       "functions_htmlentities",
 		 	       "functions_htmlspecialchars",
@@ -36,7 +37,8 @@ var D3menu =
 		 	       "functions_escapeshellarg",
 		 	       "functions_base64_encode",
 		 	       "functions_base64_decode",
-                   "functions_unserialize"),
+                   "functions_unserialize",
+                   "functions_leet"),
 		
  /**
   * initialization to collect startup errors

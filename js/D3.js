@@ -1,5 +1,5 @@
 /** 
- * @version 0.4
+ * @version 0.5
  * @author Maik Kulbe <info@linux-web-development.de>
  * @copyright (c) 2010 Maik Kulbe
  */
@@ -18,7 +18,7 @@ var D3 =
      * 
      * @var String
      */
-   version: "0.4",
+   version: "0.5",
     /**
      * list all functions so we can use this while saving
      * @var Array 
@@ -27,6 +27,7 @@ var D3 =
                       "functions_timestamp",
                       "functions_crc32",
                       "functions_bin2hex",
+                      "functions_bin2txt",
                       "functions_html_entity_decode",
                       "functions_htmlentities",
                       "functions_htmlspecialchars",
@@ -38,7 +39,33 @@ var D3 =
                       "functions_escapeshellarg",
                       "functions_base64_encode",
                       "functions_base64_decode",
-                      "functions_unserialize"),
+                      "functions_unserialize",
+                      "functions_leet_decode",
+                      "functions_leet_encode"),
+
+	PhrasesEnglish:
+		new Array('crap', 'dude', 'hacker',
+		  'hacks', 'you', 'cool', 'oh my god',
+		  'fear', 'power', 'own', 'lol',
+		  'what the hell', 'elite', 'for the win', 
+		  'oh really', 'good game'),
+
+	PhrasesLeet:
+		new Array('carp', 'dood', 'haxor', 'hax', 'joo',
+		  'kewl', 'omg', 'ph43', 'powwah', 'pwn', 'lawl',
+		  'wth', 'leet', 'ftw', 'o rly', 'gg'),
+
+	LettersEnglish:
+		new Array('n', 'b', 'k', 'd', 'e', 'f', 'g', 'h',
+		  'p', 'm', 'r', 'l', 'o', 'q', 's', 't',
+		  'u', 'x', 'w', 'y', 'z', 'c', 'a', 'j', 
+		  'i', 'v', ' '),
+
+	LettersLeet: 
+		new Array('/\\/', '|}', '|X', '[)', '3', '|=', 'gee', '|-|',
+		  '|*', '(\\/)', '|2', '1', '()', '0', '$', '+',
+		  '|_|', '><', '\\X/', '\'/', '2', '<', '/\\', '_|', 
+		  '|', '\\/', '  '),
 			 	       
 	checkInstall: function() {
         if(!localStorage.getItem('D3installed'+this.version) || localStorage.getItem('D3installed'+this.version) != 'true') {
@@ -202,6 +229,27 @@ var D3 =
 	    
 	    return a.join('');
 	},
+    bin2txt: function (binary){
+        var string = "";
+        binary.replace(" ", "");
+
+        if(binary.length%8 != 0){
+            return "Not valid binary.";
+        }
+
+        for(i=0; i<binary.length/8; i++){
+            sub = binary.substr(i*8, 8);
+            num = 0;
+            for(j=0; j<sub.length; j++){
+                if(sub.charAt(j) == '0') {}
+                else num += Math.pow(2, 7-j);
+            }
+            string += String.fromCharCode(num);
+        }
+
+        return string;
+}
+    }
 	html_entity_decode: function (string, quote_style) {
 	    var hash_map = {}, symbol = '', tmp_str = '', entity = '';
 	    tmp_str = string.toString();
@@ -659,7 +707,35 @@ var D3 =
 	 
 	    return "'"+ret+"'";
 	},
-	base64_encode: function (data) {
+    leetEncode: function (inputString) {
+        if(!inputString ) return "";
+	
+	for (i = 0; i < D3.PhrasesEnglish.length; ++i)
+		inputString = inputString.replace(
+			new RegExp(D3.PhrasesEnglish[i], "gi"),
+			D3.PhrasesLeet[i]
+			);
+
+	for (i = 0; i < D3.LettersEnglish.length; ++i)
+		inputString = inputString.replace(
+			new RegExp(D3.LettersEnglish[i], "gi"),
+			D3.LettersLeet[i]
+			);
+	},
+    leetDecode: function (inputString) {
+	for (i = 0; i < D3.LettersLeet.length; ++i)
+		inputString = inputString.replace(
+			new RegExp(RegExp.escape(D3.LettersLeet[i]), "g"),
+			D3.LettersEnglish[i]
+			);
+
+	for (i = 0; i < D3.PhrasesLeet.length; ++i)
+		inputString = inputString.replace(
+			new RegExp(RegExp.escape(D3.PhrasesLeet[i]), "g"),
+			D3.PhrasesEnglish[i]
+			);
+    },
+    base64_encode: function (data) {
 	    var b64 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
 	    var o1, o2, o3, h1, h2, h3, h4, bits, i = 0, ac = 0, enc="", tmp_arr = [];
 	 
@@ -1182,6 +1258,17 @@ var D3 =
     	    var idBin2hex=chrome.contextMenus.create(menu);
     	}
     
+    	if(localStorage.getItem("functions_bin2txt") == '1') {
+    	    menu = {
+    	            "title"     : "bin2txt", 
+    	            "parentId"  : idMain,
+    	            "contexts"  : ["selection", "editable"],
+    	            "onclick"   : function(info, tab){D3.createPopup("bin2txt", D3.bin2txt(info.selectionText));}
+    	        };
+    	    
+    	    var idBin2txt=chrome.contextMenus.create(menu);
+    	}
+    
     	if(localStorage.getItem("functions_htmlentities") == '1') {
     	    menu = {
     	            "title"     : "HTML entities", 
@@ -1324,5 +1411,27 @@ var D3 =
             
             var idBase64decode=chrome.contextMenus.create(menu);
         }
-	}
+
+    	if(localStorage.getItem("functions_leet_encode") == '1') {
+            menu = {
+                    "title"     : "L33T Encode", 
+                    "parentId"  : idMain,
+                    "contexts"  : ["selection", "editable"],
+                    "onclick"   : function(info, tab){D3.createPopup("L33T Encode", D3.leetEncode(info.selectionText));}
+                };
+            
+            var idLeetEncode=chrome.contextMenus.create(menu);
+        }
+
+    	if(localStorage.getItem("functions_leet_decode") == '1') {
+            menu = {
+                    "title"     : "L33T Decode", 
+                    "parentId"  : idMain,
+                    "contexts"  : ["selection", "editable"],
+                    "onclick"   : function(info, tab){D3.createPopup("L33T Decode", D3.leetDecode(info.selectionText));}
+                };
+            
+            var idLeetDecode=chrome.contextMenus.create(menu);
+        }
+    }
 };
