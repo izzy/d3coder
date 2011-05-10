@@ -5,9 +5,15 @@
  */
 
 /**
+ * RegEx escaping
+ */
+RegExp.escape = function(text) {
+    return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
+};
+
+/**
  * KEY FUNCTION NAMESPACE
  */
-
 var D3 = 
 {	
 	//needs a new Icon - best would be an icon per decoding type
@@ -231,11 +237,18 @@ var D3 =
 	},
     bin2txt: function (binary){
         var string = "";
+        binary.replace(/(\r\n|\n|\r)/gm,"");
         binary.replace(" ", "");
-
-        if(binary.length%8 != 0){
-            return "Not valid binary.";
+        
+        var stripped = "";
+        for (i=0; i < binary.length; i++) {
+        	if (binary.charAt(i) != '\n' &&
+        		binary.charAt(i) != '\r' &&
+        		binary.charAt(i) != '\t') {
+        			stripped += binary.charAt(i);
+        	}
         }
+        binary = stripped;
 
         for(i=0; i<binary.length/8; i++){
             sub = binary.substr(i*8, 8);
@@ -709,30 +722,32 @@ var D3 =
     leetEncode: function (inputString) {
         if(!inputString ) return "";
 	
-	for (i = 0; i < D3.PhrasesEnglish.length; ++i)
-		inputString = inputString.replace(
-			new RegExp(D3.PhrasesEnglish[i], "gi"),
-			D3.PhrasesLeet[i]
-			);
+		for (i = 0; i < D3.PhrasesEnglish.length; ++i)
+			inputString = inputString.replace(
+				new RegExp(D3.PhrasesEnglish[i], "gi"),
+				D3.PhrasesLeet[i]
+				);
 
-	for (i = 0; i < D3.LettersEnglish.length; ++i)
-		inputString = inputString.replace(
-			new RegExp(D3.LettersEnglish[i], "gi"),
-			D3.LettersLeet[i]
-			);
+		for (i = 0; i < D3.LettersEnglish.length; ++i)
+			inputString = inputString.replace(
+				new RegExp(D3.LettersEnglish[i], "gi"),
+				D3.LettersLeet[i]
+				);
+		return inputString;
 	},
     leetDecode: function (inputString) {
-	for (i = 0; i < D3.LettersLeet.length; ++i)
-		inputString = inputString.replace(
-			new RegExp(RegExp.escape(D3.LettersLeet[i]), "g"),
-			D3.LettersEnglish[i]
-			);
+		for (i = 0; i < D3.LettersLeet.length; ++i)
+			inputString = inputString.replace(
+				new RegExp(RegExp.escape(D3.LettersLeet[i]), "g"),
+				D3.LettersEnglish[i]
+				);
 
-	for (i = 0; i < D3.PhrasesLeet.length; ++i)
-		inputString = inputString.replace(
-			new RegExp(RegExp.escape(D3.PhrasesLeet[i]), "g"),
-			D3.PhrasesEnglish[i]
-			);
+		for (i = 0; i < D3.PhrasesLeet.length; ++i)
+			inputString = inputString.replace(
+				new RegExp(RegExp.escape(D3.PhrasesLeet[i]), "g"),
+				D3.PhrasesEnglish[i]
+				);
+		return inputString;
     },
     base64_encode: function (data) {
 	    var b64 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";

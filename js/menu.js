@@ -1,5 +1,5 @@
 /** 
- * @version 0.4
+ * @version 0.5
  * @author Maik Kulbe <info@linux-web-development.de>
  * @copyright (c) 2010 Maik Kulbe
  */
@@ -38,7 +38,8 @@ var D3menu =
 		 	       "functions_base64_encode",
 		 	       "functions_base64_decode",
                    "functions_unserialize",
-                   "functions_leet"),
+                   "functions_leet_decode",
+                   "functions_leet_encode"),
 		
  /**
   * initialization to collect startup errors
