@@ -1,6 +1,11 @@
 CHANGELOG
 =============================
 
+0.5.0
+Added function bin2txt
+Added function L33T encode
+Added function L33T decode
+
 0.4.2
 Fixed output of serialize function
 
