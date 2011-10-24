@@ -24,7 +24,7 @@ var D3 =
      * 
      * @var String
      */
-   version: "0.5",
+   version: "0.6",
     /**
      * list all functions so we can use this while saving
      * @var Array 
@@ -137,6 +137,11 @@ var D3 =
 		        localStorage.setItem("history_content", JSON.stringify(content));
 		    }
 		}*/
+		
+		if(localStorage.getItem("message_automatic_clipboardcopy") == 1) {
+			D3.copyToClipboard(text);
+		}
+		
 		switch (type) {
 			case 'console':
 				
@@ -172,9 +177,17 @@ var D3 =
 				var popup = window.webkitNotifications.createNotification( D3.icon, title, text);
 				popup.show();
 				break;
-		}		
+		}	
 	},
-	
+	copyToClipboard: function(text) {
+		var bg = chrome.extension.getBackgroundPage();
+		var clipboard = bg.document.getElementById("clipboard");
+		clipboard.style.display = "block";
+		clipboard.value = text;
+		clipboard.select();
+		bg.document.execCommand("Copy");
+		clipboard.style.display = "none";
+	},
 	rot13decode: function(text) 
 	{
 		var keycode	= "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -1218,31 +1231,23 @@ var D3 =
 
 	},
 	
-	menus: [],
+	menus: false,
 	
 	menuLoadTime: 1000,
 	
 	createContextMenu: function() {
-	    if(D3.menus[0]) {
+	    if(D3.menus == true) {
 	        return;
-	        chrome.contextMenus.removeAll();
 	    }
-	    
-	    var menu = 
-	    {
-	        "title": "Decode", 
-	        "contexts":["selection", "editable"]
-	    };
 
-    	var idMain=chrome.contextMenus.create(menu);
-    	D3.menus[0] = idMain;
+	    D3.menus = true;
+	    
     	/**
     	 * MENU ITEM DEFINITIONS
     	 */
     	if(localStorage.getItem("functions_rot13") == '1') {
     	    menu = {
     	            "title"     : "Rot13 Decode", 
-    	            "parentId"  : idMain,
     	            "contexts"  : ["selection", "editable"],
     	            "onclick"   : function(info, tab){D3.createPopup("rot13", D3.rot13decode(info.selectionText));} 
     	        };
@@ -1253,7 +1258,6 @@ var D3 =
     	if(localStorage.getItem("functions_timestamp") == '1') {
     	    menu = {
     	            "title"     : "Unix timestamp to date conversion", 
-    	            "parentId"  : idMain,
     	            "contexts"  : ["selection", "editable"],
     	            "onclick"   : function(info, tab){D3.createPopup("Timestamp to Date", D3.timestampToDate(info.selectionText));}
     	        };
@@ -1264,7 +1268,6 @@ var D3 =
     	if(localStorage.getItem("functions_bin2hex") == '1') {
     	    menu = {
     	            "title"     : "bin2hex", 
-    	            "parentId"  : idMain,
     	            "contexts"  : ["selection", "editable"],
     	            "onclick"   : function(info, tab){D3.createPopup("bin2hex", D3.bin2hex(info.selectionText));}
     	        };
@@ -1275,7 +1278,6 @@ var D3 =
     	if(localStorage.getItem("functions_bin2txt") == '1') {
     	    menu = {
     	            "title"     : "bin2txt", 
-    	            "parentId"  : idMain,
     	            "contexts"  : ["selection", "editable"],
     	            "onclick"   : function(info, tab){D3.createPopup("bin2txt", D3.bin2txt(info.selectionText));}
     	        };
@@ -1286,7 +1288,6 @@ var D3 =
     	if(localStorage.getItem("functions_htmlentities") == '1') {
     	    menu = {
     	            "title"     : "HTML entities", 
-    	            "parentId"  : idMain,
     	            "contexts"  : ["selection", "editable"],
     	            "onclick"   : function(info, tab){D3.createPopup("HTML entities", D3.htmlentities(info.selectionText));}
     	        };
@@ -1297,7 +1298,6 @@ var D3 =
     	if(localStorage.getItem("functions_html_entity_decode") == '1') {
     	    menu = {
     	            "title"     : "HTML entity decode", 
-    	            "parentId"  : idMain,
     	            "contexts"  : ["selection", "editable"],
     	            "onclick"   : function(info, tab){D3.createPopup("HTML entity decode", D3.html_entity_decode(info.selectionText));}
     	        };
@@ -1308,7 +1308,6 @@ var D3 =
     	if(localStorage.getItem("functions_htmlspecialchars") == '1') {
     	    menu = {
     	            "title"     : "HTML specialchars", 
-    	            "parentId"  : idMain,
     	            "contexts"  : ["selection", "editable"],
     	            "onclick"   : function(info, tab){D3.createPopup("HTML specialchars", D3.htmlspecialchars(info.selectionText,2,null,true));}
     	        };
@@ -1319,7 +1318,6 @@ var D3 =
     	if(localStorage.getItem("functions_htmlspecialchars_decode") == '1') {
     	    menu = {
     	            "title"     : "HTML specialchars decode", 
-    	            "parentId"  : idMain,
     	            "contexts"  : ["selection", "editable"],
     	            "onclick"   : function(info, tab){D3.createPopup("HTML specialchars decode", D3.htmlspecialchars_decode(info.selectionText));}
     	        };
@@ -1330,7 +1328,6 @@ var D3 =
     	if(localStorage.getItem("functions_md5") == '1') {
     	    menu = {
     	            "title"     : "MD5", 
-    	            "parentId"  : idMain,
     	            "contexts"  : ["selection", "editable"],
     	            "onclick"   : function(info, tab){D3.createPopup("MD5", D3.md5(info.selectionText));}
     	        };
@@ -1341,7 +1338,6 @@ var D3 =
     	if(localStorage.getItem("functions_sha1") == '1') {
     	    menu = {
     	            "title"     : "SHA1", 
-    	            "parentId"  : idMain,
     	            "contexts"  : ["selection", "editable"],
     	            "onclick"   : function(info, tab){D3.createPopup("SHA1", D3.sha1(info.selectionText));}
     	        };
@@ -1352,7 +1348,6 @@ var D3 =
     	if(localStorage.getItem("functions_crc32") == '1') {
     	    menu = {
     	            "title"     : "CRC32", 
-    	            "parentId"  : idMain,
     	            "contexts"  : ["selection", "editable"],
     	            "onclick"   : function(info, tab){D3.createPopup("CRC32", D3.crc32(info.selectionText));}
     	        };
@@ -1363,7 +1358,6 @@ var D3 =
     	if(localStorage.getItem("functions_quoted_printable_decode") == '1') {
     	    menu = {
     	            "title"     : "Quoted printable decode", 
-    	            "parentId"  : idMain,
     	            "contexts"  : ["selection", "editable"],
     	            "onclick"   : function(info, tab){D3.createPopup("Quoted printable decode", D3.quoted_printable_decode(info.selectionText));}
     	        };
@@ -1374,7 +1368,6 @@ var D3 =
     	if(localStorage.getItem("functions_quoted_printable_encode") == '1') {
     	    menu = {
     	            "title"     : "Quoted printable encode", 
-    	            "parentId"  : idMain,
     	            "contexts"  : ["selection", "editable"],
     	            "onclick"   : function(info, tab){D3.createPopup("Quoted printable encode", D3.quoted_printable_encode(info.selectionText));}
     	        };
@@ -1385,7 +1378,6 @@ var D3 =
     	if(localStorage.getItem("functions_escapeshellarg") == '1') {
     	    menu = {
     	            "title"     : "Escapeshellarg", 
-    	            "parentId"  : idMain,
     	            "contexts"  : ["selection", "editable"],
     	            "onclick"   : function(info, tab){D3.createPopup("Escapeshellarg", D3.escapeshellarg(info.selectionText));}
     	        };
@@ -1396,7 +1388,6 @@ var D3 =
     	if(localStorage.getItem("functions_base64_encode") == '1') {
     	    menu = {
     	            "title"     : "Base64 encode", 
-    	            "parentId"  : idMain,
     	            "contexts"  : ["selection", "editable"],
     	            "onclick"   : function(info, tab){D3.createPopup("Base64 encode", D3.base64_encode(info.selectionText));}
     	        };
@@ -1407,7 +1398,6 @@ var D3 =
     	if(localStorage.getItem("functions_base64_decode") == '1') {
     	    menu = {
     	            "title"     : "Base64 decode", 
-    	            "parentId"  : idMain,
     	            "contexts"  : ["selection", "editable"],
     	            "onclick"   : function(info, tab){D3.createPopup("Base64 decode", D3.base64_decode(info.selectionText));}
     	        };
@@ -1418,7 +1408,6 @@ var D3 =
     	if(localStorage.getItem("functions_unserialize") == '1') {
             menu = {
                     "title"     : "Unserialize", 
-                    "parentId"  : idMain,
                     "contexts"  : ["selection", "editable"],
                     "onclick"   : function(info, tab){D3.createPopup("Unserialize", D3.unserialize(info.selectionText));}
                 };
@@ -1429,7 +1418,6 @@ var D3 =
     	if(localStorage.getItem("functions_leet_encode") == '1') {
             menu = {
                     "title"     : "L33T Encode", 
-                    "parentId"  : idMain,
                     "contexts"  : ["selection", "editable"],
                     "onclick"   : function(info, tab){D3.createPopup("L33T Encode", D3.leetEncode(info.selectionText));}
                 };
@@ -1440,7 +1428,6 @@ var D3 =
     	if(localStorage.getItem("functions_leet_decode") == '1') {
             menu = {
                     "title"     : "L33T Decode", 
-                    "parentId"  : idMain,
                     "contexts"  : ["selection", "editable"],
                     "onclick"   : function(info, tab){D3.createPopup("L33T Decode", D3.leetDecode(info.selectionText));}
                 };

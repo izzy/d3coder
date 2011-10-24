@@ -1,15 +1,21 @@
-<!--
-/**
- * @version 0.5
- * @author Maik Kulbe <info@linux-web-development.de>
- * @copyright (c) 2010 Maik Kulbe
- */ --> 
-<script type="text/javascript" src="../js/mootools.js"></script>
-<script type="text/javascript" src="../js/D3.js"></script>
-<script>
-
-D3.checkInstall();
-
-waitInterval = setInterval(D3.createContextMenu,D3.menuLoadTime);
-
-</script>
+<html>
+	<head>
+		<!--
+		/**
+		 * @version 0.5
+		 * @author Maik Kulbe <info@linux-web-development.de>
+		 * @copyright (c) 2010 Maik Kulbe
+		 */ --> 
+		<script type="text/javascript" src="../js/mootools.js"></script>
+		<script type="text/javascript" src="../js/D3.js"></script>
+		<script>
+			D3.checkInstall();
+			waitInterval = setInterval(
+					D3.createContextMenu() ,D3.menuLoadTime
+					);
+		</script>
+	</head>
+	<body>
+	   <textarea id="clipboard" style="display:none"></textarea>
+	</body>
+</html>

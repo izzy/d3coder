@@ -1,6 +1,10 @@
 CHANGELOG
 =============================
 
+0.6.0
+Added automatic clipboard funtionality
+Added div-style clipbloard button
+
 0.5.0
 Added function bin2txt
 Added function L33T encode

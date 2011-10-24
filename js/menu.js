@@ -1,5 +1,5 @@
 /** 
- * @version 0.5
+ * @version 0.6
  * @author Maik Kulbe <info@linux-web-development.de>
  * @copyright (c) 2010 Maik Kulbe
  */
@@ -11,7 +11,7 @@ var D3menu =
   * 
   * @var String
   */
- version: "0.5",
+ version: "0.6",
  /**
   * list all message types so we can use this while saving
   * @var Array 
@@ -65,7 +65,10 @@ var D3menu =
          if(!localStorage.getItem("message_type3"))
              localStorage.setItem("message_type3", "0");
          if(!localStorage.getItem("message_type4"))
-             localStorage.setItem("message_type4", "0");
+        	 localStorage.setItem("message_type4", "0");
+         
+         if(!localStorage.getItem("message_automatic_clipboardcopy"))
+             localStorage.setItem("message_automatic_clipboardcopy", "0");
          
          D3menu.checkboxes.each(function(el){
              if(localStorage.getItem(el) != "0" && localStorage.getItem(el) != "1") {
@@ -94,7 +97,13 @@ var D3menu =
 			 value = $( option ).value; 
 		 }
 	 });
-	 localStorage.setItem("message_type", value ? value : "notifications");
+     localStorage.setItem("message_type", value ? value : "notifications");
+     
+     if($("message_automatic_clipboardcopy").checked == true) {
+    	 localStorage.setItem("message_automatic_clipboardcopy", 1);
+     } else {
+    	 localStorage.setItem("message_automatic_clipboardcopy", 0);
+     }
 	 
 	 D3menu.checkboxes.each(function(option){
 		 var elem = $( option );
@@ -116,6 +125,12 @@ var D3menu =
 			 						localStorage.getItem("message_type") : 
 			 						"notifications"; 
 	 var somethingChecked   = false;
+	 
+	 if(localStorage.getItem("message_automatic_clipboardcopy") == 1) {
+		 $("message_automatic_clipboardcopy").checked = true;
+     } else {
+    	 $("message_automatic_clipboardcopy").checked = false;
+     }
 	 
 	 D3menu.options.each(function(option){
 		 var optionValue = $(option).value;
