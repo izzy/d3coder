@@ -63,6 +63,12 @@ D3content = {
 	            'text': text
 	        });
 
+	        // FIXME: finish clipboardcopy button
+	        var infoClipboardCopy = new Element('a').set({
+	        	'width': 20,
+	        	'height': 20
+	        });
+
 	        var hr = new Element('hr');
 	        
 	        $(infoDiv).grab(infoHeading);
