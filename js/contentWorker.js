@@ -63,17 +63,44 @@ D3content = {
 	            'text': text
 	        });
 
-	        // FIXME: finish clipboardcopy button
 	        var infoClipboardCopy = new Element('a').set({
-	        	'width': 20,
-	        	'height': 20
+				'href': 'javascript:void',
+                'text': ' ',
+				'styles': {
+					'width': 20,
+					'height': 20,
+                    'background-image': 'url(data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5Ojf/2wBDAQoKCg0MDRoPDxo3JR8lNzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzf/wAARCAAUABQDASIAAhEBAxEB/8QAGAABAAMBAAAAAAAAAAAAAAAAAAQFBgf/xAAmEAABAwQCAQMFAAAAAAAAAAABAgMEAAUGERIhYRMiMQcjY5Gz/8QAFQEBAQAAAAAAAAAAAAAAAAAABAP/xAAcEQACAQUBAAAAAAAAAAAAAAAAAQIDERIx0SL/2gAMAwEAAhEDEQA/AOnZVerjbp1rg2lmOt+cp3an0qUEpQkKOgkgk6J/XmqGdkWR2aG5NdQy+y2pBeS/FcbI2dew70OyOjvXfZq1ydfHNsS8ql/zFQ/qOtQw24FSSPez8j8go8m8Zu+uIvFK8FbfTcUpSkEDPZNjMa9ORpD0yfHejKV6TkZ7gU8hpWjo/OhVCnBIkz7Uy83x9kkcmnZnJKu99jj4pSi1EsxNN+TeNN+kgJ5rX5WdmlKUoMf/2Q==)',
+					'position': 'absolute',
+					'top': 0,
+					'right': 0
+				},
+                'title': 'Copy last conversion to clipboard',
+                'id': 'D3-clipboard-button'
 	        });
 
 	        var hr = new Element('hr');
 	        
 	        $(infoDiv).grab(infoHeading);
+	        $(infoDiv).grab(infoClipboardCopy);
 	        $(infoDiv).grab(infoText);
 	        $(infoDiv).grab(hr);
+
+            $('D3-clipboard-button').addEvent('click', function(){
+                chrome.extension.sendRequest({command: "doCopy"}, function(response) {
+                    console.log(response);
+                });
+                /*
+                var bg = chrome.extension.getBackgroundPage();
+                var clipboard = bg.document.getElementById("clipboard");
+                clipboard.style.display = "block";
+                clipboard.value = text;
+                clipboard.select();
+                bg.document.execCommand("Copy");
+                clipboard.style.display = "none";
+                */
+            });
+
+
 		},
 		logConsole: function(text) 
 		{

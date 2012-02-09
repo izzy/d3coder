@@ -49,6 +49,8 @@ var D3 =
                       "functions_leet_decode",
                       "functions_leet_encode"),
 
+    lastMessage: '',
+
 	PhrasesEnglish:
 		new Array('crap', 'dude', 'hacker',
 		  'hacks', 'you', 'cool', 'oh my god',
@@ -141,6 +143,8 @@ var D3 =
 		if(localStorage.getItem("message_automatic_clipboardcopy") == 1) {
 			D3.copyToClipboard(text);
 		}
+        
+        D3.lastMessage = text;
 		
 		switch (type) {
 			case 'console':
@@ -187,6 +191,7 @@ var D3 =
 		clipboard.select();
 		bg.document.execCommand("Copy");
 		clipboard.style.display = "none";
+        return true;
 	},
 	rot13decode: function(text) 
 	{

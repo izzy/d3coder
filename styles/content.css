@@ -22,6 +22,7 @@
 {
 	z-index:				1100;
     float:                  right;
+    margin-right:           30px;
 }
 
 #D3-inject-heading
@@ -32,6 +33,10 @@
 #D3-inject, #D3-inject-heading, #D3-inject-close, .D3-inject-heading
 {
 	color:					black !important;	
+}
+
+.D3-inject-text {
+    word-wrap:              break-word;
 }
 
 div.handle {
