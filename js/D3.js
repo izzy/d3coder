@@ -1,5 +1,5 @@
 /** 
- * @version 0.5
+ * @version 1.0
  * @author Maik Kulbe <info@linux-web-development.de>
  * @copyright (c) 2010 Maik Kulbe
  */
@@ -24,7 +24,7 @@ var D3 =
      * 
      * @var String
      */
-   version: "0.6",
+   version: "1.0",
     /**
      * list all functions so we can use this while saving
      * @var Array 
@@ -87,6 +87,8 @@ var D3 =
                 localStorage.setItem("message_type3", "0");
             if(!localStorage.getItem("message_type4"))
                 localStorage.setItem("message_type4", "0");
+            if(!localStorage.getItem("message_type5"))
+                localStorage.setItem("message_type5", "0");
             
             D3.checkboxes.each(function(el){
                 if(localStorage.getItem(el) != "0" && localStorage.getItem(el) != "1") {
@@ -148,7 +150,6 @@ var D3 =
 		
 		switch (type) {
 			case 'console':
-				
 				text = D3.base64_encode(text);
 				
 				chrome.tabs.executeScript(null, {file:'js/mootools.js'});
@@ -176,6 +177,16 @@ var D3 =
 				};
 				setTimeout("injectDiv()",400);
                 break;
+            case 'inplace':
+                // TODO: replace text in page
+				chrome.tabs.executeScript(null, {file:'js/mootools.js'});
+				chrome.tabs.executeScript(null, {file:'js/contentWorker.js'});
+				replaceText = function() {
+					text = D3.base64_encode(text);
+					chrome.tabs.executeScript(null, {code:"D3content.replaceText('" + text + "');"});
+				};
+				setTimeout("replaceText()",400);
+                break;                
 			default:
 			case 'notification':
 				var popup = window.webkitNotifications.createNotification( D3.icon, title, text);

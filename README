@@ -1,6 +1,9 @@
 CHANGELOG
 =============================
 
+1.0.0
+Added in-place conversion
+
 0.6.0
 Added automatic clipboard funtionality
 Added div-style clipboard button

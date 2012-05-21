@@ -1,5 +1,5 @@
 /** 
- * @version 0.6
+ * @version 1.0
  * @author Maik Kulbe <info@linux-web-development.de>
  * @copyright (c) 2010 Maik Kulbe
  */
@@ -102,6 +102,25 @@ D3content = {
 
 
 		},
+
+		replaceText: function(text)
+		{
+            var selection, range;
+
+			text = D3content.base64_decode(text);
+            if (window.getSelection) {
+                selection = window.getSelection();
+                if (selection.rangeCount) {
+                    range = selection.getRangeAt(0);
+                    range.deleteContents();
+                    range.insertNode(document.createTextNode(text));
+                }
+            } else if (document.selection && document.selection.createRange) {
+                range = document.selection.createRange();
+                range.text = text;
+            }
+		},
+
 		logConsole: function(text) 
 		{
 			console.log(D3content.base64_decode(text));
