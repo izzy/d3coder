@@ -1,5 +1,5 @@
 /** 
- * @version 0.6
+ * @version 1.0
  * @author Maik Kulbe <info@linux-web-development.de>
  * @copyright (c) 2010 Maik Kulbe
  */
@@ -11,12 +11,12 @@ var D3menu =
   * 
   * @var String
   */
- version: "0.6",
+ version: "1.0",
  /**
   * list all message types so we can use this while saving
   * @var Array 
   */
- options: Array("message_type1", "message_type2", "message_type3", "message_type4"),
+ options: Array("message_type1", "message_type2", "message_type3", "message_type4", "message_type5"),
  /**
   * list all functions so we can use this while saving
   * @var Array 
@@ -66,6 +66,8 @@ var D3menu =
              localStorage.setItem("message_type3", "0");
          if(!localStorage.getItem("message_type4"))
         	 localStorage.setItem("message_type4", "0");
+         if(!localStorage.getItem("message_type5"))
+        	 localStorage.setItem("message_type5", "0");
          
          if(!localStorage.getItem("message_automatic_clipboardcopy"))
              localStorage.setItem("message_automatic_clipboardcopy", "0");
