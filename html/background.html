@@ -8,27 +8,7 @@
 		 */ --> 
 		<script type="text/javascript" src="../js/mootools.js"></script>
 		<script type="text/javascript" src="../js/D3.js"></script>
-		<script>
-			D3.checkInstall();
-			waitInterval = setInterval(
-					D3.createContextMenu() ,D3.menuLoadTime
-					);
-
-            chrome.extension.onRequest.addListener(
-              function(request, sender, sendResponse) {
-                console.log(sender.tab ?
-                            "from a content script:" + sender.tab.url :
-                            "from the extension");
-                if (request.command == "doCopy") {
-                  console.log(D3);
-                  var responseStatus = D3.copyToClipboard(D3.lastMessage);
-                  sendResponse({status: ["Message copied to clip board!", responseStatus] });
-                } else {
-                  sendResponse({}); // snub them.
-                }
-              });
-
-   		</script>
+		<script type="text/javascript" src="../js/background.js"></script>
 	</head>
 	<body>
 	   <textarea id="clipboard" style="display:none"></textarea>
