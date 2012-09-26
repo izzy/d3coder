@@ -47,7 +47,8 @@ var D3 =
                       "functions_base64_decode",
                       "functions_unserialize",
                       "functions_leet_decode",
-                      "functions_leet_encode"),
+                      "functions_leet_encode",
+                      "functions_reverse"),
 
     lastMessage: '',
 
@@ -778,6 +779,9 @@ var D3 =
 				);
 		return inputString;
     },
+    reverseText: function (inputString) {
+        return inputString.split("").reverse().join("");
+    },
     base64_encode: function (data) {
 	    var b64 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
 	    var o1, o2, o3, h1, h2, h3, h4, bits, i = 0, ac = 0, enc="", tmp_arr = [];
@@ -1449,6 +1453,16 @@ var D3 =
                 };
             
             var idLeetDecode=chrome.contextMenus.create(menu);
+        }
+
+        if(localStorage.getItem("functions_reverse") == '1') {
+            menu = {
+                    "title"     : "Reverse text",
+                    "contexts"  : ["selection", "editable"],
+                    "onclick"   : function(info, tab) {D3.createPopup("Reverse", D3.reverseText(info.selectionText));}
+            };
+
+            var idReverseText=chrome.contextMenus.create(menu);
         }
     }
 };

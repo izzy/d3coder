@@ -39,7 +39,8 @@ var D3menu =
 		 	       "functions_base64_decode",
                    "functions_unserialize",
                    "functions_leet_decode",
-                   "functions_leet_encode"),
+                   "functions_leet_encode",
+                   "functions_reverse"),
 		
  /**
   * initialization to collect startup errors
