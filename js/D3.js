@@ -158,10 +158,12 @@ var D3 =
 				
 				chrome.tabs.executeScript(null, {code:"console.log('d3coder:: FUNCTION: " + title + "');"});
 				chrome.tabs.executeScript(null, {code:"console.log('d3coder:: VALUE:');"});
-				logIt = function(){
-					chrome.tabs.executeScript(null, {code:"D3content.logConsole('" + text + "');"});
-				};
-				setTimeout("logIt()",400);
+				window.setTimeout(function(){
+                    chrome.tabs.executeScript(
+                        null, 
+                        {code:"D3content.logConsole('" + text + "');"}
+                    );
+                },400);
 				
 				break;
 			case 'alert': 
@@ -172,21 +174,28 @@ var D3 =
 				chrome.tabs.insertCSS(null, {file: "styles/content.css"});
 				chrome.tabs.executeScript(null, {file:'js/mootools.js'});
 				chrome.tabs.executeScript(null, {file:'js/contentWorker.js'});
-				injectDiv = function() {
-					text = D3.base64_encode(text);
-					chrome.tabs.executeScript(null, {code:"D3content.createDiv('" + title + "', '" + text + "');"});
-				};
-				setTimeout("injectDiv()",400);
+				
+                window.setTimeout(function() {
+                    text = D3.base64_encode(text);
+					chrome.tabs.executeScript(
+                        null, 
+                        {code:"D3content.createDiv('" + title + "', '" + text + "');"}
+                    );
+                },400);
+
                 break;
             case 'inplace':
                 // TODO: replace text in page
 				chrome.tabs.executeScript(null, {file:'js/mootools.js'});
 				chrome.tabs.executeScript(null, {file:'js/contentWorker.js'});
-				replaceText = function() {
-					text = D3.base64_encode(text);
-					chrome.tabs.executeScript(null, {code:"D3content.replaceText('" + text + "');"});
-				};
-				setTimeout("replaceText()",400);
+				
+                window.setTimeout(function() {
+                    text = D3.base64_encode(text);
+					chrome.tabs.executeScript(
+                        null, 
+                        {code:"D3content.replaceText('" + text + "');"}
+                    );
+                },400);
                 break;                
 			default:
 			case 'notification':

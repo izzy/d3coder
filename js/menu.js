@@ -215,3 +215,19 @@ D3menu.init();
 $$('input').each(function(el){
 	el.addEvent('change', function(){D3menu.save_options(false);});
 });
+
+$('message-tab').addEvent('click', function(){
+    D3menu.messageTabShow();
+});
+
+$('context-menu-tab').addEvent('click', function(){
+    D3menu.contextMenuTabShow();
+});
+
+$('misc-tab').addEvent('click', function(){
+    D3menu.miscTabShow();
+});
+
+$('credits-tab').addEvent('click', function(){
+    D3menu.creditsTabShow();
+});
