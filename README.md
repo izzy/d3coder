@@ -1,6 +1,18 @@
 CHANGELOG
 =============================
 
+1.2.2
+Fixed not-working outputs (manifest v2 regression)
+
+1.2.1
+Fixed not-working options-page (manifest v2 regression)
+
+1.2.0
+Added function reverse
+
+1.1.0
+Changed manifest to version 2
+
 1.0.0
 Added in-place conversion
 
