@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "d3coder", 
-  "version": "1.2.3",
+  "version": "1.2.5",
   "description": "Encoding/Decoding Plugin for various types of encoding like base64, rot13 or unix timestamp conversion",
   "options_page": "html/menu.html",
   "permissions": [ 
