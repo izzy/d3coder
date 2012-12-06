@@ -38,6 +38,8 @@ var D3 =
                       "functions_htmlentities",
                       "functions_htmlspecialchars",
                       "functions_htmlspecialchars_decode",
+                      "functions_uri_encode",
+                      "functions_uri_decode",
                       "functions_md5",
                       "functions_sha1",
                       "functions_quoted_printable_decode",
@@ -423,7 +425,13 @@ var D3 =
 	 
 	    return string;
 	},
-	md5: function (str) {
+    uri_encode: function (str) {
+        return encodeURIComponent(str);
+    },
+    uri_decode: function (str) {
+        return decodeURIComponent(str);
+    },
+    md5: function (str) {
 	    var xl;
 	 
 	    var rotateLeft = function (lValue, iShiftBits) {
@@ -1313,6 +1321,26 @@ var D3 =
     	    
     	    var idBin2txt=chrome.contextMenus.create(menu);
     	}
+    	
+        if(localStorage.getItem("functions_uri_encode") == '1') {
+    	    menu = {
+    	            "title"     : "URI encode", 
+    	            "contexts"  : ["selection", "editable"],
+    	            "onclick"   : function(info, tab){D3.createPopup("URI encode", D3.uri_encode(info.selectionText));}
+    	        };
+    	    
+    	    var idURIEncode=chrome.contextMenus.create(menu);
+    	}
+    	
+        if(localStorage.getItem("functions_uri_decode") == '1') {
+    	    menu = {
+    	            "title"     : "URI decode", 
+    	            "contexts"  : ["selection", "editable"],
+    	            "onclick"   : function(info, tab){D3.createPopup("URI decode", D3.uri_decode(info.selectionText));}
+    	        };
+    	    
+    	    var idURIDecode=chrome.contextMenus.create(menu);
+    	}
     
     	if(localStorage.getItem("functions_htmlentities") == '1') {
     	    menu = {
@@ -1473,5 +1501,14 @@ var D3 =
 
             var idReverseText=chrome.contextMenus.create(menu);
         }
+
+        // Menu item for options
+        menu = {
+            "title"     : "d3coder options",
+            "contexts"  : ["all"],
+            "onclick"   : function(info, tab) {chrome.tabs.create({url:"html/menu.html"});}
+        }
+
+        var idDecoderOptions=chrome.contextMenus.create(menu);
     }
 };

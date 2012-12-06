@@ -1,6 +1,11 @@
 CHANGELOG
 =============================
 
+1.2.3
+Added function URI encode
+Added function URI decode
+Added link to menu in context menu
+
 1.2.2
 Fixed not-working outputs (manifest v2 regression)
 

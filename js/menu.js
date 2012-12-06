@@ -30,6 +30,8 @@ var D3menu =
 		 	       "functions_htmlentities",
 		 	       "functions_htmlspecialchars",
 		 	       "functions_htmlspecialchars_decode",
+		 	       "functions_uri_encode",
+		 	       "functions_uri_decode",
 		 	       "functions_md5",
 		 	       "functions_sha1",
 		 	       "functions_quoted_printable_decode",
