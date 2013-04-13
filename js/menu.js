@@ -93,6 +93,7 @@ var D3menu =
   * Save options to localStorage
   */
  save_options: function(alertText) {
+     console.log("Called save_options");
 	 if(alertText == undefined) {
 		 alert = true;
 	 }
@@ -109,15 +110,18 @@ var D3menu =
      } else {
     	 localStorage.setItem("message_automatic_clipboardcopy", 0);
      }
-	 
+
+	 console.log('Updating functions');
 	 D3menu.checkboxes.each(function(option){
 		 var elem = $( option );
+         console.log(elem);
 		 var value = "0";
-		 if(elem.checked)
+		 if(elem.checked) {
 			 value = elem.checked ? "1" : "0";
-		 else if(elem.value)
-			 value = elem.value=="on" ? "1" : "0";
-		 
+		 } else {
+            value = "0";
+         }
+
 		 localStorage.setItem(option, value); 
 	 });
  },
