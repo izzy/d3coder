@@ -1,6 +1,10 @@
 CHANGELOG
 =============================
 
+1.2.4
+1.2.5
+Packaging problems
+
 1.2.3
 Added function URI encode
 Added function URI decode
