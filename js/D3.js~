@@ -1291,7 +1291,7 @@ var D3 =
                 } else if(localStorage.getItem("functions_" + name) == '0' && D3.menuIds[name]) {
                     console.log(D3.menuIds[name]);
                     chrome.contextMenus.remove(D3.menuIds[name]);
-                    D3.menuIds[name] = null;
+                    D3.menuIds[name] == null;
                 }
             };
 
