@@ -309,7 +309,7 @@ var D3 =
 	    var hash_map = {}, symbol = '', tmp_str = '', entity = '';
 	    tmp_str = string.toString();
 	    
-	    if (false === (hash_map = this.get_html_translation_table('HTML_ENTITIES', quote_style))) {
+	    if (false === (hash_map = D3.get_html_translation_table('HTML_ENTITIES', quote_style))) {
 	        return false;
 	    }
 	 
@@ -330,7 +330,7 @@ var D3 =
 	    var hash_map = {}, symbol = '', tmp_str = '', entity = '';
 	    tmp_str = string.toString();
 	    
-	    if (false === (hash_map = this.get_html_translation_table('HTML_ENTITIES', quote_style))) {
+	    if (false === (hash_map = D3.get_html_translation_table('HTML_ENTITIES', quote_style))) {
 	        return false;
 	    }
 	    hash_map["'"] = '&#039;';
@@ -1285,8 +1285,17 @@ var D3 =
                         "contexts"  : ["selection", "editable"],
                         "onclick"   : function(info, tab){D3.createPopup(info, ptFunction(info.selectionText));} 
                     };
-
                     D3.menuIds[name]=chrome.contextMenus.create(menu);
+
+                    menu = {
+                        "title"     : info, 
+                        "contexts"  : ["page"],
+                        "onclick"   : function(info, tab){
+                            var clipboardText = 'this could be from clipboard';
+                            D3.createPopup(info, ptFunction(clipboardText));} 
+                    };
+                    D3.menuIds[name]=chrome.contextMenus.create(menu);
+
                     changed = true;
                 } else if(localStorage.getItem("functions_" + name) == '0' && D3.menuIds[name]) {
                     console.log(D3.menuIds[name]);
