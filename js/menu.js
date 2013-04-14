@@ -114,7 +114,6 @@ var D3menu =
 	 console.log('Updating functions');
 	 D3menu.checkboxes.each(function(option){
 		 var elem = $( option );
-         console.log(elem);
 		 var value = "0";
 		 if(elem.checked) {
 			 value = elem.checked ? "1" : "0";
@@ -124,6 +123,8 @@ var D3menu =
 
 		 localStorage.setItem(option, value); 
 	 });
+
+     console.log(localStorage);
  },
 
  /**
