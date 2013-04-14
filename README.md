@@ -1,8 +1,11 @@
 CHANGELOG
 =============================
 
+1.3.0
+Feature: New menu for direct in-clipboard-conversion
+
 1.2.6
-Fix for broken context menu customization
+Bugfix: Problems with context menu customization
 
 1.2.5
 1.2.4
