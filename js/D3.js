@@ -1276,23 +1276,23 @@ var D3 =
 	
 	createContextMenu: function() {
 	var changed = false,
-            createMenu = function(name, info, ptFunction) {
+            createMenu = function(name, infotext, ptFunction) {
                 var menu;
 
                 if(localStorage.getItem("functions_" + name) == '1' && !D3.menuIds[name]) {
                     menu = {
-                        "title"     : info, 
+                        "title"     : infotext, 
                         "contexts"  : ["selection", "editable"],
-                        "onclick"   : function(info, tab){D3.createPopup(info, ptFunction(info.selectionText));} 
+                        "onclick"   : function(info, tab){D3.createPopup(infotext, ptFunction(info.selectionText));} 
                     };
                     D3.menuIds[name]=chrome.contextMenus.create(menu);
 
                     menu = {
-                        "title"     : info, 
+                        "title"     : infotext, 
                         "contexts"  : ["page"],
                         "onclick"   : function(info, tab){
                             var clipboardText = 'this could be from clipboard';
-                            D3.createPopup(info, ptFunction(clipboardText));} 
+                            D3.createPopup(infotext, ptFunction(clipboardText));} 
                     };
                     D3.menuIds[name]=chrome.contextMenus.create(menu);
 
