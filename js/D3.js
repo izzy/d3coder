@@ -1280,19 +1280,34 @@ var D3 =
                 var menu;
 
                 if(localStorage.getItem("functions_" + name) == '1' && !D3.menuIds[name]) {
+                    // Menu for selected text
                     menu = {
                         "title"     : infotext, 
                         "contexts"  : ["selection", "editable"],
-                        "onclick"   : function(info, tab){D3.createPopup(infotext, ptFunction(info.selectionText));} 
+                        "onclick"   : function (info, tab) {
+                            D3.createPopup(infotext, ptFunction(info.selectionText));
+                        } 
                     };
                     D3.menuIds[name]=chrome.contextMenus.create(menu);
 
+                    // Menu for normal page
                     menu = {
                         "title"     : infotext, 
                         "contexts"  : ["page"],
-                        "onclick"   : function(info, tab){
-                            var clipboardText = 'this could be from clipboard';
-                            D3.createPopup(infotext, ptFunction(clipboardText));} 
+                        "onclick"   : function (info, tab) {
+
+                            var bg = chrome.extension.getBackgroundPage(),
+                                clipboard = bg.document.getElementById("clipboard"),
+                                clipboardText;
+
+                            clipboard.style.display = "block";
+                            clipboard.select();
+                            bg.document.execCommand("Paste");
+                            clipboardText = clipboard.value;
+                            clipboard.style.display = "none";
+
+                            D3.copyToClipboard(ptFunction(clipboardText));
+                        } 
                     };
                     D3.menuIds[name]=chrome.contextMenus.create(menu);
 
