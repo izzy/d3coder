@@ -1,8 +1,11 @@
 CHANGELOG
 =============================
 
-1.2.4
+1.2.6
+Fix for broken context menu customization
+
 1.2.5
+1.2.4
 Packaging problems
 
 1.2.3
