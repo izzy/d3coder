@@ -51,8 +51,8 @@ D3content = {
             document.getElementById('D3-inject').appendChild(hr);
 
             document.getElementById('D3-inject-close').addEventListener('click', function(){
-                document.getElementById('D3-inject').parentNode.removeChild();
-                document.getElementById('D3-inject-close').parentNode.removeChild();
+                document.getElementById('D3-inject_handle').parentNode.removeChild(document.getElementById('D3-inject_handle'));                
+                document.getElementById('D3-inject').parentNode.removeChild(document.getElementById('D3-inject'));
             });
 
             document.getElementById('D3-inject_handle').addEventListener('mousedown', initDrag, false);
