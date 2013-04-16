@@ -58,6 +58,9 @@ D3content = {
             document.getElementById('D3-inject_handle').addEventListener('mousedown', initDrag, false);
 
             function initDrag(e) {
+                var oldSelectStart = document.body.onselectstart;
+                document.body.onselectstart = function() {return false;};
+
                 function doDrag(e) {
                     var y = startHeight + (startY - e.clientY);
                     if (y < 100) {
@@ -73,6 +76,7 @@ D3content = {
                 function stopDrag(e) {
                     document.documentElement.removeEventListener('mousemove', doDrag, false);
                     document.documentElement.removeEventListener('mouseup', stopDrag, false);
+                    document.body.onselectstart=oldSelectStart;
                 }
 
                 startY = e.clientY;
