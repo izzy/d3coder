@@ -47,31 +47,9 @@ D3content = {
             document.getElementById('D3-inject').appendChild(hr);
 
             document.getElementById('D3-inject-close').addEventListener('click', function(){
-                document.getElementById('D3-inject_handle').parentNode.removeChild();
                 document.getElementById('D3-inject').parentNode.removeChild();
                 document.getElementById('D3-inject-close').parentNode.removeChild();
             });
-
-var startX, startY, startWidth, startHeight;
-
-function initDrag(e) {
-   startX = e.clientX;
-   startY = e.clientY;
-   startWidth = parseInt(document.defaultView.getComputedStyle(p).width, 10);
-   startHeight = parseInt(document.defaultView.getComputedStyle(p).height, 10);
-   document.documentElement.addEventListener('mousemove', doDrag, false);
-   document.documentElement.addEventListener('mouseup', stopDrag, false);
-}
-
-function doDrag(e) {
-   document.getElementById('D3-inject_handle').style.width = (startWidth + e.clientX - startX) + 'px';
-   document.getElementById('D3-inject_handle').style.height = (startHeight + e.clientY - startY) + 'px';
-}
-
-function stopDrag(e) {
-    document.documentElement.removeEventListener('mousemove', doDrag, false);
-    document.documentElement.removeEventListener('mouseup', stopDrag, false);
-}
 
             document.getElementById('D3-inject_handle').addEventListener('click', function init() {
                 document.getElementById('D3-inject_handle').removeEventListener('click', init, false);
@@ -81,13 +59,27 @@ function stopDrag(e) {
                 document.getElementById('D3-inject_handle').appendChild(resizer);
                 resizer.addEventListener('mousedown', initDrag, false);
             }, false);
-            /*centerBottomResize = new Resizable('D3-inject_handle',{
-                invert: true,
-                mode: 'vertical',
-                cookie: 'centerBottomResize'
-            });
 
-            ResizableLimits.attach();*/
+var startX, startY, startWidth, startHeight;
+
+            function initDrag(e) {
+               startX = e.clientX;
+               startY = e.clientY;
+               startWidth = parseInt(document.defaultView.getComputedStyle(p).width, 10);
+               startHeight = parseInt(document.defaultView.getComputedStyle(p).height, 10);
+               document.documentElement.addEventListener('mousemove', doDrag, false);
+               document.documentElement.addEventListener('mouseup', stopDrag, false);
+            }
+
+            function doDrag(e) {
+               document.getElementById('D3-inject_handle').style.width = (startWidth + e.clientX - startX) + 'px';
+               document.getElementById('D3-inject_handle').style.height = (startHeight + e.clientY - startY) + 'px';
+            }
+
+            function stopDrag(e) {
+                document.documentElement.removeEventListener('mousemove', doDrag, false);
+                document.documentElement.removeEventListener('mouseup', stopDrag, false);
+            }
         } else {
             infoDiv = document.getElementById('D3-inject');
         }
