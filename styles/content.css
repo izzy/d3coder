@@ -23,6 +23,7 @@
 	z-index:				1100;
     float:                  right;
     margin-right:           30px;
+    cursor:                 pointer;
 }
 
 #D3-inject-heading
