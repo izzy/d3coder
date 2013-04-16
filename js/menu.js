@@ -75,11 +75,14 @@ var D3menu =
          if(!localStorage.getItem("message_automatic_clipboardcopy"))
              localStorage.setItem("message_automatic_clipboardcopy", "0");
          
-         D3menu.checkboxes.each(function(el){
-             if(localStorage.getItem(el) != "0" && localStorage.getItem(el) != "1") {
-                 localStorage.setItem(el, "1");
+         for (el in D3menu.checkboxes) {
+             if(D3menu.checkboxes.hasOwnProperty(el)) {
+                 if(localStorage.getItem(el) != "0" && localStorage.getItem(el) != "1") {
+                     localStorage.setItem(el, "1");
+                 }
              }
-         });
+         }
+
          localStorage.setItem('D3installed'+this.version, 'true');
          if(localStorage.getItem('D3lastversion')) {
         	 localStorage.removeItem('D3installed'+localStorage.getItem('lastversion'));
@@ -98,33 +101,36 @@ var D3menu =
 		 alert = true;
 	 }
      var value = false;
-     D3menu.options.each(function(option){
-		 if($( option ) && $( option ).checked == true) {
-			 value = $( option ).value; 
-		 }
-	 });
+     for (option in D3menu.options) {
+         if(D3menu.options.hasOwnProperty(option)) {
+		     if(document.getElementById(D3menu.options[option]) && document.getElementById(D3menu.options[option]).checked == true) {
+			     value = document.getElementById(D3menu.options[option]).value; 
+		     }
+         }
+	 }
+
      localStorage.setItem("message_type", value ? value : "notifications");
      
-     if($("message_automatic_clipboardcopy").checked == true) {
+     if(document.getElementById("message_automatic_clipboardcopy").checked == true) {
     	 localStorage.setItem("message_automatic_clipboardcopy", 1);
      } else {
     	 localStorage.setItem("message_automatic_clipboardcopy", 0);
      }
 
 	 console.log('Updating functions');
-	 D3menu.checkboxes.each(function(option){
-		 var elem = $( option );
-		 var value = "0";
-		 if(elem.checked) {
-			 value = elem.checked ? "1" : "0";
-		 } else {
-            value = "0";
+	 for (option in D3menu.checkboxes) {
+         if (D3menu.checkboxes.hasOwnProperty(option)) {
+		     var elem = document.getElementById(D3menu.checkboxes[option]);
+		     var value = "0";
+		     if(elem.checked) {
+			     value = elem.checked ? "1" : "0";
+		     } else {
+                value = "0";
+             }
+
+		     localStorage.setItem(D3menu.checkboxes[option], value); 
          }
-
-		 localStorage.setItem(option, value); 
-	 });
-
-     console.log(localStorage);
+	 }
  },
 
  /**
@@ -137,26 +143,31 @@ var D3menu =
 	 var somethingChecked   = false;
 	 
 	 if(localStorage.getItem("message_automatic_clipboardcopy") == 1) {
-		 $("message_automatic_clipboardcopy").checked = true;
+		 document.getElementById("message_automatic_clipboardcopy").checked = true;
      } else {
-    	 $("message_automatic_clipboardcopy").checked = false;
+    	 document.getElementById("message_automatic_clipboardcopy").checked = false;
      }
 	 
-	 D3menu.options.each(function(option){
-		 var optionValue = $(option).value;
-		 if(optionValue==type) {
-			 $(option).checked = true;
-			 somethingChecked = true;
-		 }
-	 });
+	 for (option in D3menu.options) {
+         if (D3menu.options.hasOwnProperty(option)) {
+		     var optionValue = document.getElementById(D3menu.options[option]).value;
+		     if(optionValue==type) {
+			     document.getElementById(D3menu.options[option]).checked = true;
+			     somethingChecked = true;
+		     }
+         }
+	 }
+
 	 if(somethingChecked == false) {
-		 $('message_type2').checked = true;
+		 document.getElementById('message_type2').checked = true;
 	 }
 	 
-	 D3menu.checkboxes.each(function(option){
-		 var value = localStorage.getItem(option) == 1 ? true : false;
-		 var elem = $(option).checked = value;
-	 });
+	 for (option in D3menu.checkboxes) {
+         if (D3menu.checkboxes.hasOwnProperty(option)) {
+		     var value = localStorage.getItem(D3menu.checkboxes[option]) == 1 ? true : false;
+		     var elem = document.getElementById(D3menu.checkboxes[option]).checked = value;
+         }
+	 }
  },
  
  /**
@@ -164,77 +175,82 @@ var D3menu =
   * TODO:  better code to switch between tabs than this massive block of JS
   */
  messageTabShow: function(){
-	 $('message').style.display = '';
-	 $('message-tab').className = 'active';
+	 document.getElementById('message').style.display = '';
+	 document.getElementById('message-tab').className = 'active';
 	 
-	 $('context-menu').style.display = 'none';
-	 $('context-menu-tab').className = '';
+	 document.getElementById('context-menu').style.display = 'none';
+	 document.getElementById('context-menu-tab').className = '';
 
-	 $('misc').style.display = 'none';
-	 $('misc-tab').className = '';
+	 document.getElementById('misc').style.display = 'none';
+	 document.getElementById('misc-tab').className = '';
 
-	 $('credits').style.display = 'none';
-	 $('credits-tab').className = '';
+	 document.getElementById('credits').style.display = 'none';
+	 document.getElementById('credits-tab').className = '';
  },
  contextMenuTabShow: function(){
-	 $('message').style.display = 'none';
-	 $('message-tab').className = '';
+	 document.getElementById('message').style.display = 'none';
+	 document.getElementById('message-tab').className = '';
 	 
-	 $('context-menu').style.display = '';
-	 $('context-menu-tab').className = 'active';
+	 document.getElementById('context-menu').style.display = '';
+	 document.getElementById('context-menu-tab').className = 'active';
 
-	 $('misc').style.display = 'none';
-	 $('misc-tab').className = '';
+	 document.getElementById('misc').style.display = 'none';
+	 document.getElementById('misc-tab').className = '';
 
-	 $('credits').style.display = 'none';
-	 $('credits-tab').className = '';
+	 document.getElementById('credits').style.display = 'none';
+	 document.getElementById('credits-tab').className = '';
  },
  miscTabShow: function(){
-	 $('message').style.display = 'none';
-	 $('message-tab').className = '';
+	 document.getElementById('message').style.display = 'none';
+	 document.getElementById('message-tab').className = '';
 	 
-	 $('context-menu').style.display = 'none';
-	 $('context-menu-tab').className = '';
+	 document.getElementById('context-menu').style.display = 'none';
+	 document.getElementById('context-menu-tab').className = '';
 
-	 $('misc').style.display = '';
-	 $('misc-tab').className = 'active';
+	 document.getElementById('misc').style.display = '';
+	 document.getElementById('misc-tab').className = 'active';
 
-	 $('credits').style.display = 'none';
-	 $('credits-tab').className = '';
+	 document.getElementById('credits').style.display = 'none';
+	 document.getElementById('credits-tab').className = '';
  },
  creditsTabShow: function(){
-	 $('message').style.display = 'none';
-	 $('message-tab').className = '';
+	 document.getElementById('message').style.display = 'none';
+	 document.getElementById('message-tab').className = '';
 	 
-	 $('context-menu').style.display = 'none';
-	 $('context-menu-tab').className = '';
+	 document.getElementById('context-menu').style.display = 'none';
+	 document.getElementById('context-menu-tab').className = '';
 
-	 $('misc').style.display = 'none';
-	 $('misc-tab').className = '';
+	 document.getElementById('misc').style.display = 'none';
+	 document.getElementById('misc-tab').className = '';
 
-	 $('credits').style.display = '';
-	 $('credits-tab').className = 'active';
+	 document.getElementById('credits').style.display = '';
+	 document.getElementById('credits-tab').className = 'active';
  }
 };
 
 D3menu.init();
 
-$$('input').each(function(el){
-	el.addEvent('change', function(){D3menu.save_options(false);});
-});
+var inputs = document.querySelectorAll('input');
+for (el in inputs) {
+    if (inputs.hasOwnProperty(el) && inputs[el] && el != 'length') {
+	    inputs[el].addEventListener('change', function() {
+            D3menu.save_options(false);
+        });
+    }
+}
 
-$('message-tab').addEvent('click', function(){
+document.getElementById('message-tab').addEventListener('click', function(){
     D3menu.messageTabShow();
 });
 
-$('context-menu-tab').addEvent('click', function(){
+document.getElementById('context-menu-tab').addEventListener('click', function(){
     D3menu.contextMenuTabShow();
 });
 
-$('misc-tab').addEvent('click', function(){
+document.getElementById('misc-tab').addEventListener('click', function(){
     D3menu.miscTabShow();
 });
 
-$('credits-tab').addEvent('click', function(){
+document.getElementById('credits-tab').addEventListener('click', function(){
     D3menu.creditsTabShow();
 });

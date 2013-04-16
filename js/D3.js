@@ -156,8 +156,7 @@ var D3 =
 		switch (type) {
 			case 'console':
 				text = D3.base64_encode(text);
-				
-				chrome.tabs.executeScript(null, {file:'js/mootools.js'});
+
 				chrome.tabs.executeScript(null, {file:'js/contentWorker.js'});
 				
 				chrome.tabs.executeScript(null, {code:"console.log('d3coder:: FUNCTION: " + title + "');"});
@@ -176,7 +175,6 @@ var D3 =
 				break;
 			case 'div':
 				chrome.tabs.insertCSS(null, {file: "styles/content.css"});
-				chrome.tabs.executeScript(null, {file:'js/mootools.js'});
 				chrome.tabs.executeScript(null, {file:'js/contentWorker.js'});
 				
                 window.setTimeout(function() {
@@ -189,8 +187,6 @@ var D3 =
 
                 break;
             case 'inplace':
-                // TODO: replace text in page
-				chrome.tabs.executeScript(null, {file:'js/mootools.js'});
 				chrome.tabs.executeScript(null, {file:'js/contentWorker.js'});
 				
                 window.setTimeout(function() {

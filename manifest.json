@@ -23,7 +23,10 @@
     {
       "matches": ["*://*/*"],
       "css": ["styles/content.css"],
-      "js": ["js/mootools.js", "js/contentWorker.js"],
+      "js": ["js/contentWorker.js"],
       "all_frames": true
-    }]
+    }],
+  "web_accessible_resources": [
+    "images/grip.png"
+  ]
 }
