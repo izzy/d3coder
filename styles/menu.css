@@ -1,146 +1,36 @@
-/** 
- * @version 1.0
- * @author Maik Kulbe <info@linux-web-development.de>
- * @copyright (c) 2010 Maik Kulbe
- */
-
-body 
-{
-	padding:					0;
-	margin:						0;	
-	margin: 					0;
-	padding: 					0;
-	height: 					100%;	
-}
-h1 
-{
-	-webkit-padding-end: 		24px;
-	padding-top:				1em;
-	padding-bottom: 			1em;
-	border-bottom: 				1px solid #eeeeee;
-	-webkit-padding-start: 		0;
-	font-size: 					125%;
-	color: 						#54637f;
-	margin: 					0;
-}
-blockquote
-{
-	padding:					1em;
-	background:					#eeeeee;	
-	border:						1px solid #54637f;
-	border-radius:				5px;
-}
-#menubar
-{
-	margin: 					0;
-	width:	 					250px;
-	height: 					100%;
-	position:					absolute;
-	left:						0;
-	top:						0;
-	background:					#ebeff9;
+html, body {
+    height:         100%;
+    width:          100%;
+    padding:        0;
+    margin:         0;
 }
 
-#optionsFrame 
-{
-	height: 					100%;
-	width:						100%;
-	position:					absolute;
+body {
+    font-size:      75%;
 }
 
-#options, #footer
-{
-	padding-left:				265px;	
+h1 {
+    color:          rgb(92, 97, 102);
+    font-size:      1.5em;
+    font-weight:    normal;
+    line-height:    1;
+    margin:         0 0 20px 0;
+    font-family:    'Segoe UI', Ubuntu, Tahoma, Arial, sans-serif;
 }
 
-#menu
-{
-	margin:						30px 0px 0px 0px;
-	-webkit-padding-start: 		0px;
+#menubar {
+    height:     100%;
+    left:       0;
+    position:   absolute;
+    width:      155px;
 }
 
-#menubar-title
-{
-	font-size: 					16px;
-	text-align:					right;
-	padding-right:				30px;
-	margin-top:					15px;
-	font-weight: 				normal;
-	
-}
-
-#menu li
-{
-	width:						240px;
-	clear: 						both;
-	text-align:					right;
-	padding:					5px 10px 5px 0px;
-	list-style-type: 			none;
-	position: 					relative;
-	border: 					none;
-	cursor: 					pointer;
-	margin:						0;
-	color:						#4b74d6;
-}
-
-#menu .active
-{
-	background: 				-webkit-gradient(
-								    linear,
-								    left top,
-								    right top,
-								    color-stop(0.15, #ebeff9),	
-								    color-stop(1, #b3c4eb)
-								);
-	font-weight: 				bold;
-	color:						black;
-}
-
-.label, .inputs 
-{
-	margin:						5px 0px;
-}
-#buttons
-{
-	position:					absolute;
-	left:						0px;
-	bottom:						30px;
-	text-align:					center;
-	color:						#54637f;
-}
-#buttons button 
-{
-	background:					none;
-	border:						none;
-}
-.buttonlabel 
-{
-	color: 						white;
-	font-size: 					20px;
-	font-weight: 				bold;
-	margin-left: 				62px;
-	margin-top: 				-39px;
-	position: 					absolute;
-	text-shadow: 				black 1px 1px 1px;
-}
-
-.buttonlabel.pressed 
-{
-	color: 						grey;
-	text-shadow: 				white 1px 1px 1px;
-}
-
-#footer
-{ 
-	position: 					absolute;
-	bottom:						0px;
-	height: 					100px;
-	left:						0px;
-	background: 				-webkit-gradient(
-								    linear,
-								    left top,
-								    right top,
-								    color-stop(0.5, #ebeff9),
-								    color-stop(1, #FFFFFF)
-								);
+#optionsFrame {
+    left:       155px;
+    right:      0;
+    bottom:     0;
+    top:        0;
+    position:   absolute;
+    overflow:   auto;
+    height:     100%;
 }
