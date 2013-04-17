@@ -185,10 +185,12 @@ var D3menu =
  showTab: function(name) {
     var deactivate = function(id) {
             document.getElementById(id).style.display    = 'none';
+            document.getElementById(id).style.opacity    = '0';
             document.getElementById(id+'-tab').className = '';
         },
         activate = function(id) {
             document.getElementById(id).style.display    = '';
+            document.getElementById(id).style.opacity    = '1';
             document.getElementById(id+'-tab').className = 'active';
         };
 

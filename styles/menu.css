@@ -7,6 +7,8 @@ html, body {
 
 body {
     font-size:      75%;
+    font-family:    'Segoe UI', Ubuntu, Tahoma, Arial, sans-serif;
+    color:          #333;
 }
 
 h1 {
@@ -15,22 +17,48 @@ h1 {
     font-weight:    normal;
     line-height:    1;
     margin:         0 0 20px 0;
-    font-family:    'Segoe UI', Ubuntu, Tahoma, Arial, sans-serif;
+}
+
+#menu li, #options label {
+    cursor:         pointer;
 }
 
 #menubar {
-    height:     100%;
-    left:       0;
-    position:   absolute;
-    width:      155px;
+    height:         100%;
+    left:           0;
+    position:       absolute;
+    width:          155px;
+}
+
+#menubar ul {
+    padding:        0;
+    margin:         0;
+    left:           0;
+}
+
+#menubar li {
+    color:          #999;
+    list-style-type: none;
+    -webkit-border-start: 6px solid transparent;
+    -webkit-padding-start: 18px;
+    -webkit-transition: all .3s linear;
+}
+
+#menubar li.active {
+    color:          #464e5a;
+    -webkit-border-start: 6px solid #464e5a;
 }
 
 #optionsFrame {
-    left:       155px;
-    right:      0;
-    bottom:     0;
-    top:        0;
-    position:   absolute;
-    overflow:   auto;
-    height:     100%;
+    left:           155px;
+    right:          0;
+    bottom:         0;
+    top:            0;
+    position:       absolute;
+    overflow:       auto;
+    height:         100%;
+}
+
+#options > div {
+    -webkit-transition: all .3s linear;
 }
