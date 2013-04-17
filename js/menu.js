@@ -1,5 +1,5 @@
 /** 
- * @version 1.0
+ * @version 2.0
  * @author Maik Kulbe <info@linux-web-development.de>
  * @copyright (c) 2010 Maik Kulbe
  */
@@ -43,6 +43,14 @@ var D3menu =
                    "functions_leet_decode",
                    "functions_leet_encode",
                    "functions_reverse"),
+
+ tabs: [
+    'message',
+    'context-menu',
+    'misc',
+    'credits'
+ ],
+
 		
  /**
   * initialization to collect startup errors
@@ -174,57 +182,25 @@ var D3menu =
   * menu tab functions
   * TODO:  better code to switch between tabs than this massive block of JS
   */
- messageTabShow: function(){
-	 document.getElementById('message').style.display = '';
-	 document.getElementById('message-tab').className = 'active';
-	 
-	 document.getElementById('context-menu').style.display = 'none';
-	 document.getElementById('context-menu-tab').className = '';
+ showTab: function(name) {
+    var deactivate = function(id) {
+            document.getElementById(id).style.display    = 'none';
+            document.getElementById(id+'-tab').className = '';
+        },
+        activate = function(id) {
+            document.getElementById(id).style.display    = '';
+            document.getElementById(id+'-tab').className = 'active';
+        };
 
-	 document.getElementById('misc').style.display = 'none';
-	 document.getElementById('misc-tab').className = '';
-
-	 document.getElementById('credits').style.display = 'none';
-	 document.getElementById('credits-tab').className = '';
- },
- contextMenuTabShow: function(){
-	 document.getElementById('message').style.display = 'none';
-	 document.getElementById('message-tab').className = '';
-	 
-	 document.getElementById('context-menu').style.display = '';
-	 document.getElementById('context-menu-tab').className = 'active';
-
-	 document.getElementById('misc').style.display = 'none';
-	 document.getElementById('misc-tab').className = '';
-
-	 document.getElementById('credits').style.display = 'none';
-	 document.getElementById('credits-tab').className = '';
- },
- miscTabShow: function(){
-	 document.getElementById('message').style.display = 'none';
-	 document.getElementById('message-tab').className = '';
-	 
-	 document.getElementById('context-menu').style.display = 'none';
-	 document.getElementById('context-menu-tab').className = '';
-
-	 document.getElementById('misc').style.display = '';
-	 document.getElementById('misc-tab').className = 'active';
-
-	 document.getElementById('credits').style.display = 'none';
-	 document.getElementById('credits-tab').className = '';
- },
- creditsTabShow: function(){
-	 document.getElementById('message').style.display = 'none';
-	 document.getElementById('message-tab').className = '';
-	 
-	 document.getElementById('context-menu').style.display = 'none';
-	 document.getElementById('context-menu-tab').className = '';
-
-	 document.getElementById('misc').style.display = 'none';
-	 document.getElementById('misc-tab').className = '';
-
-	 document.getElementById('credits').style.display = '';
-	 document.getElementById('credits-tab').className = 'active';
+    for (n in D3menu.tabs) {
+        if (D3menu.tabs.hasOwnProperty(n)) {
+            if (D3menu.tabs[n] !== name) {
+                deactivate(D3menu.tabs[n]);
+            } else {
+                activate(D3menu.tabs[n])
+            }
+        }
+    }
  }
 };
 
@@ -239,18 +215,14 @@ for (el in inputs) {
     }
 }
 
-document.getElementById('message-tab').addEventListener('click', function(){
-    D3menu.messageTabShow();
-});
+var listenerForTab = function(n) {
+    document.getElementById(n + '-tab').addEventListener('click', function () {
+        D3menu.showTab(n);
+    });
+}
 
-document.getElementById('context-menu-tab').addEventListener('click', function(){
-    D3menu.contextMenuTabShow();
-});
-
-document.getElementById('misc-tab').addEventListener('click', function(){
-    D3menu.miscTabShow();
-});
-
-document.getElementById('credits-tab').addEventListener('click', function(){
-    D3menu.creditsTabShow();
-});
+for (tab in D3menu.tabs) {
+    if (D3menu.tabs.hasOwnProperty(tab)) {
+        listenerForTab(D3menu.tabs[tab]);
+    }
+}
