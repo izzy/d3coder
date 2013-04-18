@@ -191,7 +191,7 @@ D3content = {
 	    } while (i < data.length);
 	 
 	    dec = tmp_arr.join('');
-	    dec = this.utf8_decode(dec);
+	    dec = D3content.utf8_decode(dec);
 	 
 	    return dec;
 	},
