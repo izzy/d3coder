@@ -16,7 +16,18 @@ h1 {
     font-size:      1.5em;
     font-weight:    normal;
     line-height:    1;
-    margin:         0 0 20px 0;
+    margin:         20px;
+}
+
+#optionsFrame {
+    font-size:      1em;
+}
+
+#optionsFrame h1 {
+    margin-left:    0;
+    color:          rgb(62, 67, 72);
+    padding-bottom: 15px;
+    border-bottom:  1px solid #eee;
 }
 
 #menu li, #options label {
@@ -37,16 +48,24 @@ h1 {
 }
 
 #menubar li {
-    color:          #999;
-    list-style-type: none;
-    -webkit-border-start: 6px solid transparent;
-    -webkit-padding-start: 18px;
-    -webkit-transition: all .3s linear;
+    color:                  #999;
+    list-style-type:        none;
+    -webkit-border-start:   6px solid transparent;
+    -webkit-padding-start:  18px;
+    -webkit-transition:     all .3s linear;
+    padding:                6px 0 6px 18px;
 }
 
 #menubar li.active {
-    color:          #464e5a;
-    -webkit-border-start: 6px solid #464e5a;
+    color:                  #464e5a;
+    -webkit-border-start:   6px solid #464e5a;
+}
+
+#buttons {
+    padding:        15px;
+    color:          #666;
+    position:       absolute;
+    bottom:         0;
 }
 
 #optionsFrame {
@@ -62,3 +81,30 @@ h1 {
 #options > div {
     -webkit-transition: all .3s linear;
 }
+
+.inputs {
+    margin-top:     15px;
+    margin-left:    10px;
+}
+
+.inputs > div {
+    -webkit-transition: all .2s linear;
+    padding:        3px 0;
+    color:          #666;
+}
+
+.inputs div:hover {
+    color:          #333;
+}
+
+.inputs input {
+    height:         15px;
+    width:          15px;
+}
+
+.inputs label {
+    margin-top: 2px;
+    margin-left: 6px;
+    position: absolute;
+}
+
