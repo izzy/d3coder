@@ -1,6 +1,9 @@
 CHANGELOG
 =============================
 
+2.0.1
+Bugfix: Fixed broken encryptions
+
 2.0.0
 Rewrite of core code to drop library
 Updated options page theme
