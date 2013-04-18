@@ -180,17 +180,14 @@ var D3menu =
  
  /**
   * menu tab functions
-  * TODO:  better code to switch between tabs than this massive block of JS
   */
  showTab: function(name) {
     var deactivate = function(id) {
-            document.getElementById(id).style.display    = 'none';
-            document.getElementById(id).style.opacity    = '0';
+            document.getElementById(id).className        = '';
             document.getElementById(id+'-tab').className = '';
         },
         activate = function(id) {
-            document.getElementById(id).style.display    = '';
-            document.getElementById(id).style.opacity    = '1';
+            document.getElementById(id).className        = 'active';
             document.getElementById(id+'-tab').className = 'active';
         };
 
@@ -233,4 +230,6 @@ for (tab in D3menu.tabs) {
 
 if (document.location.hash) {
     D3menu.showTab(document.location.hash.substr(1));
+} else {
+    D3menu.showTab('message')
 }
