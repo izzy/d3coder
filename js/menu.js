@@ -203,6 +203,8 @@ var D3menu =
             }
         }
     }
+
+    document.location.hash = name;
  }
 };
 
@@ -227,4 +229,8 @@ for (tab in D3menu.tabs) {
     if (D3menu.tabs.hasOwnProperty(tab)) {
         listenerForTab(D3menu.tabs[tab]);
     }
+}
+
+if (document.location.hash) {
+    D3menu.showTab(document.location.hash.substr(1));
 }
