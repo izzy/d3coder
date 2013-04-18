@@ -4,6 +4,7 @@ CHANGELOG
 2.0.0
 Rewrite of core code to drop library
 Updated options page theme
+Rewrite of options page code
 
 1.3.0
 Feature: New menu for direct in-clipboard-conversion
