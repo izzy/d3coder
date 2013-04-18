@@ -1,6 +1,9 @@
 CHANGELOG
 =============================
 
+2.0.2
+Small updates to options page
+
 2.0.1
 Bugfix: Fixed broken encryptions
 
