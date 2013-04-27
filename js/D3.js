@@ -1,5 +1,7 @@
 /** 
- * @version 1.0
+ * Some functions from php.js (see phpjs.org)
+ *
+ * @version 2.0.2
  * @author Maik Kulbe <info@linux-web-development.de>
  * @copyright (c) 2010 Maik Kulbe
  */
@@ -24,7 +26,7 @@ var D3 =
      * 
      * @var String
      */
-   version: "1.0",
+   version: "2.0.2",
     /**
      * list all functions so we can use this while saving
      * @var Array 
@@ -112,40 +114,6 @@ var D3 =
 	createPopup: function(title, text)
 	{
 		var type = localStorage.getItem("message_type");
-		/*if(localStorage.getItem("history_save") == "1") {
-		    if(localStorage.getItem("history_content")) {
-		        var content = JSON.parse(localStorage.getItem("history_content"));
-		        if(content.itemsCount == 15) {
-		            var tmp = { 
-		                        "itemsCount": "15",
-		                        "items" : []
-		                      };
-		            for(var i=0;i<=13;i++) {
-		                tmp.items[i] = {
-                                           "title":    title,
-                                           "text":     text
-                                      };
-		            }
-		        } else {
-		            content.itemsCount = content.itemsCount++;
-		            content.items[content.itemsCount-1] = {
-                		                "title":    title,
-                                        "text":     text
-		                              };
-		        }
-		    } else {
-		        var content = {
-		            "itemsCount": "1",
-		            "items": [
-    		                      {
-    		                          "title":    title,
-    		                          "text":     text
-    		                      }
-		                     ]
-		        };
-		        localStorage.setItem("history_content", JSON.stringify(content));
-		    }
-		}*/
 		
 		if(localStorage.getItem("message_automatic_clipboardcopy") == 1) {
 			D3.copyToClipboard(text);

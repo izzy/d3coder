@@ -1,5 +1,5 @@
 /** 
- * @version 1.0
+ * @version 2.0.2
  * @author Maik Kulbe <info@linux-web-development.de>
  * @copyright (c) 2010 Maik Kulbe
  */
