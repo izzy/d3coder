@@ -11,7 +11,7 @@ var D3menu =
   * 
   * @var String
   */
- version: "1.0",
+ version: "2.0.2",
  /**
   * list all message types so we can use this while saving
   * @var Array 
