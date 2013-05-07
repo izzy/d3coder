@@ -7,6 +7,9 @@ base64, rot13 or unix timestamp conversion.
 CHANGELOG
 =============================
 
+
+* 2.0.3
+  * Fixed broken install
 * 2.0.2
   * Small updates to options page
 * 2.0.1
