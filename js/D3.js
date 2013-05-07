@@ -97,11 +97,15 @@ var D3 =
             if(!localStorage.getItem("message_type5"))
                 localStorage.setItem("message_type5", "0");
             
-            D3.checkboxes.each(function(el){
-                if(localStorage.getItem(el) != "0" && localStorage.getItem(el) != "1") {
-                    localStorage.setItem(el, "1");
+            for (var el in D3.checkboxes) {
+                if (D3.checkboxes.hasOwnProperty(el)) {
+                    if(localStorage.getItem(D3.checkboxes[el]) != "0" &&
+                            localStorage.getItem(D3.checkboxes[el]) != "1") {
+                        localStorage.setItem(D3.checkboxes[el], "1");
+                    }
                 }
-            });
+            }
+
             localStorage.setItem('D3installed'+D3.version, 'true');
             if(localStorage.getItem('D3lastversion')) {
                 localStorage.removeItem('D3installed'+localStorage.getItem('lastversion'));
