@@ -7,7 +7,8 @@ base64, rot13 or unix timestamp conversion.
 CHANGELOG
 =============================
 
-
+* 2.0.4
+  * Fixed update of context menu after disabling menu items
 * 2.0.3
   * Fixed broken install
 * 2.0.2

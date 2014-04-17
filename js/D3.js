@@ -1277,13 +1277,21 @@ var D3 =
                             D3.copyToClipboard(ptFunction(clipboardText));
                         } 
                     };
-                    D3.menuIds[name]=chrome.contextMenus.create(menu);
+                    D3.menuIds[name + '_c']=chrome.contextMenus.create(menu);
 
                     changed = true;
-                } else if(localStorage.getItem("functions_" + name) == '0' && D3.menuIds[name]) {
-                    console.log(D3.menuIds[name]);
-                    chrome.contextMenus.remove(D3.menuIds[name]);
-                    D3.menuIds[name] = null;
+                } else if(localStorage.getItem("functions_" + name) == '0') {
+                    if (D3.menuIds[name]) {
+                        console.log(D3.menuIds[name]);
+                        chrome.contextMenus.remove(D3.menuIds[name]);
+                        D3.menuIds[name] = null;
+                    }
+
+                    if (D3.menuIds[name + '_c']) {
+                        console.log(D3.menuIds[name + '_c']);
+                        chrome.contextMenus.remove(D3.menuIds[name + '_c']);
+                        D3.menuIds[name + '_c'] = null;
+                    }
                 }
             };
 
