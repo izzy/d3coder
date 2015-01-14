@@ -7,6 +7,8 @@ base64, rot13 or unix timestamp conversion.
 CHANGELOG
 =============================
 
+* 2.0.5
+  * Fixed broken unserialize function
 * 2.0.4
   * Fixed update of context menu after disabling menu items
 * 2.0.3
