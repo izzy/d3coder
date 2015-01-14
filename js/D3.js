@@ -1079,7 +1079,7 @@ var D3 =
 
 	                // Length was calculated on an utf-8 encoded string
 	                // so wait with decoding
-	                readdata = that.utf8_decode(readdata);
+	                readdata = D3.utf8_decode(readdata);
 	            break;
 	            case 'a':
 	                readdata = {};
