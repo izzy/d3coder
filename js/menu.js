@@ -1,5 +1,5 @@
 /** 
- * @version 2.0.5
+ * @version 2.0.6
  * @author Maik Kulbe <info@linux-web-development.de>
  * @copyright (c) 2010 Maik Kulbe
  */
@@ -11,7 +11,7 @@ var D3menu =
   * 
   * @var String
   */
- version: "2.0.5",
+ version: "2.0.6",
  /**
   * list all message types so we can use this while saving
   * @var Array 
