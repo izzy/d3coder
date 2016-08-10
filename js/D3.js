@@ -247,27 +247,20 @@ var D3 =
 	    return a.join('');
 	},
     bin2txt: function (binary){
-        var string = "";
-        binary.replace(/(\r\n|\n|\r)/gm,"");
-        binary.replace(" ", "");
-        
-        var stripped = "";
-        for (i=0; i < binary.length; i++) {
-        	if (binary.charAt(i) != '\n' &&
-        		binary.charAt(i) != '\r' &&
-        		binary.charAt(i) != '\t') {
-        			stripped += binary.charAt(i);
-        	}
-        }
-        binary = stripped;
+        binary = binary.replace(/(\s)/gm, "");
 
-        for(i=0; i<binary.length/8; i++){
-            sub = binary.substr(i*8, 8);
+        var string = "";        
+
+        for (i = 0; i < binary.length / 8; i++) {
+            sub = binary.substr(i * 8, 8);
             num = 0;
-            for(j=0; j<sub.length; j++){
-                if(sub.charAt(j) == '0') {}
-                else num += Math.pow(2, 7-j);
+
+            for (j = 0; j < sub.length; j++) {
+                if (sub.charAt(j) != '0') { 
+					num += Math.pow(2, 7 - j);
+				}
             }
+
             string += String.fromCharCode(num);
         }
 
