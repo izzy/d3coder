@@ -7,6 +7,8 @@ base64, rot13 or unix timestamp conversion.
 CHANGELOG
 =============================
 
+* 2.0.6
+  * Fixed bin2txt when converting strings with whitespace characters
 * 2.0.5
   * Fixed broken unserialize function
 * 2.0.4
