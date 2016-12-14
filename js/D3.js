@@ -687,15 +687,22 @@ var D3 =
 	    return temp.toLowerCase();
 	},
 	quoted_printable_decode: function (str) {
-	    var RFC2045Decode1 = /=\r\n/gm,
+		/*
+		 *  Replaced with new Code
+		 *  14.12.16 - Issue #7
+		*/
+	    //var RFC2045Decode1 = /=\r\n/gm,
 	    // Decodes all equal signs followed by two hex digits
-	    RFC2045Decode2IN = /=([0-9A-F]{2})/gim, // the RFC states against decoding lower case encodings, but following apparent PHP behavior
+	    //RFC2045Decode2IN = /=([0-9A-F]{2})/gim, // the RFC states against decoding lower case encodings, but following apparent PHP behavior
 	    // RFC2045Decode2IN = /=([0-9A-F]{2})/gm,
 	 
-	    RFC2045Decode2OUT = function (sMatch, sHex) {
-	        return String.fromCharCode(parseInt(sHex, 16));
-	    };
-	    return str.replace(RFC2045Decode1, '').replace(RFC2045Decode2IN, RFC2045Decode2OUT);
+	    //RFC2045Decode2OUT = function (sMatch, sHex) {
+	    //    return String.fromCharCode(parseInt(sHex, 16));
+	    //};
+	    //return str.replace(RFC2045Decode1, '').replace(RFC2045Decode2IN, RFC2045Decode2OUT);
+		
+		str = str.replace(/={1}/g, '%');
+		return decodeURI(strToDecode);
 	},
 	quoted_printable_encode: function (str) {
 	   var hexChars = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'],
