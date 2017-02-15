@@ -26,6 +26,8 @@ var D3menu =
 		 	       "functions_crc32",
 		 	       "functions_bin2hex",
 		 	       "functions_bin2txt",
+                   "functions_txt2hex",
+                   "functions_hex2txt",
 		 	       "functions_html_entity_decode",
 		 	       "functions_htmlentities",
 		 	       "functions_htmlspecialchars",
