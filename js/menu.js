@@ -1,7 +1,7 @@
 /** 
  * @version 2.0.5
- * @author Maik Kulbe <info@linux-web-development.de>
- * @copyright (c) 2010 Maik Kulbe
+ * @author Izzy Kulbe <github@unikorn.me>
+ * @copyright (c) 2010 - 2018 Izzy Kulbe
  */
 
 var D3menu = 
@@ -61,7 +61,7 @@ var D3menu =
 		D3menu.restore_options();
 	} catch(e) {
 		alert("An error accured:\n" + e + "\n\n Feel free to report errors to "+
-				"info@linux-web-development.de so I can fix them.");
+				"github@unikorn.me so I can fix them.");
 	}
  },
  
