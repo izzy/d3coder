@@ -2,8 +2,8 @@
  * Some functions from php.js (see phpjs.org)
  *
  * @version 2.0.5
- * @author Maik Kulbe <info@linux-web-development.de>
- * @copyright (c) 2010 Maik Kulbe
+ * @author Izzy Kulbe <github@unikorn.me>
+ * @copyright (c) 2010 - 2018 Izzy Kulbe
  */
 
 /**
