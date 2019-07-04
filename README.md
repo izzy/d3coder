@@ -7,6 +7,8 @@ base64, rot13 or unix timestamp conversion.
 CHANGELOG
 =============================
 
+* 2.0.7
+  * Fixed duplicate base64 options entry
 * 2.0.5
   * Fixed broken unserialize function
 * 2.0.4
