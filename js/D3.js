@@ -1293,7 +1293,7 @@ var D3 =
         /**
          * MENU ITEM DEFINITIONS
     	 */
-    	createMenu('rot13',                     'Rot13 Decode',                      D3.rot13decode);
+    	createMenu('rot13',                     'Rot13',                             D3.rot13decode);
     	createMenu('timestamp',                 'Unix timestamp to date conversion', D3.timestampToDate);
     	createMenu('bin2hex',                   'bin2hex',                           D3.bin2hex);
     	createMenu('bin2txt',                   'bin2txt',                           D3.bin2txt);
