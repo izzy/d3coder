@@ -7,6 +7,9 @@ base64, rot13 or unix timestamp conversion.
 CHANGELOG
 =============================
 
+* 2.1.0
+  * Added ASCII to Text function
+  * Added Text to ASCII function
 * 2.0.7
   * Fixed duplicate base64 options entry
 * 2.0.5

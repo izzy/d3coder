@@ -1,9 +1,9 @@
 /** 
  * Some functions from php.js (see phpjs.org)
  *
- * @version 2.0.5
+ * @version 2.1.0
  * @author Izzy Kulbe <github@unikorn.me>
- * @copyright (c) 2010 - 2018 Izzy Kulbe
+ * @copyright (c) 2010 - 2019 Izzy Kulbe
  */
 
 /**
@@ -26,7 +26,7 @@ var D3 =
      * 
      * @var String
      */
-   version: "2.0.5",
+   version: "2.1.0",
     /**
      * list all functions so we can use this while saving
      * @var Array 
@@ -36,6 +36,8 @@ var D3 =
                       "functions_crc32",
                       "functions_bin2hex",
                       "functions_bin2txt",
+                      "functions_txt2hex",
+                      "functions_hex2txt",
                       "functions_html_entity_decode",
                       "functions_htmlentities",
                       "functions_htmlspecialchars",
@@ -265,6 +267,22 @@ var D3 =
         }
 
         return string;
+	},
+	txt2hex: function (text) {
+        var arr = [];
+        for (var i = 0, l = text.length; i < l; i ++) {
+                var hex = Number(text.charCodeAt(i)).toString(16);
+                arr.push(hex);
+        }
+        return arr.join('');
+    },
+    hex2txt: function (data) {
+        data = data.toString();                   // Force conversion
+        data = data.replace(/[^0-9a-fA-F]+/g, ""); // Strip all non-HEX characters
+        var str = '';
+        for (var i = 0; i < data.length; i += 2)
+                str += String.fromCharCode(parseInt(data.substr(i, 2), 16));
+        return str;
     },
     html_entity_decode: function (string, quote_style) {
 	    var hash_map = {}, symbol = '', tmp_str = '', entity = '';
@@ -1297,6 +1315,8 @@ var D3 =
     	createMenu('timestamp',                 'Unix timestamp to date conversion', D3.timestampToDate);
     	createMenu('bin2hex',                   'bin2hex',                           D3.bin2hex);
     	createMenu('bin2txt',                   'bin2txt',                           D3.bin2txt);
+    	createMenu('txt2hex',                   'ASCII to HEX',                      D3.txt2hex);
+    	createMenu('hex2txt',                   'HEX to ASCII',                      D3.hex2txt);1
     	createMenu('uri_encode',                'URI encode',                        D3.uri_encode);
     	createMenu('uri_decode',                'URI decode',                        D3.uri_decode);
     	createMenu('htmlentities',              'HTML entities',                     D3.htmlentities);

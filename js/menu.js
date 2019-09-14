@@ -1,7 +1,7 @@
 /** 
- * @version 2.0.5
+ * @version 2.1.0
  * @author Izzy Kulbe <github@unikorn.me>
- * @copyright (c) 2010 - 2018 Izzy Kulbe
+ * @copyright (c) 2010 - 2019 Izzy Kulbe
  */
 
 var D3menu = 
@@ -11,7 +11,7 @@ var D3menu =
   * 
   * @var String
   */
- version: "2.0.5",
+ version: "2.1.0",
  /**
   * list all message types so we can use this while saving
   * @var Array 
@@ -25,8 +25,10 @@ var D3menu =
 		 	       "functions_timestamp",
 		 	       "functions_crc32",
 		 	       "functions_bin2hex",
-		 	       "functions_bin2txt",
-		 	       "functions_html_entity_decode",
+                   "functions_bin2txt",
+                   "functions_txt2hex",
+                   "functions_hex2txt",
+                   "functions_html_entity_decode",
 		 	       "functions_htmlentities",
 		 	       "functions_htmlspecialchars",
 		 	       "functions_htmlspecialchars_decode",
