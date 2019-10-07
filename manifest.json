@@ -3,14 +3,18 @@
   "name": "d3coder", 
   "version": "2.1.0",
   "description": "Encoding/Decoding Plugin for various types of encoding like base64, rot13 or unix timestamp conversion",
-  "options_page": "html/menu.html",
+  "options_ui": {
+    "page": "html/menu_ui.html",
+    "open_in_tab": false
+  },
   "permissions": [ 
                     "contextMenus",
                     "notifications",
                     "tabs",
                     "*://*/*", 
                     "clipboardWrite",
-                    "clipboardRead"
+                    "clipboardRead",
+                    "storage"
                  ],
   "background": {
                     "page": "html/background.html"
