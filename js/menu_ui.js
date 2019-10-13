@@ -1,122 +1,136 @@
-var D3menu = 
-{
- /**
-  * Version number
-  * 
-  * @var String
-  */
- version: "2.1.0",
- /**
-  * list all message types so we can use this while saving
-  * @var Array 
-  */
- options: Array("message_type1", "message_type2", "message_type3", "message_type4", "message_type5"),
- /**
-  * list all functions so we can use this while saving
-  * @var Array 
-  */
- checkboxes: Array("functions_rot13",
-		 	       "functions_timestamp",
-		 	       "functions_crc32",
-		 	       "functions_bin2hex",
-                   "functions_bin2txt",
-                   "functions_txt2hex",
-                   "functions_hex2txt",
-                   "functions_html_entity_decode",
-		 	       "functions_htmlentities",
-		 	       "functions_htmlspecialchars",
-		 	       "functions_htmlspecialchars_decode",
-		 	       "functions_uri_encode",
-		 	       "functions_uri_decode",
-		 	       "functions_md5",
-		 	       "functions_sha1",
-		 	       "functions_quoted_printable_decode",
-		 	       "functions_quoted_printable_encode",
-		 	       "functions_escapeshellarg",
-		 	       "functions_base64_encode",
-		 	       "functions_base64_decode",
-                   "functions_unserialize",
-                   "functions_leet_decode",
-                   "functions_leet_encode",
-                   "functions_reverse"),
-
- tabs: [
-    'message',
-    'context-menu',
-    'misc',
-    'credits'
- ]
+var D3menu = {
+  /**
+    * Version number
+    * 
+    * @var String
+    */
+  version: "2.1.0",
+  
+  /**
+    * list all functions. Needed to upgrade from older versions
+    * @var Array 
+    */
+  checkboxes: Array("functions_rot13",
+                    "functions_timestamp",
+                    "functions_crc32",
+                    "functions_bin2hex",
+                    "functions_bin2txt",
+                    "functions_txt2hex",
+                    "functions_hex2txt",
+                    "functions_html_entity_decode",
+                    "functions_htmlentities",
+                    "functions_htmlspecialchars",
+                    "functions_htmlspecialchars_decode",
+                    "functions_uri_encode",
+                    "functions_uri_decode",
+                    "functions_md5",
+                    "functions_sha1",
+                    "functions_quoted_printable_decode",
+                    "functions_quoted_printable_encode",
+                    "functions_escapeshellarg",
+                    "functions_base64_encode",
+                    "functions_base64_decode",
+                    "functions_unserialize",
+                    "functions_leet_decode",
+                    "functions_leet_encode",
+                    "functions_reverse")
 }
 
 function upgrade() {
-    var clipboardSave, checkboxes, version;
+    var clipboardSave, checkboxes = {}, version = D3menu.version;
 
     chrome.storage.sync.get({version: false}, function(items) {
-        if (version) {
-            console.log("D3coder version " + version + " found.");
+        if (items.version) {
+            console.log("Upgrade: D3coder version " + version + " found.");
             return;
         }
-        console.log("New install or upgrade, checking local storage");
 
-        clipboardSave = localStorage.getItem("message_automatic_clipboardcopy") == 1 ? true : false;
-        checkboxes = [];
-        messageType = localStorage.getItem("message_type") ? localStorage.getItem("message_type") : "notification";
-        
+        console.log("Upgrade: New install or upgrade, checking local storage");
+
+        if (localStorage.getItem('message_type')) {
+          console.log("Upgrade: Found data in localStorage, starting upgrade");
+          clipboardSave = localStorage.getItem("message_automatic_clipboardcopy") == 1 ? true : false;
+          messageType = localStorage.getItem("message_type") ? localStorage.getItem("message_type") : "notification";
+          
+          for (option of D3menu.checkboxes) {
+            checkboxes[option] = localStorage.getItem(option) == 1 ? true : false;
+          }
+          
+          chrome.storage.sync.set(
+            {
+              checkboxes: checkboxes,
+              clipboardSave: clipboardSave,
+              messageType: messageType,
+              version: version
+            }, function(){
+              console.log("Upgrade: Saved converted values");
+              restore_options();
+          });
+        } else {
+          console.log("Upgrade: Couldn't find any values in localStorage");
+        }
     });
 }
 
 function save_options() {
-    var checkboxes = [],
-        messageType = document.getElementById(''),
+    var checkboxes = {},
+        messageType = document.getElementById('message_type').value,
         clipboardSave = document.getElementById("message_automatic_clipboardcopy").checked == true ? true : false;
 
-    upgrade();
-
-    for (option in D3menu.checkboxes) {
-        if (D3menu.checkboxes.hasOwnProperty(option)) {
-            var elem = document.getElementById(D3menu.checkboxes[option]);
-            var value = "0";
-            if(elem.checked) {
-                value = elem.checked ? "1" : "0";
-            } else {
-                value = "0";
-            }
-
-            checkboxes[option] = value;
-        }
+    for (option of document.querySelectorAll("input[id^='functions_'")) {
+      checkboxes[option.id] = document.getElementById(option.id).checked == true ? true : false;
     }
-   
-    //chrome.storage.sync.set
-    console.log({
-      checkboxes: checkboxes,
-      messageType: messageType,
-      clipboardSave: clipboardSave,
-      version: D3menu.version
-    })/*, function() {
-      // Update status to let user know options were saved.
-      var status = document.getElementById('status');
-      status.textContent = 'Options saved.';
-      setTimeout(function() {
-        status.textContent = '';
-      }, 750);
-    });*/
+  
+    chrome.storage.sync.set(
+      {
+        checkboxes: checkboxes,
+        messageType: messageType,
+        clipboardSave: clipboardSave,
+        version: D3menu.version
+      }, function() {
+        console.log("Save: Options saved to storage");
+        var status = document.getElementById('status');
+        status.textContent = 'Options saved.';
+        setTimeout(function() {
+          status.textContent = '';
+        }, 2000);
+    });
   }
 
 // Restores select box and checkbox state using the preferences
 // stored in chrome.storage.
 function restore_options() {
-    chrome.storage.sync.get({
-      checkboxes: [],
-      messageType: 'message',
-      clipboardSave: false,
-      version: 0
-    }, function(items) {
-      console.log(items.checkboxes);
-      console.log(items.messageType);
-      console.log(items.clipboardSave);
-      console.log(items.version);
-    });
-  }
-  document.addEventListener('DOMContentLoaded', restore_options);
-  //document.getElementById('save').addEventListener('click', save_options);
+  console.log("Restore: Starting restore");
+  chrome.storage.sync.get({
+    checkboxes: [],
+    messageType: 'message',
+    clipboardSave: false,
+    version: 0
+  }, function(items) {
+    console.log("Restore: Loaded these items:");
+    console.log("Restore: Checkboxes", items.checkboxes);
+    console.log("Restore: Message Type", items.messageType);
+    console.log("Restore: Clipboard save", items.clipboardSave);
+    console.log("Restore: Version", items.version);
+
+    if (!items.version) {
+      console.log("No version found during startup, running upgrade");
+      upgrade();
+    } else {
+      document.getElementById("message_automatic_clipboardcopy").checked = items.clipboardSave;
+      document.getElementById("message_type").value = items.messageType;
+
+      for (checkbox in items.checkboxes) {
+        document.getElementById(checkbox).checked = items.checkboxes[checkbox];
+      }
+    }
+  });
+}
+
+document.addEventListener('DOMContentLoaded', restore_options);
+
+for (tag of document.querySelectorAll("input, select")) {
+  tag.addEventListener('change', save_options);
+}
+
   
