@@ -91,8 +91,11 @@ function save_options() {
         console.log("Save: Options saved to storage");
         var status = document.getElementById('status');
         status.textContent = 'Options saved.';
+        status.style.display = "block";
+        status.style.opacity = 1;
         setTimeout(function() {
-          status.textContent = '';
+          status.style.opacity = 0;
+          status.style.display = "block";
         }, 2000);
     });
   }

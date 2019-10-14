@@ -85,19 +85,29 @@ var D3 =
 		  '|', '\\/', '  '),
 			 	       
 	checkInstall: function(callback) {
-		update = {};
 		chrome.storage.sync.get(null, function(items) {
+			console.log("Check Install: Start");
+			update = {};
 			if (!items["messageType"]) {
-				update["messageType"] = "inplace";
+				if (localStorage.getItem("message_type")) {
+					update["messageType"] = localStorage.getItem("message_type");
+				} else {
+					update["messageType"] = "inplace";
+				}
 			}
 
 			if (!items["clipboardSave"]) {
-				update["clipboardSave"] = false;
+				if (localStorage.getItem("message_automatic_clipboardcopy") == "1") {
+					update["clipboardSave"] = true;
+				} else {
+					update["clipboardSave"] = false;
+				}
 			}
 
 			update["checkboxes"] = {};
 			for (name of D3.checkboxes) {
-				if (items["checkboxes"] && items["checkboxes"][name] !== false) {
+				if ((items["checkboxes"] && items["checkboxes"][name] === false) || 
+					 localStorage.getItem(name) === "0") {
 					update["checkboxes"][name] = false;
 				} else {
 					update["checkboxes"][name] = true;
