@@ -1346,7 +1346,13 @@ var D3 =
 		menu = {
 		    "title"     : "d3coder options",
 		    "contexts"  : ["all"],
-		    "onclick"   : function(info, tab) {chrome.tabs.create({url:"html/menu.html"});}
+		    "onclick"   : function(info, tab) {
+				if (chrome.runtime.openOptionsPage) {
+					chrome.runtime.openOptionsPage();
+				} else {
+					window.open(chrome.runtime.getURL('html/menu_ui.html'));
+				}
+			}
 		}
 
 		D3.menuIds["options"]=chrome.contextMenus.create(menu);
