@@ -85,6 +85,7 @@ var D3 =
 		  '|', '\\/', '  '),
 			 	       
 	checkInstall: function() {
+		// TODO: replace with sync storage settings
         if(!localStorage.getItem('D3installed'+D3.version) || localStorage.getItem('D3installed'+D3.version) != 'true') {
             if(!localStorage.getItem("message_type")) 
                 localStorage.setItem("message_type", "alert");

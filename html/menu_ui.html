@@ -1,47 +1,48 @@
 <!DOCTYPE html>
 <html>
 <head><title>d3coder Settings</title></head>
-<!--<link rel="stylesheet" type="text/css" media="screen" href="../styles/menu.css" />-->
+<link rel="stylesheet" type="text/css" media="screen" href="../styles/menu.css" />
 <body>
 <div id="status"></div>
 <div id="options">
 	<div id="message">
 		<h1>Message Type</h1> 
 	
-		<select class="inputs" id="message_type">
-			<div>
-				<option name="message_type" id="message_type1" value="alert"/>
-				<label for="message_type1">Using alert()</label>
-			</div>
-			<div>
-				<option name="message_type" id="message_type2" value="notifications"/>
-				<label for="message_type2">Using native notifications</label>
-			</div>
-			<div>
-				<option name="message_type" id="message_type3" value="console"/>
-				<label for="message_type3">Log to console</label>
-			</div>
-			<div>
-				<option name="message_type" id="message_type4" value="div"/>
-				<label for="message_type4">Adding an HTML element to the bottom of the site</label>
-			</div>
-			<div>
-				<option name="message_type" id="message_type5" value="inplace"/>
-				<label for="message_type5">Use the selection and replace the text in-place</label>
-			</div>
-		</select>
+		<div>
+			<select class="inputs" id="message_type">
+				<div>
+					<option name="message_type" id="message_type1" value="alert"/>
+					<label for="message_type1">Using alert()</label>
+				</div>
+				<div>
+					<option name="message_type" id="message_type2" value="notifications"/>
+					<label for="message_type2">Using native notifications</label>
+				</div>
+				<div>
+					<option name="message_type" id="message_type3" value="console"/>
+					<label for="message_type3">Log to console</label>
+				</div>
+				<div>
+					<option name="message_type" id="message_type4" value="div"/>
+					<label for="message_type4">Adding an HTML element to the bottom of the site</label>
+				</div>
+				<div>
+					<option name="message_type" id="message_type5" value="inplace"/>
+					<label for="message_type5">Use the selection and replace the text in-place</label>
+				</div>
+			</select>
+		</div>
 		
 		<div class="inputs">
-			<div>
-				<input type="checkbox" name="message_automatic_clipboardcopy" id="message_automatic_clipboardcopy" />
-				Copy results to clipboard after conversion (be aware that this might override data in your clipboard, so use with caution!)
-			</div>
+			<input type="checkbox" name="message_automatic_clipboardcopy" id="message_automatic_clipboardcopy" />
+			Copy results to clipboard after conversion (be aware that this might override data in your clipboard, so use with caution!)
 		</div>
 	</div>
+
 	<div id="context-menu">
 		<h1>Activate Functions</h1>
 
-		You can turn the different functions in the context menu on and off. 
+		<div>You can turn the different functions in the context menu on and off. </div>
 
 		<div class="inputs">
 			<div>
@@ -142,33 +143,22 @@
 			</div>
 		</div>
 	</div>
-	<div id="misc">
-		<h1>Miscellaneous</h1>
 
-		<p>Also a placeholder for other things. Your idea could be here - just drop me a feature request on the extension page, <a href="http://www.linux-web-development.de/chrome-extensions">linux-web-development.de</a> or via mail.</p>
-		
-		<h2>Decode/encode history</h2>
-		
-		<div>
-			<input type="checkbox" name="history_save" id="history_save" checked="checked" />
-			<label for="history_save">Save the Encodings/Decodings you do(up to 15)</label>
-		</div>
-		
-		<div id="history"></div>
-	</div>
 	<div id="credits">
 		<h1>Credits</h1>
-		This extension was developed by Izzy Kulbe &lt;<a href="mailto:github@unikorn.me">github@unikorn.me</a>&gt;
+
+		<p>This extension was developed by Izzy Kulbe &lt;<a href="mailto:github@unikorn.me">github@unikorn.me</a>&gt;</p>
 			
-		Special thanks for several functions to the php.js team, they did a great job on porting some of the most important functions to JS.
+		<p>Special thanks for several functions to the php.js team, they did a great job on porting some of the most important functions to JS.</p>
 		
 		<blockquote>php.js is dual licensed under the MIT and GPL licenses.
 
-		This means you may use php.js under the terms of either the <a href="http://phpjs.org/pages/license/#MIT" >MIT License</a> or the <a href="http://phpjs.org/licenses/GPL-LICENSE.txt" >Gnu General Public License (GPL) Version 2</a>.</blockquote>
+		This means you may use php.js under the terms of either the <a href="http://phpjs.org/pages/license/#MIT" >MIT License</a> or the 
+		<a href="http://phpjs.org/licenses/GPL-LICENSE.txt" >Gnu General Public License (GPL) Version 2</a>.</blockquote>
 		
-		Thanks for the images and icons for the webstore to <a href="http://www.martin-jost.com">Martin Jost</a>.<br><br>
+		<p>Thanks for the images and icons for the webstore to <a href="http://www.martin-jost.com">Martin Jost</a>.</p>
 		
-		Clipboard icon in div-view by <a href="http://bogo-d.deviantart.com/">Mihaiciuc Bogdan</a>.
+		<p>Clipboard icon in div-view by <a href="http://bogo-d.deviantart.com/">Mihaiciuc Bogdan</a>.</p>
 	</div>
 </div>
 
