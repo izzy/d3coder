@@ -1,8 +1,8 @@
-D3.checkInstall();
-waitInterval = window.setInterval(
-    function(){ D3.createContextMenu() },
-    D3.menuLoadTime
-);
+D3.checkInstall(D3.createContextMenu());
+
+chrome.storage.onChanged.addListener(function(changes, namespace) {
+    D3.createContextMenu();
+});
 
 chrome.extension.onRequest.addListener(
     function(request, sender, sendResponse) {

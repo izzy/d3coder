@@ -1,122 +1,37 @@
-html, body {
-    height:         100%;
-    width:          100%;
-    padding:        0;
-    margin:         0;
-}
-
-body {
-    font-size:      75%;
-    font-family:    'Segoe UI', Ubuntu, Tahoma, Arial, sans-serif;
-    color:          #333;
-}
-
 h1 {
     color:          rgb(92, 97, 102);
     font-size:      1.5em;
     font-weight:    normal;
     line-height:    1;
-    margin:         20px;
+    margin:         20px 5px;
 }
 
-#optionsFrame {
-    font-size:      1em;
-}
-
-#optionsFrame h1 {
-    margin-left:    0;
-    color:          rgb(62, 67, 72);
-    padding-bottom: 15px;
-    border-bottom:  1px solid #eee;
-}
-
-#menu li, #options label {
-    cursor:         pointer;
-}
-
-#menubar {
-    height:         100%;
-    left:           0;
-    position:       absolute;
-    width:          155px;
-}
-
-#menubar ul {
-    padding:        0;
-    margin:         0;
-    left:           0;
-}
-
-#menubar li {
-    color:                  #999;
-    list-style-type:        none;
-    -webkit-border-start:   6px solid transparent;
-    -webkit-padding-start:  18px;
-    -webkit-transition:     all .3s linear;
-    padding:                6px 0 6px 18px;
-}
-
-#menubar li.active {
-    color:                  #464e5a;
-    -webkit-border-start:   6px solid #464e5a;
-}
-
-#buttons {
-    padding:        15px;
-    color:          #666;
-    position:       absolute;
-    bottom:         0;
-}
-
-#optionsFrame {
-    left:           155px;
-    right:          0;
-    bottom:         0;
-    top:            0;
-    position:       absolute;
-    overflow:       auto;
-    height:         100%;
-}
-
-#options > div {
-    left:                   -200%;
-    position:               absolute;
-    opacity:                0;
-    -webkit-margin-start:   -20px;
-    -webkit-transition:     margin 150ms, opacity 150ms;
-    z-index:                1;
-}
-
-#options > div.active {
-    -webkit-margin-start:   0px;
-    left:                   0;
-    opacity:                1;
-    z-index:                2;
-}
-
-.inputs {
-    margin-top:     15px;
-    margin-left:    10px;
-}
-
-.inputs > div {
-    -webkit-transition: all .2s linear;
-    padding:        3px 0;
-    color:          #666;
-}
-
-.inputs div:hover {
-    color:          #333;
-}
-
-.inputs input {
-    height:         15px;
-    width:          15px;
+#status {
+    position: fixed;
+    left: auto;
+    bottom: 15px;
+    background: rgba(0, 0, 0, .6);
+    color: #aaffaa;
+    width: 90%;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 150%;
+    opacity: 0;
+    transition-duration: 800ms;
+    border-radius: 5px;
 }
 
 .inputs label {
-    margin-top: 2px;
+    margin-right: 20px;
     margin-left: 6px;
     position: absolute;
 }
 
+.inputs label:hover {
+    color: #336633;
+    transition-duration: 400ms;
+}
+#options > div > div, #options > div > p {
+    padding: 5px 20px 5px 15px;
+}
