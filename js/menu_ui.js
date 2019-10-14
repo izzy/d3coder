@@ -4,7 +4,7 @@ var D3menu = {
     * 
     * @var String
     */
-  version: "2.1.0",
+  version: "3.0.0",
   
   /**
     * list all functions. Needed to upgrade from older versions

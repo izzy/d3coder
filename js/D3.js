@@ -1,7 +1,7 @@
 /** 
  * Some functions from php.js (see phpjs.org)
  *
- * @version 2.1.0
+ * @version 3.0.0
  * @author Izzy Kulbe <github@unikorn.me>
  * @copyright (c) 2010 - 2019 Izzy Kulbe
  */
@@ -26,7 +26,7 @@ var D3 =
      * 
      * @var String
      */
-   version: "2.1.0",
+   version: "3.0.0",
     /**
      * list all functions so we can use this while saving
      * @var Array 
@@ -84,45 +84,39 @@ var D3 =
 		  '|_|', '><', '\\X/', '\'/', '2', '<', '/\\', '_|', 
 		  '|', '\\/', '  '),
 			 	       
-	checkInstall: function() {
-		// TODO: replace with sync storage settings
-        if(!localStorage.getItem('D3installed'+D3.version) || localStorage.getItem('D3installed'+D3.version) != 'true') {
-            if(!localStorage.getItem("message_type")) 
-                localStorage.setItem("message_type", "alert");
-            if(!localStorage.getItem("message_type1"))
-                localStorage.setItem("message_type1", "1"); 
-            if(!localStorage.getItem("message_type2"))
-                localStorage.setItem("message_type2", "0");
-            if(!localStorage.getItem("message_type3"))
-                localStorage.setItem("message_type3", "0");
-            if(!localStorage.getItem("message_type4"))
-                localStorage.setItem("message_type4", "0");
-            if(!localStorage.getItem("message_type5"))
-                localStorage.setItem("message_type5", "0");
-            
-            for (var el in D3.checkboxes) {
-                if (D3.checkboxes.hasOwnProperty(el)) {
-                    if(localStorage.getItem(D3.checkboxes[el]) != "0" &&
-                            localStorage.getItem(D3.checkboxes[el]) != "1") {
-                        localStorage.setItem(D3.checkboxes[el], "1");
-                    }
-                }
-            }
+	checkInstall: function(callback) {
+		update = {};
+		chrome.storage.sync.get(null, function(items) {
+			if (!items["messageType"]) {
+				update["messageType"] = "inplace";
+			}
 
-            localStorage.setItem('D3installed'+D3.version, 'true');
-            if(localStorage.getItem('D3lastversion')) {
-                localStorage.removeItem('D3installed'+localStorage.getItem('lastversion'));
-            }
-            localStorage.setItem('D3lastversion',D3.version);
-            
-        }   
+			if (!items["clipboardSave"]) {
+				update["clipboardSave"] = false;
+			}
+
+			update["checkboxes"] = {};
+			for (name of D3.checkboxes) {
+				if (items["checkboxes"] && items["checkboxes"][name] !== false) {
+					update["checkboxes"][name] = false;
+				} else {
+					update["checkboxes"][name] = true;
+				}
+			}
+			
+			if (!items["version"]) {
+				update["version"] = D3.version;
+			}
+
+			chrome.storage.sync.set(update, function(){
+				console.log("Installed decoder version " + D3.version);
+			});
+		});               
 	 },
 	
-	createPopup: function(title, text)
+	createPopup: function(title, text, type, clipboardCopy)
 	{
-		var type = localStorage.getItem("message_type");
-		
-		if(localStorage.getItem("message_automatic_clipboardcopy") == 1) {
+		if(clipboardCopy) {
 			D3.copyToClipboard(text);
 		}
         
@@ -1255,108 +1249,132 @@ var D3 =
 	menuLoadTime: 1000,
 	
 	createContextMenu: function() {
-	var changed = false,
-            createMenu = function(name, infotext, ptFunction) {
-                var menu;
+		D3.menus = true;
 
-                if(localStorage.getItem("functions_" + name) == '1' && !D3.menuIds[name]) {
-                    // Menu for selected text
-                    menu = {
-                        "title"     : infotext, 
-                        "contexts"  : ["selection", "editable"],
-                        "onclick"   : function (info, tab) {
-                            D3.createPopup(infotext, ptFunction(info.selectionText));
-                        } 
-                    };
-                    D3.menuIds[name]=chrome.contextMenus.create(menu);
+		var function_list = {
+			'functions_rot13': ['Rot13', 										D3.rot13decode],
+			'functions_timestamp': ['Unix timestamp to date conversion',		D3.timestampToDate],
+			'functions_bin2hex': ['bin2hex',                           		D3.bin2hex],
+			'functions_bin2txt': ['bin2txt',                           		D3.bin2txt],
+			'functions_txt2hex': ['ASCII to HEX',                      		D3.txt2hex],
+			'functions_hex2txt': ['HEX to ASCII',                      		D3.hex2txt],
+			'functions_uri_encode': ['URI encode',                        	D3.uri_encode],
+			'functions_uri_decode': ['URI decode',                        	D3.uri_decode],
+			'functions_htmlentities': ['HTML entities',                   	D3.htmlentities],
+			'functions_html_entity_decode': ['HTML entity decode',        	D3.html_entity_decode],
+			'functions_htmlspecialchars': ['HTML specialchars',           	D3.htmlspecialchars],
+			'functions_htmlspecialchars_decode': ['HTML specialchars decode',	D3.htmlspecialchars_decode],
+			'functions_md5': ['MD5',                               			D3.md5],
+			'functions_sha1': ['SHA1',                              			D3.sha1],
+			'functions_crc32': ['CRC32',                            			D3.crc32],
+			'functions_quoted_printable_decode': ['Quoted printable decode',  D3.quoted_printable_decode],
+			'functions_quoted_printable_encode': ['Quoted printable encode',  D3.quoted_printable_encode],
+			'functions_escapeshellarg': ['Escapeshellarg',                    D3.escapeshellarg],
+			'functions_base64_encode': ['Base64 encode',                     	D3.base64_encode],
+			'functions_base64_decode': ['Base64 decode',                     	D3.base64_decode],
+			'functions_unserialize': ['Unserialize',                       	D3.unserialize],
+			'functions_leet_encode': ['L33T Encode',                       	D3.leetEncode],
+			'functions_leet_decode': ['L33T Decode',                       	D3.leetDecode],
+	    	'functions_reverse': ['Reverse text',                      		D3.reverseText],
+		};
 
-                    // Menu for normal page
-                    menu = {
-                        "title"     : infotext, 
-                        "contexts"  : ["page"],
-                        "onclick"   : function (info, tab) {
+		function clearMenu() {
+			while (localStorage.getItem("clearmenumutex") === "1") { }
 
-                            var bg = chrome.extension.getBackgroundPage(),
-                                clipboard = bg.document.getElementById("clipboard"),
-                                clipboardText;
-
-                            clipboard.style.display = "block";
-                            clipboard.select();
-                            bg.document.execCommand("Paste");
-                            clipboardText = clipboard.value;
-                            clipboard.style.display = "none";
-
-                            D3.copyToClipboard(ptFunction(clipboardText));
-                        } 
-                    };
-                    D3.menuIds[name + '_c']=chrome.contextMenus.create(menu);
-
-                    changed = true;
-                } else if(localStorage.getItem("functions_" + name) == '0') {
-                    if (D3.menuIds[name]) {
-                        console.log(D3.menuIds[name]);
-                        chrome.contextMenus.remove(D3.menuIds[name]);
-                        D3.menuIds[name] = null;
-                    }
-
-                    if (D3.menuIds[name + '_c']) {
-                        console.log(D3.menuIds[name + '_c']);
-                        chrome.contextMenus.remove(D3.menuIds[name + '_c']);
-                        D3.menuIds[name + '_c'] = null;
-                    }
-                }
-            };
-
-        D3.menus = true;
-	    
-        /**
-         * MENU ITEM DEFINITIONS
-    	 */
-    	createMenu('rot13',                     'Rot13',                             D3.rot13decode);
-    	createMenu('timestamp',                 'Unix timestamp to date conversion', D3.timestampToDate);
-    	createMenu('bin2hex',                   'bin2hex',                           D3.bin2hex);
-    	createMenu('bin2txt',                   'bin2txt',                           D3.bin2txt);
-    	createMenu('txt2hex',                   'ASCII to HEX',                      D3.txt2hex);
-    	createMenu('hex2txt',                   'HEX to ASCII',                      D3.hex2txt);1
-    	createMenu('uri_encode',                'URI encode',                        D3.uri_encode);
-    	createMenu('uri_decode',                'URI decode',                        D3.uri_decode);
-    	createMenu('htmlentities',              'HTML entities',                     D3.htmlentities);
-    	createMenu('html_entity_decode',        'HTML entity decode',                D3.html_entity_decode);
-    	createMenu('htmlspecialchars',          'HTML specialchars',                 D3.htmlspecialchars);
-    	createMenu('htmlspecialchars_decode',   'HTML specialchars decode',          D3.htmlspecialchars_decode);
-    	createMenu('md5',                       'MD5',                               D3.md5);
-    	createMenu('sha1',                      'SHA1',                              D3.sha1);
-    	createMenu('crc32',                     'CRC32',                             D3.crc32);
-    	createMenu('quoted_printable_decode',   'Quoted printable decode',           D3.quoted_printable_decode);
-    	createMenu('quoted_printable_encode',   'Quoted printable encode',           D3.quoted_printable_encode);
-    	createMenu('escapeshellarg',            'Escapeshellarg',                    D3.escapeshellarg);
-    	createMenu('base64_encode',             'Base64 encode',                     D3.base64_encode);
-    	createMenu('base64_decode',             'Base64 decode',                     D3.base64_decode);
-    	createMenu('unserialize',               'Unserialize',                       D3.unserialize);
-    	createMenu('leet_encode',               'L33T Encode',                       D3.leetEncode);
-    	createMenu('leet_decode',               'L33T Decode',                       D3.leetDecode);
-    	createMenu('reverse',                   'Reverse text',                      D3.reverseText);
-
-        if (changed === true && D3.menuIds["options"]) {
-            chrome.contextMenus.remove(D3.menuIds['options']);
-            D3.menuIds["options"] = null;
-        } 
-
-	if (!D3.menuIds["options"]) {
-		// Menu item for options
-		menu = {
-		    "title"     : "d3coder options",
-		    "contexts"  : ["all"],
-		    "onclick"   : function(info, tab) {
-				if (chrome.runtime.openOptionsPage) {
-					chrome.runtime.openOptionsPage();
-				} else {
-					window.open(chrome.runtime.getURL('html/menu_ui.html'));
+			console.log("Menu: Clearing old menus");
+			localStorage.setItem("clearmenumutex", "1");
+			for (id in D3.menuIds) {
+				console.log("Menu: Removing menu entry: " + D3.menuIds[id]);
+				console.log("Menu: Menu ID: " + id);
+				if (id && D3.menuIds[id] != null) {
+					chrome.contextMenus.remove(D3.menuIds[id]);
 				}
+				D3.menuIds[id] = null;
 			}
+			localStorage.setItem("clearmenumutex", "0");
 		}
 
-		D3.menuIds["options"]=chrome.contextMenus.create(menu);
-	}
+		function createMenu(items, name) {
+			let menu = null, changed = false;
+			console.log("Menu: " + name);
+			if (items.checkboxes[name] == true && !D3.menuIds[name]) {
+				console.log("Menu: Creating " + name);
+				console.log(function_list[name]);
+				// Menu for selected text
+				menu = {
+					"title"     : function_list[name][0],
+					"contexts"  : ["selection", "editable"],
+					"onclick"   : function (info, tab) {
+						D3.createPopup(
+							function_list[name][0],
+							function_list[name][1](info.selectionText),
+							items["messageType"],
+							items["clipboardSave"]);
+					} 
+				};
+				D3.menuIds[name]=chrome.contextMenus.create(menu);
+
+				// Menu for normal page
+				menu = {
+					"title"     : function_list[name][0], 
+					"contexts"  : ["page"],
+					"onclick"   : function (info, tab) {
+
+						var bg = chrome.extension.getBackgroundPage(),
+							clipboard = bg.document.getElementById("clipboard"),
+							clipboardText;
+
+						clipboard.style.display = "block";
+						clipboard.select();
+						bg.document.execCommand("Paste");
+						clipboardText = clipboard.value;
+						clipboard.style.display = "none";
+
+						D3.copyToClipboard(function_list[name][1](clipboardText));
+					} 
+				};
+				D3.menuIds[name + '_c']=chrome.contextMenus.create(menu);
+
+				changed = true;
+			} else if (items.checkboxes[name] == false) {
+				if (D3.menuIds[name]) {
+					console.log("Menu: Removing " + D3.menuIds[name]);
+					chrome.contextMenus.remove(D3.menuIds[name]);
+					D3.menuIds[name] = null;
+				}
+
+				if (D3.menuIds[name + '_c']) {
+					console.log("Menu: Removing " + D3.menuIds[name + '_c']);
+					chrome.contextMenus.remove(D3.menuIds[name + '_c']);
+					D3.menuIds[name + '_c'] = null;
+				}
+			}	
+		}
+
+		chrome.storage.sync.get(null, function (items) {
+			clearMenu();
+
+			for (name in items.checkboxes) {
+				createMenu(items, name);
+			}
+			
+			if (!D3.menuIds["options"]) {
+				// Menu item for options
+				menu = {
+					"title"     : "d3coder options",
+					"contexts"  : ["all"],
+					"onclick"   : function(info, tab) {
+						if (chrome.runtime.openOptionsPage) {
+							chrome.runtime.openOptionsPage();
+						} else {
+							window.open(chrome.runtime.getURL('html/menu_ui.html'));
+						}
+					}
+				}
+	
+				D3.menuIds["options"]=chrome.contextMenus.create(menu);
+			}
+			console.log(D3.menuIds);
+		});
     }
 };
