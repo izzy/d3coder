@@ -7,6 +7,9 @@ base64, rot13 or unix timestamp conversion.
 CHANGELOG
 =============================
 
+* 3.0.0
+  * Updated Options UI to Chrome's more modern v2 options
+  * Changed storage to Chrome's sync storage
 * 2.1.0
   * Added ASCII to Text function
   * Added Text to ASCII function
