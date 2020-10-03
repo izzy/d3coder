@@ -1,10 +1,31 @@
+/**
+ * Localize the settings page
+ * curtesy of https://stackoverflow.com/a/25612056
+ */
+let localizeHtmlPage = function(){
+  let elems = document.getElementsByTagName('html');
+  for (let j = 0; j < elems.length; j++) {
+    let obj = elems[j];
+
+    let valStrH = obj.innerHTML.toString();
+    let valNewH = valStrH.replace(/__MSG_(\w+)__/g, function(match, v1) {
+      return v1 ? chrome.i18n.getMessage(v1) : "";
+    });
+
+    if(valNewH != valStrH)
+    {
+        obj.innerHTML = valNewH;
+    }
+  }
+}();
+
 var D3menu = {
   /**
     * Version number
     * 
     * @var String
     */
-  version: "3.0.0",
+  version: "4.0.0",
   
   /**
     * list all functions. Needed to upgrade from older versions
@@ -90,7 +111,7 @@ function save_options() {
       }, function() {
         console.log("Save: Options saved to storage");
         var status = document.getElementById('status');
-        status.textContent = 'Options saved.';
+        status.textContent = chrome.i18n.getMessage('options_saved');
         status.style.display = "block";
         status.style.opacity = 1;
         setTimeout(function() {
@@ -135,5 +156,3 @@ document.addEventListener('DOMContentLoaded', restore_options);
 for (tag of document.querySelectorAll("input, select")) {
   tag.addEventListener('change', save_options);
 }
-
-  

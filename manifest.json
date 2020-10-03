@@ -1,8 +1,8 @@
 {
   "manifest_version": 2,
-  "name": "d3coder", 
-  "version": "3.0.0",
-  "description": "Encoding/Decoding Plugin for various types of encoding like base64, rot13 or unix timestamp conversion",
+  "name": "__MSG_extName__", 
+  "version": "4.0.0",
+  "description": "__MSG_extDescription__",
   "options_ui": {
     "page": "html/menu_ui.html",
     "open_in_tab": false
@@ -32,5 +32,6 @@
     }],
   "web_accessible_resources": [
     "images/grip.png"
-  ]
+  ],
+  "default_locale": "en"
 }
