@@ -1,0 +1,74 @@
+{
+    "extName": {
+        "message": "d3coder",
+        "description": "Name of the extension"
+    },
+    "extDescription": {
+        "message": "Plug-in voor codering/decodering voor verschillende soorten codering, zoals base64-, rot13- of unix-tijdstempel",
+        "description": "Short description of the extension"
+    },
+    "settings": {
+        "message": "instellingen",
+        "description": "Title of the settings dialog for the extension"
+    },
+    "message_type": {
+        "message": "Weergavetype",
+        "description": "How the converted text will be displayed"
+    },
+    "type_alert": {
+        "message": "De alert() gebruiken",
+        "description": "Setting that enables the messages to be displayed in an alert box"
+    },
+    "type_console": {
+        "message": "Log in op console",
+        "description": "Setting that enables the messages to be displayed in the JS console"
+    },
+    "type_html": {
+        "message": "Voeg een HTML element toe aan de onderkant",
+        "description": "Setting that enables the messages to be displayed in a HTML element inserted into the page"
+    },
+    "type_inplace": {
+        "message": "Vervang de tekst op zijn plaats",
+        "description": "Setting that enables the messages to be displayed as replacement of the original text"
+    },
+    "copy_results_to_clipboard": {
+        "message": "Kopieer de resultaten naar het klembord (kan bestaande gegevens op het klembord overschrijven)",
+        "description": "Label of the checkbox that enables clipboard-copy post-conversion in the settings"
+    },
+    "activate_functions": {
+        "message": "Functies",
+        "description": "Title of the part of the settings that (in)activates de/encoding functions"
+    },
+    "activate_functions_description": {
+        "message": "Schakel de verschillende functies in het contextmenu in of uit.",
+        "description": "Description for the part of the settings that (in)activates de/encoding functions"
+    },
+    "function_timestamp": {
+        "message": "Unix tijdstempel",
+        "description": "Function name for UNIX Timestamp conversion"
+    },
+    "function_ascii2hex": {
+        "message": "ASCII naar Hex",
+        "description": "Function name for ASCII to Hex"
+    },
+    "function_hex2ascii": {
+        "message": "Hex naar ASCII",
+        "description": "Function name for Hex to ASCII"
+    },
+    "function_reverse_text": {
+        "message": "Omgekeerde tekst",
+        "description": "Function name for Reverse Text"
+    },
+    "message_copied_to_clipboard": {
+        "message": "Tekst gekopieerd naar klembord!",
+        "description": "message when text was successfully copied to the clipboard"
+    },
+    "copy_last_conversion_to_clipboard": {
+        "message": "Kopieer de laatste conversie naar het klembord",
+        "description": ""
+    },
+    "options_saved": {
+        "message": "Instellingen opgeslagen.",
+        "description": "Success message when the user settings where successfully saved"
+    }
+}
