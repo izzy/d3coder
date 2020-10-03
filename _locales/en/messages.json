@@ -19,10 +19,6 @@
         "message": "Using alert()",
         "description": "Setting that enables the messages to be displayed in an alert box"
     },
-    "type_native_notification": {
-        "message": "Using native notifications",
-        "description": "Setting that enables the messages to be displayed in a native notification"
-    },
     "type_console": {
         "message": "Log to console",
         "description": "Setting that enables the messages to be displayed in the JS console"

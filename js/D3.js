@@ -1,7 +1,7 @@
 /** 
  * Some functions from php.js (see phpjs.org)
  *
- * @version 4.0.0
+ * @version 4.1.0
  * @author Izzy Kulbe <github@unikorn.me>
  * @copyright (c) 2010 - 2019 Izzy Kulbe
  */
@@ -26,7 +26,7 @@ var D3 =
      * 
      * @var String
      */
-   version: "4.0.0",
+   version: "4.1.0",
     /**
      * list all functions so we can use this while saving
      * @var Array 
@@ -164,7 +164,8 @@ var D3 =
                     );
                 },400);
 
-                break;
+				break;
+			default:
             case 'inplace':
 				chrome.tabs.executeScript(null, {file:'js/contentWorker.js'});
 				
@@ -175,12 +176,7 @@ var D3 =
                         {code:"D3content.replaceText('" + text + "');"}
                     );
                 },400);
-                break;                
-			default:
-			case 'notification':
-				var popup = window.webkitNotifications.createNotification( D3.icon, title, text);
-				popup.show();
-				break;
+                break;
 		}	
 	},
 	copyToClipboard: function(text) {

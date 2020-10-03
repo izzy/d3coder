@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "__MSG_extName__", 
-  "version": "4.0.0",
+  "version": "4.1.0",
   "description": "__MSG_extDescription__",
   "options_ui": {
     "page": "html/menu_ui.html",
@@ -9,11 +9,9 @@
   },
   "permissions": [ 
                     "contextMenus",
-                    "notifications",
                     "tabs",
                     "*://*/*", 
                     "clipboardWrite",
-                    "clipboardRead",
                     "storage"
                  ],
   "background": {
