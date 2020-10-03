@@ -1,0 +1,154 @@
+{
+    "extName": {
+        "message": "d3coder",
+        "description": "Nom de l'extension"
+    },
+    "extDescription": {
+        "message": "Plugin d'encodage / décodage de différents types comme: base64, rot13 ou unix",
+        "description": "Brève description de l'extension"
+    },
+    "settings": {
+        "message": "Paramètres",
+        "description": "Titre de la page des paramètres de l'extension"
+    },
+    "message_type": {
+        "message": "Type de message",
+        "description": "Comment le texte converti sera affiché"
+    },
+    "type_alert": {
+        "message": "Utiliser alert()",
+        "description": "Paramètre permettant d'afficher les messages dans une boîte d'alerte"
+    },
+    "type_console": {
+        "message": "Log dans la console",
+        "description": "Paramètre permettant d'afficher les messages dans la console JS"
+    },
+    "type_html": {
+        "message": "Ajout d'un élément HTML en bas du site",
+        "description": "Paramètre permettant d'afficher les messages dans un élément HTML dans la page"
+    },
+    "type_inplace": {
+        "message": "Utilisez la sélection et remplacez le texte",
+        "description": "Paramètre permettant d'afficher les messages en remplacement du texte d'origine"
+    },
+    "copy_results_to_clipboard": {
+        "message": "Copiez les résultats dans le presse-papiers après la conversion (cela peut remplacer les données de votre presse-papiers, utilisez-le avec prudence!)",
+        "description": "Label de la case à cocher permettant la post-conversion de la copie du presse-papiers dans les paramètres"
+    },
+    "activate_functions": {
+        "message": "Activer les fonctions",
+        "description": "Titre de la partie des paramètres qui (in)active les fonctions de/encodage"
+    },
+    "activate_functions_description": {
+        "message": "Vous pouvez activer et désactiver les différentes fonctions du menu contextuel.",
+        "description": "Titre de la partie des paramètres qui dés/active les fonctions de dé/encodage"
+    },
+    "function_rot13": {
+        "message": "ROT13",
+        "description": "Nom de la fonction pour ROT13"
+    },
+    "function_timestamp": {
+        "message": "Conversion des timestamp",
+        "description": "Nom de la fonction pour la conversion de timestamp UNIX"
+    },
+    "function_bin2hex": {
+        "message": "bin2hex",
+        "description": "Nom de fonction pour bin2hex"
+    },
+    "function_bin2txt": {
+        "message": "bin2txt",
+        "description": "Nom de fonction pour bin2txt"
+    },
+    "function_ascii2hex": {
+        "message": "ASCII à Hex",
+        "description": "Nom de la fonction pour ASCII à Hex"
+    },
+    "function_hex2ascii": {
+        "message": "Hex à ASCII",
+        "description": "Nom de la fonction pour Hex à ASCII"
+    },
+    "function_html_entity_decode": {
+        "message": "Décodage d'entité HTML",
+        "description": "Nom de la fonction pour le décodage d'entité HTML"
+    },
+    "function_html_entities": {
+        "message": "Entités HTML",
+        "description": "Nom de fonction pour les entités HTML"
+    },
+    "function_uri_encode": {
+        "message": "Encodage URI",
+        "description": "Nom de la fonction pour l'encodage URI"
+    },
+    "function_uri_decode": {
+        "message": "Décodage URI",
+        "description": "Nom de la fonction pour le décodage URI"
+    },
+    "function_htmlspecialchars": {
+        "message": "Encodage des caractères spéciaux HTML",
+        "description": "Nom de fonction pour l'encodage des caractères spéciaux HTML"
+    },
+    "function_htmlspecialchars_decode": {
+        "message": "Décodage des caractères spéciaux HTML",
+        "description": "Nom de fonction pour le décodage des caractères spéciaux HTML"
+    },
+    "function_md5": {
+        "message": "MD5",
+        "description": "Nom de fonction pour MD5"
+    },
+    "function_sha1": {
+        "message": "SHA1",
+        "description": "Nom de fonction pour SHA1"
+    },
+    "function_crc32": {
+        "message": "CRC32",
+        "description": "Nom de fonction pour CRC32"
+    },
+    "function_quoted_printable_decode": {
+        "message": "Cité le décodage",
+        "description": "Nom de la fonction pour \"Cité le décodage\""
+    },
+    "function_quoted_printable_encode": {
+        "message": "Cité l'encodage",
+        "description": "Nom de la fonction pour \"Cité l'encodage\""
+    },
+    "function_escapeshellarg": {
+        "message": "Escapeshellarg",
+        "description": "Nom de la fonction pour Escapeshellarg"
+    },
+    "function_base64_encode": {
+        "message": "Base64 encodage",
+        "description": "Nom de la fonction pour Base64 encodage"
+    },
+    "function_base64_decode": {
+        "message": "Base64 décodage",
+        "description": "Nom de la fonction pour Base64 décodage"
+    },
+    "function_unserialize": {
+        "message": "Unserialize",
+        "description": "Nom de la fonction pour Unserialize"
+    },
+    "function_leet_decode": {
+        "message": "L33T décodage",
+        "description": "Nom de la fonction pour L33T décodage"
+    },
+    "function_leet_encode": {
+        "message": "L33T encodage",
+        "description": "Nom de la fonction pourL33T encodage"
+    },
+    "function_reverse_text": {
+        "message": "Reverse Text",
+        "description": "Nom de la fonction pour Reverse Text"
+    },
+    "message_copied_to_clipboard": {
+        "message": "Message copié dans le presse-papiers !",
+        "description": "message lorsque le texte a été copié avec succès dans le presse-papiers"
+    },
+    "copy_last_conversion_to_clipboard": {
+        "message": "Copier la dernière conversion dans le presse-papiers",
+        "description": ""
+    },
+    "options_saved": {
+        "message": "Options enregistrées.",
+        "description": "Message de réussite lorsque les paramètres utilisateur ont été enregistrés avec succès"
+    }
+}
