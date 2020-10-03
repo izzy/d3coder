@@ -7,6 +7,8 @@ base64, rot13 or unix timestamp conversion.
 CHANGELOG
 =============================
 
+* 4.3.0
+  * Added Portuguese - Brazil translation
 * 4.2.0
   * Fixes missing permission ClipboardRead
   * Removes unneeded permission tabs
