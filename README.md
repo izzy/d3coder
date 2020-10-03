@@ -7,6 +7,9 @@ base64, rot13 or unix timestamp conversion.
 CHANGELOG
 =============================
 
+* 4.2.0
+  * Fixes missing permission ClipboardRead
+  * Removes unneeded permission tabs
 * 4.1.0
   * Removed native notifications output type (see #25)
 * 4.0.0
