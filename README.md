@@ -7,6 +7,11 @@ base64, rot13 or unix timestamp conversion.
 CHANGELOG
 =============================
 
+* 4.5.0
+  * Added French translations
+  * Added Russian translations
+  * Added Spanish translations
+  * Added Polish translations
 * 4.4.0
   * Added Dutch translations
 * 4.3.0
