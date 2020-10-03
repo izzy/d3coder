@@ -1,0 +1,70 @@
+{
+    "extName": {
+        "message": "d3coder",
+        "description": "Name of the extension"
+    },
+    "extDescription": {
+        "message": "Encoding/Decoding Erweiterung für verschiedene Encodings wie base64, rot13 oder Unixzeit",
+        "description": "Short description of the extension"
+    },
+    "settings": {
+        "message": "Einstellungen",
+        "description": "Title of the settings dialog for the extension"
+    },
+    "message_type": {
+        "message": "Art der Anzeige",
+        "description": "How the converted text will be displayed"
+    },
+    "type_alert": {
+        "message": "alert() nutzen",
+        "description": "Setting that enables the messages to be displayed in an alert box"
+    },
+    "type_native_notification": {
+        "message": "Native notifications nutzen",
+        "description": "Setting that enables the messages to be displayed in a native notification"
+    },
+    "type_console": {
+        "message": "In die Konsole schreiben",
+        "description": "Setting that enables the messages to be displayed in the JS console"
+    },
+    "type_html": {
+        "message": "Ein HTML Element in das Ende der Seite anfügen",
+        "description": "Setting that enables the messages to be displayed in a HTML element inserted into the page"
+    },
+    "type_inplace": {
+        "message": "Den selektierten Text ersetzen",
+        "description": "Setting that enables the messages to be displayed as replacement of the original text"
+    },
+    "copy_results_to_clipboard": {
+        "message": "Ergebnisse nach der Konvertierung in die Zwischenablage kopieren(kann existierende Daten in der Zwischenablage ersetzen)",
+        "description": "Label of the checkbox that enables clipboard-copy post-conversion in the settings"
+    },
+    "activate_functions": {
+        "message": "Aktive Funktionen",
+        "description": "Title of the part of the settings that (in)activates de/encoding functions"
+    },
+    "activate_functions_description": {
+        "message": "Funktionen im Kontextmenü aktivieren oder deaktivieren.",
+        "description": "Description for the part of the settings that (in)activates de/encoding functions"
+    },
+    "function_timestamp": {
+        "message": "Unixzeit konvertieren",
+        "description": "Function name for UNIX Timestamp conversion"
+    },
+    "function_reverse_text": {
+        "message": "Text umkehren",
+        "description": "Function name for Reverse Text"
+    },
+    "message_copied_to_clipboard": {
+        "message": "Text erfolgreich in die Zwischenablage kopiert!",
+        "description": "message when text was successfully copied to the clipboard"
+    },
+    "copy_last_conversion_to_clipboard": {
+        "message": "Letzten konvertierten Text in die Zwischenablage konvertieren",
+        "description": ""
+    },
+    "options_saved": {
+        "message": "Einstellungen gespeichert",
+        "description": "Success message when the user settings where successfully saved"
+    }
+}

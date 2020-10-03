@@ -1,5 +1,5 @@
 /** 
- * @version 2.0.5
+ * @version 4.0.0
  * @author Izzy Kulbe <github@unikorn.me>
  * @copyright (c) 2010 - 2018 Izzy Kulbe
  */
@@ -110,7 +110,7 @@ D3content = {
         infoClipboardCopy.style.position = 'absolute';
         infoClipboardCopy.style.top      = 0;
         infoClipboardCopy.style.right    = 0;
-        infoClipboardCopy.title          = 'Copy last conversion to clipboard';
+        infoClipboardCopy.title          = chrome.i18n.getMessage('copy_last_conversion_to_clipboard');
         infoClipboardCopy.id             = 'D3-clipboard-button';
 
         hr = document.createElement('hr');
@@ -124,16 +124,6 @@ D3content = {
             chrome.extension.sendRequest({command: "doCopy"}, function(response) {
                 console.log(response);
             });
-
-            /*
-                var bg = chrome.extension.getBackgroundPage();
-                var clipboard = bg.document.getElementById("clipboard");
-                clipboard.style.display = "block";
-                clipboard.value = text;
-                clipboard.select();
-                bg.document.execCommand("Copy");
-                clipboard.style.display = "none";
-            */
         });
     },
 

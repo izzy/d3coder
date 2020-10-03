@@ -12,7 +12,7 @@ chrome.extension.onRequest.addListener(
     if (request.command == "doCopy") {
         console.log(D3);
         var responseStatus = D3.copyToClipboard(D3.lastMessage);
-        sendResponse({status: ["Message copied to clip board!", responseStatus] });
+        sendResponse({status: [chrome.i18n.getMessage("message_copied_to_clipboard"), responseStatus] });
     } else {
         sendResponse({}); // snub them.
     }

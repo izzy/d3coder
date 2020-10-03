@@ -1,7 +1,7 @@
 /** 
  * Some functions from php.js (see phpjs.org)
  *
- * @version 3.0.0
+ * @version 4.0.0
  * @author Izzy Kulbe <github@unikorn.me>
  * @copyright (c) 2010 - 2019 Izzy Kulbe
  */
@@ -26,7 +26,7 @@ var D3 =
      * 
      * @var String
      */
-   version: "3.0.0",
+   version: "4.0.0",
     /**
      * list all functions so we can use this while saving
      * @var Array 
@@ -1262,30 +1262,30 @@ var D3 =
 		D3.menus = true;
 
 		var function_list = {
-			'functions_rot13': ['Rot13', 										D3.rot13decode],
-			'functions_timestamp': ['Unix timestamp to date conversion',		D3.timestampToDate],
-			'functions_bin2hex': ['bin2hex',                           		D3.bin2hex],
-			'functions_bin2txt': ['bin2txt',                           		D3.bin2txt],
-			'functions_txt2hex': ['ASCII to HEX',                      		D3.txt2hex],
-			'functions_hex2txt': ['HEX to ASCII',                      		D3.hex2txt],
-			'functions_uri_encode': ['URI encode',                        	D3.uri_encode],
-			'functions_uri_decode': ['URI decode',                        	D3.uri_decode],
-			'functions_htmlentities': ['HTML entities',                   	D3.htmlentities],
-			'functions_html_entity_decode': ['HTML entity decode',        	D3.html_entity_decode],
-			'functions_htmlspecialchars': ['HTML specialchars',           	D3.htmlspecialchars],
-			'functions_htmlspecialchars_decode': ['HTML specialchars decode',	D3.htmlspecialchars_decode],
-			'functions_md5': ['MD5',                               			D3.md5],
-			'functions_sha1': ['SHA1',                              			D3.sha1],
-			'functions_crc32': ['CRC32',                            			D3.crc32],
-			'functions_quoted_printable_decode': ['Quoted printable decode',  D3.quoted_printable_decode],
-			'functions_quoted_printable_encode': ['Quoted printable encode',  D3.quoted_printable_encode],
-			'functions_escapeshellarg': ['Escapeshellarg',                    D3.escapeshellarg],
-			'functions_base64_encode': ['Base64 encode',                     	D3.base64_encode],
-			'functions_base64_decode': ['Base64 decode',                     	D3.base64_decode],
-			'functions_unserialize': ['Unserialize',                       	D3.unserialize],
-			'functions_leet_encode': ['L33T Encode',                       	D3.leetEncode],
-			'functions_leet_decode': ['L33T Decode',                       	D3.leetDecode],
-	    	'functions_reverse': ['Reverse text',                      		D3.reverseText],
+			'functions_rot13':                   ['function_rot13', D3.rot13decode],
+			'functions_timestamp':               ['function_timestamp', D3.timestampToDate],
+			'functions_bin2hex':                 ['function_bin2hex', D3.bin2hex],
+			'functions_bin2txt':                 ['function_bin2txt', D3.bin2txt],
+			'functions_txt2hex':                 ['function_ascii2hex', D3.txt2hex],
+			'functions_hex2txt':                 ['function_hex2ascii', D3.hex2txt],
+			'functions_uri_encode':              ['function_uri_encode', D3.uri_encode],
+			'functions_uri_decode':              ['function_uri_decode', D3.uri_decode],
+			'functions_htmlentities':            ['function_html_entities', D3.htmlentities],
+			'functions_html_entity_decode':      ['function_html_entity_decode', D3.html_entity_decode],
+			'functions_htmlspecialchars':        ['function_htmlspecialchars', D3.htmlspecialchars],
+			'functions_htmlspecialchars_decode': ['function_htmlspecialchars_decode', D3.htmlspecialchars_decode],
+			'functions_md5':                     ['function_md5', D3.md5],
+			'functions_sha1':                    ['function_sha1', D3.sha1],
+			'functions_crc32':                   ['function_crc32', D3.crc32],
+			'functions_quoted_printable_decode': ['function_quoted_printable_decode', D3.quoted_printable_decode],
+			'functions_quoted_printable_encode': ['function_quoted_printable_encode', D3.quoted_printable_encode],
+			'functions_escapeshellarg':          ['function_escapeshellarg', D3.escapeshellarg],
+			'functions_base64_encode':           ['function_base64_encode', D3.base64_encode],
+			'functions_base64_decode':           ['function_base64_decode', D3.base64_decode],
+			'functions_unserialize':             ['function_unserialize', D3.unserialize],
+			'functions_leet_encode':             ['function_leet_encode', D3.leetEncode],
+			'functions_leet_decode':             ['function_leet_decode', D3.leetDecode],
+	    	'functions_reverse':                 ['function_reverse_text', D3.reverseText],
 		};
 
 		function clearMenu() {
@@ -1312,11 +1312,11 @@ var D3 =
 				console.log(function_list[name]);
 				// Menu for selected text
 				menu = {
-					"title"     : function_list[name][0],
+					"title"     : chrome.i18n.getMessage(function_list[name][0]) ? chrome.i18n.getMessage(function_list[name][0]) : "Missing translation for " + function_list[name][0],
 					"contexts"  : ["selection", "editable"],
 					"onclick"   : function (info, tab) {
 						D3.createPopup(
-							function_list[name][0],
+							chrome.i18n.getMessage(function_list[name][0]),
 							function_list[name][1](info.selectionText),
 							items["messageType"],
 							items["clipboardSave"]);
@@ -1326,7 +1326,7 @@ var D3 =
 
 				// Menu for normal page
 				menu = {
-					"title"     : function_list[name][0], 
+					"title"     : chrome.i18n.getMessage(function_list[name][0]) ? chrome.i18n.getMessage(function_list[name][0]) : "Missing translation for " + function_list[name][0], 
 					"contexts"  : ["page"],
 					"onclick"   : function (info, tab) {
 
@@ -1371,7 +1371,7 @@ var D3 =
 			if (!D3.menuIds["options"]) {
 				// Menu item for options
 				menu = {
-					"title"     : "d3coder options",
+					"title"     : chrome.i18n.getMessage("extName") + " " + chrome.i18n.getMessage("settings"),
 					"contexts"  : ["all"],
 					"onclick"   : function(info, tab) {
 						if (chrome.runtime.openOptionsPage) {
