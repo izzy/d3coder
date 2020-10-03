@@ -71,7 +71,11 @@ function upgrade() {
         if (localStorage.getItem('message_type')) {
           console.log("Upgrade: Found data in localStorage, starting upgrade");
           clipboardSave = localStorage.getItem("message_automatic_clipboardcopy") == 1 ? true : false;
-          messageType = localStorage.getItem("message_type") ? localStorage.getItem("message_type") : "notification";
+          messageType = localStorage.getItem("message_type") ? localStorage.getItem("message_type") : "inplace";
+
+          // Fix for #25 when upgrading from an earlier version and having
+          // notifications set as message type
+          if(messageType == "notification") messageType = "inplace";
           
           for (option of D3menu.checkboxes) {
             checkboxes[option] = localStorage.getItem(option) == 1 ? true : false;

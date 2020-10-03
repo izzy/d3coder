@@ -7,6 +7,12 @@ base64, rot13 or unix timestamp conversion.
 CHANGELOG
 =============================
 
+* 4.1.0
+  * Removed native notifications output type (see #25)
+* 4.0.0
+  * Added i18n capabilities
+  * Added English translation
+  * Added German translation
 * 3.0.0
   * Updated Options UI to Chrome's more modern v2 options
   * Changed storage to Chrome's sync storage
