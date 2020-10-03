@@ -1,0 +1,74 @@
+{
+  "extName": {
+    "message": "d3coder",
+    "description": "Name of the extension"
+  },
+  "extDescription": {
+    "message": "Dodatek do przeglądarki pozwalający na kodowanie i odkodowywanie różnych rodzajów kodowania, takich jak base64, rot13 lub czasu uniksowego",
+    "description": "Short description of the extension"
+  },
+  "settings": {
+    "message": "ustawienia",
+    "description": "Title of the settings dialog for the extension"
+  },
+  "message_type": {
+    "message": "Rodzaj wiadomości",
+    "description": "How the converted text will be displayed"
+  },
+  "type_alert": {
+    "message": "Użyj funkcji alert()",
+    "description": "Setting that enables the messages to be displayed in an alert box"
+  },
+  "type_console": {
+    "message": "Wyświetl logi w konsoli",
+    "description": "Setting that enables the messages to be displayed in the JS console"
+  },
+  "type_html": {
+    "message": "Dodaj element HTML na dole strony",
+    "description": "Setting that enables the messages to be displayed in a HTML element inserted into the page"
+  },
+  "type_inplace": {
+    "message": "Wyświetl wiadomość w miejscu zaznaczonego tekstu",
+    "description": "Setting that enables the messages to be displayed as replacement of the original text"
+  },
+  "copy_results_to_clipboard": {
+    "message": "Skopiuj wynik do schowka po konwersji (uwaga, ta funkcja może nadpisać istniejące dane w schowku!)",
+    "description": "Label of the checkbox that enables clipboard-copy post-conversion in the settings"
+  },
+  "activate_functions": {
+    "message": "Funkcje",
+    "description": "Title of the part of the settings that (in)activates de/encoding functions"
+  },
+  "activate_functions_description": {
+    "message": "Możesz włączyć i wyłączyć poszczególne funkcje w menu kontekstowym",
+    "description": "Description for the part of the settings that (in)activates de/encoding functions"
+  },
+  "function_timestamp": {
+    "message": "Konwersja czasu uniksowego",
+    "description": "Function name for UNIX Timestamp conversion"
+  },
+  "function_ascii2hex": {
+    "message": "ASCCI do Xex",
+    "description": "Function name for ASCII to Hex"
+  },
+  "function_hex2ascii": {
+    "message": "Hex do ASCII",
+    "description": "Function name for Hex to ASCII"
+  },
+  "function_reverse_text": {
+    "message": "Odwróć tekst",
+    "description": "Function name for Reverse Text"
+  },
+  "message_copied_to_clipboard": {
+    "message": "Wiadomość skopiowana do schowka",
+    "description": "message when text was successfully copied to the clipboard"
+  },
+  "copy_last_conversion_to_clipboard": {
+    "message": "Skopiuj ostatni wynik do schowka",
+    "description": ""
+  },
+  "options_saved": {
+    "message": "Ustawienia zapisane",
+    "description": "Success message when the user settings where successfully saved"
+  }
+}
