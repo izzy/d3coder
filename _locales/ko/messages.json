@@ -1,147 +1,147 @@
 {
   "extName": {
     "message": "d3coder",
-    "description": "확장 이름"
+    "description": "Name of the extension"
   },
   "extDescription": {
     "message": "base64, rot13 또는 unix 타임 스탬프 변환과 같은 여러 유형의 암호화 / 복호화를위한 플러그인",
-    "description": "확장에 대한 간단한 설명"
+    "description": "Short description of the extension"
   },
   "settings": {
     "message": "설정",
-    "description": "확장에 대한 설정 대화 상자의 제목"
+    "description": "Title of the settings dialog for the extension"
   },
   "message_type": {
     "message": "메시지 유형",
-    "description": "변환 된 텍스트가 표시되는 방법"
+    "description": "How the converted text will be displayed"
   },
   "type_alert": {
     "message": "alert() 사용",
-    "description": "메시지를 경고 상자에 표시 할 수있는 g"
+    "description": "Setting that enables the messages to be displayed in an alert box"
   },
   "type_console": {
     "message": "콘솔에 로그인",
-    "description": "JS 콘솔에 메시지를 표시 할 수있는 설정"
+    "description": "Setting that enables the messages to be displayed in the JS console"
   },
   "type_html": {
     "message": "사이트 하단에 HTML 요소 추가",
-    "description": "페이지에 삽입 된 HTML 요소에 메시지를 표시 할 수있는 설정"
+    "description": "Setting that enables the messages to be displayed in a HTML element inserted into the page"
   },
   "type_inplace": {
     "message": "선택 항목을 사용하고 제자리에서 텍스트를 바꿉니다.",
-    "description": "원본 텍스트를 대체하여 메시지를 표시 할 수있는 설정"
+    "description": "Setting that enables the messages to be displayed as replacement of the original text"
   },
   "copy_results_to_clipboard": {
     "message": "환 후 결과를 클립 보드에 복사 (이는 클립 보드의 데이터를 재정의 할 수 있으므로주의해서 사용하십시오!)",
-    "description": "설정에서 클립 보드 복사 후 변환을 활성화하는 확인란의 레이블"
+    "description": "Label of the checkbox that enables clipboard-copy post-conversion in the settings"
   },
   "activate_functions": {
     "message": "기능 활성화",
-    "description": "디코딩 / 인코딩 기능을 (in) 활성화하는 설정 부분의 제목"
+    "description": "Title of the part of the settings that (in)activates de/encoding functions"
   },
   "activate_functions_description": {
     "message": "상황에 맞는 메뉴에서 다양한 기능을 켜고 끌 수 있습니다.",
-    "description": "디코딩 / 인코딩 기능을 (in) 활성화하는 설정 부분에 대한 설명"
+    "description": "Description for the part of the settings that (in)activates de/encoding functions"
   },
   "function_rot13": {
     "message": "ROT13",
-    "description": "ROT13의 기능 이름"
+    "description": "Function name for ROT13"
   },
   "function_timestamp": {
     "message": "타임 스탬프 변환",
-    "description": "UNIX 타임 스탬프 변환을위한 함수 이름"
+    "description": "Function name for UNIX Timestamp conversion"
   },
   "function_bin2hex": {
     "message": "bin2hex",
-    "description": "bin2hex의 함수 이름"
+    "description": "Function name for bin2hex"
   },
   "function_bin2txt": {
     "message": "bin2txt",
-    "description": "bin2txt의 함수 이름"
+    "description": "Function name for bin2txt"
   },
   "function_ascii2hex": {
     "message": "ASCII에서 16 진수로",
-    "description": "ASCII에서 16 진수로의 함수 이름"
+    "description": "Function name for ASCII to Hex"
   },
   "function_hex2ascii": {
     "message": "16 진수에서 ASCII로",
-    "description": "Hex에서 ASCII 로의 함수 이름"
+    "description": "Function name for Hex to ASCII"
   },
   "function_html_entity_decode": {
     "message": "HTML 엔티티 디코딩",
-    "description": "HTML 엔티티 디코딩을위한 함수 이름"
+    "description": "Function name for HTML entity decode"
   },
   "function_html_entities": {
     "message": "HTML 엔티티",
-    "description": "HTML 엔티티의 함수 이름"
+    "description": "Function name for HTML entities"
   },
   "function_uri_encode": {
     "message": "URI 인코딩",
-    "description": "URI 인코딩을위한 함수 이름"
+    "description": "Function name for URI encode"
   },
   "function_uri_decode": {
     "message": "URI 디코딩",
-    "description": "URI 디코딩을위한 함수 이름"
+    "description": "Function name for URI decode"
   },
   "function_htmlspecialchars": {
     "message": "HTML 특수 문자 인코딩",
-    "description": "HTML 특수 문자 인코딩을위한 함수 이름"
+    "description": "Function name for HTML special chars encode"
   },
   "function_htmlspecialchars_decode": {
     "message": "HTML 특수 문자 디코딩",
-    "description": "HTML 특수 문자 디코딩을위한 함수 이름"
+    "description": "Function name for HTML special chars decode"
   },
   "function_md5": {
     "message": "MD5",
-    "description": "MD5의 기능 이름"
+    "description": "Function name for MD5"
   },
   "function_sha1": {
     "message": "SHA1",
-    "description": "SHA1의 기능 이름"
+    "description": "Function name for SHA1"
   },
   "function_crc32": {
     "message": "CRC32",
-    "description": "CRC32의 기능 이름"
+    "description": "Function name for CRC32"
   },
   "function_quoted_printable_decode": {
     "message": "인용 된 인쇄 가능한 디코딩",
-    "description": "인용 된 인쇄 가능 디코딩의 기능 이름"
+    "description": "Function name for Quoted printable decode"
   },
   "function_quoted_printable_encode": {
     "message": "인용 된 인쇄 가능한 인코딩",
-    "description": "인용 인쇄 가능한 인코딩을위한 함수 이름"
+    "description": "Function name for Quoted printable encode"
   },
   "function_escapeshellarg": {
     "message": "탈출",
-    "description": "Escapeshellarg의 함수 이름"
+    "description": "Function name for Escapeshellarg"
   },
   "function_base64_encode": {
     "message": "Base64 인코딩",
-    "description": "Base64 인코딩을위한 함수 이름"
+    "description": "Function name for Base64 encode"
   },
   "function_base64_decode": {
     "message": "Base64 디코딩",
-    "description": "Base64 디코딩의 기능 이름"
+    "description": "Function name for Base64 decode"
   },
   "function_unserialize": {
     "message": "직렬화 해제",
-    "description": "직렬화 해제를위한 함수 이름"
+    "description": "Function name for Unserialize"
   },
   "function_leet_decode": {
     "message": "L33T 디코딩",
-    "description": "L33T 디코딩의 기능 이름"
+    "description": "Function name for L33T Decode"
   },
   "function_leet_encode": {
     "message": "L33T 인코딩",
-    "description": "L33T 인코딩의 기능 이름"
+    "description": "Function name for L33T Encode"
   },
   "function_reverse_text": {
     "message": "텍스트 반전",
-    "description": "역방향 텍스트의 기능 이름"
+    "description": "Function name for Reverse Text"
   },
   "message_copied_to_clipboard": {
     "message": "클립 보드에 메시지가 복사되었습니다!",
-    "description": "텍스트가 클립 보드에 성공적으로 복사되었을 때 메시지"
+    "description": "message when text was successfully copied to the clipboard"
   },
   "copy_last_conversion_to_clipboard": {
     "message": "마지막 변환을 클립 보드에 복사",
@@ -149,6 +149,6 @@
   },
   "options_saved": {
     "message": "옵션이 저장되었습니다.",
-    "description": "사용자 설정이 성공적으로 저장되면 성공 메시지"
+    "description": "Success message when the user settings where successfully saved"
   }
 }
