@@ -1,0 +1,154 @@
+{
+    "extName": {
+        "message": "d3coder",
+        "description": "Name of the extension"
+    },
+    "extDescription": {
+        "message": "编码/解码插件，支持包括base64，rot13 或unix timestamp编码的转换",
+        "description": "Short description of the extension"
+    },
+    "settings": {
+        "message": "设置",
+        "description": "Title of the settings dialog for the extension"
+    },
+    "message_type": {
+        "message": "消息类型",
+        "description": "How the converted text will be displayed"
+    },
+    "type_alert": {
+        "message": "使用alert()",
+        "description": "Setting that enables the messages to be displayed in an alert box"
+    },
+    "type_console": {
+        "message": "记录到控制台",
+        "description": "Setting that enables the messages to be displayed in the JS console"
+    },
+    "type_html": {
+        "message": "在网页底部添加一个HTML元素",
+        "description": "Setting that enables the messages to be displayed in a HTML element inserted into the page"
+    },
+    "type_inplace": {
+        "message": "启用选择并直接替换文本",
+        "description": "Setting that enables the messages to be displayed as replacement of the original text"
+    },
+    "copy_results_to_clipboard": {
+        "message": "在转换后复制文本到剪贴板（注意，这可能会覆写你剪切板中的数据！）",
+        "description": "Label of the checkbox that enables clipboard-copy post-conversion in the settings"
+    },
+    "activate_functions": {
+        "message": "启用功能",
+        "description": "Title of the part of the settings that (in)activates de/encoding functions"
+    },
+    "activate_functions_description": {
+        "message": "你可以在上下文菜单中开关不同的功能。",
+        "description": "Description for the part of the settings that (in)activates de/encoding functions"
+    },
+    "function_rot13": {
+        "message": "ROT13",
+        "description": "Function name for ROT13"
+    },
+    "function_timestamp": {
+        "message": "时间戳转换",
+        "description": "Function name for UNIX Timestamp conversion"
+    },
+    "function_bin2hex": {
+        "message": "bin转hex",
+        "description": "Function name for bin2hex"
+    },
+    "function_bin2txt": {
+        "message": "bin转txt",
+        "description": "Function name for bin2txt"
+    },
+    "function_ascii2hex": {
+        "message": "ASCII转Hex",
+        "description": "Function name for ASCII to Hex"
+    },
+    "function_hex2ascii": {
+        "message": "Hex转ASCII",
+        "description": "Function name for Hex to ASCII"
+    },
+    "function_html_entity_decode": {
+        "message": "HTML实体解码",
+        "description": "Function name for HTML entity decode"
+    },
+    "function_html_entities": {
+        "message": "HTML实体",
+        "description": "Function name for HTML entities"
+    },
+    "function_uri_encode": {
+        "message": "URI编码",
+        "description": "Function name for URI encode"
+    },
+    "function_uri_decode": {
+        "message": "URI解码",
+        "description": "Function name for URI decode"
+    },
+    "function_htmlspecialchars": {
+        "message": "HTML特殊字符编码",
+        "description": "Function name for HTML special chars encode"
+    },
+    "function_htmlspecialchars_decode": {
+        "message": "HTML特殊字符解码",
+        "description": "Function name for HTML special chars decode"
+    },
+    "function_md5": {
+        "message": "MD5",
+        "description": "Function name for MD5"
+    },
+    "function_sha1": {
+        "message": "SHA1",
+        "description": "Function name for SHA1"
+    },
+    "function_crc32": {
+        "message": "CRC32",
+        "description": "Function name for CRC32"
+    },
+    "function_quoted_printable_decode": {
+        "message": "可打印字符引用编码（Quoted printable）解码",
+        "description": "Function name for Quoted printable decode"
+    },
+    "function_quoted_printable_encode": {
+        "message": "可打印字符引用编码（Quoted printable）编码",
+        "description": "Function name for Quoted printable encode"
+    },
+    "function_escapeshellarg": {
+        "message": "Escapeshellarg",
+        "description": "Function name for Escapeshellarg"
+    },
+    "function_base64_encode": {
+        "message": "Base64编码",
+        "description": "Function name for Base64 encode"
+    },
+    "function_base64_decode": {
+        "message": "Base64解码",
+        "description": "Function name for Base64 decode"
+    },
+    "function_unserialize": {
+        "message": "反序列化",
+        "description": "Function name for Unserialize"
+    },
+    "function_leet_decode": {
+        "message": "L33T解码",
+        "description": "Function name for L33T Decode"
+    },
+    "function_leet_encode": {
+        "message": "L33T编码",
+        "description": "Function name for L33T Encode"
+    },
+    "function_reverse_text": {
+        "message": "反转文本",
+        "description": "Function name for Reverse Text"
+    },
+    "message_copied_to_clipboard": {
+        "message": "文本已复制到剪贴板！",
+        "description": "message when text was successfully copied to the clipboard"
+    },
+    "copy_last_conversion_to_clipboard": {
+        "message": "复制最后一次转换到剪切板",
+        "description": ""
+    },
+    "options_saved": {
+        "message": "选项已保存。",
+        "description": "Success message when the user settings where successfully saved"
+    }
+}
