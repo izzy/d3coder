@@ -136,7 +136,7 @@
         "description": "Function name for L33T Encode"
     },
     "function_reverse_text": {
-        "message": "Reverse Text",
+        "message": "Αντιστροφή κειμένου",
         "description": "Function name for Reverse Text"
     },
     "message_copied_to_clipboard": {
@@ -144,7 +144,7 @@
         "description": "message when text was successfully copied to the clipboard"
     },
     "copy_last_conversion_to_clipboard": {
-        "message": "Copy last conversion to clipboard",
+        "message": "Αντιγραφή τελευταίας μετατροπής στο πρόχειρο",
         "description": ""
     },
     "options_saved": {
