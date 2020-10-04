@@ -1,0 +1,154 @@
+{
+    "extName": {
+        "message": "d3coder",
+        "description": "Name of the extension"
+    },
+    "extDescription": {
+        "message": "Encoding/Decoding Plugin digunakan untuk bermacam-macam tipe penyandian seperti base64, rot13 atau konversi unix timestamp",
+        "description": "Short description of the extension"
+    },
+    "settings": {
+        "message": "pengaturan",
+        "description": "Title of the settings dialog for the extension"
+    },
+    "message_type": {
+        "message": "Tipe Pesan",
+        "description": "How the converted text will be displayed"
+    },
+    "type_alert": {
+        "message": "Gunakan alert()",
+        "description": "Setting that enables the messages to be displayed in an alert box"
+    },
+    "type_console": {
+        "message": "Catat ke console",
+        "description": "Setting that enables the messages to be displayed in the JS console"
+    },
+    "type_html": {
+        "message": "Menambahkan sebuah elemen HTML ke bagian bawah situs",
+        "description": "Setting that enables the messages to be displayed in a HTML element inserted into the page"
+    },
+    "type_inplace": {
+        "message": "Gunakan seleksi dan mengganti teks di tempat",
+        "description": "Setting that enables the messages to be displayed as replacement of the original text"
+    },
+    "copy_results_to_clipboard": {
+        "message": "Salin hasil ke clipboard setelah melakukan konversi (perhatikan bahwa ini mungkin menimpa data pada clipboard-mu, maka gunakan dengan hati-hati!)",
+        "description": "Label of the checkbox that enables clipboard-copy post-conversion in the settings"
+    },
+    "activate_functions": {
+        "message": "Aktifkan Fungsi",
+        "description": "Title of the part of the settings that (in)activates de/encoding functions"
+    },
+    "activate_functions_description": {
+        "message": "Anda dapat mengaktifkan dan menonaktifkan berbagai fungsi yang berbeda di menu konteks.",
+        "description": "Description for the part of the settings that (in)activates de/encoding functions"
+    },
+    "function_rot13": {
+        "message": "ROT13",
+        "description": "Function name for ROT13"
+    },
+    "function_timestamp": {
+        "message": "Konversi Timestamp",
+        "description": "Function name for UNIX Timestamp conversion"
+    },
+    "function_bin2hex": {
+        "message": "bin2hex",
+        "description": "Function name for bin2hex"
+    },
+    "function_bin2txt": {
+        "message": "bin2txt",
+        "description": "Function name for bin2txt"
+    },
+    "function_ascii2hex": {
+        "message": "ASCII ke Hex",
+        "description": "Function name for ASCII to Hex"
+    },
+    "function_hex2ascii": {
+        "message": "Hex ke ASCII",
+        "description": "Function name for Hex to ASCII"
+    },
+    "function_html_entity_decode": {
+        "message": "Decode entitas HTML",
+        "description": "Function name for HTML entity decode"
+    },
+    "function_html_entities": {
+        "message": "Entitas HTML",
+        "description": "Function name for HTML entities"
+    },
+    "function_uri_encode": {
+        "message": "Encode URI",
+        "description": "Function name for URI encode"
+    },
+    "function_uri_decode": {
+        "message": "Decode URI",
+        "description": "Function name for URI decode"
+    },
+    "function_htmlspecialchars": {
+        "message": "Encode karakter khusus HTML",
+        "description": "Function name for HTML special chars encode"
+    },
+    "function_htmlspecialchars_decode": {
+        "message": "Decode karakter khusus HTML",
+        "description": "Function name for HTML special chars decode"
+    },
+    "function_md5": {
+        "message": "MD5",
+        "description": "Function name for MD5"
+    },
+    "function_sha1": {
+        "message": "SHA1",
+        "description": "Function name for SHA1"
+    },
+    "function_crc32": {
+        "message": "CRC32",
+        "description": "Function name for CRC32"
+    },
+    "function_quoted_printable_decode": {
+        "message": "Mengutip decode yang dapat dicetak",
+        "description": "Function name for Quoted printable decode"
+    },
+    "function_quoted_printable_encode": {
+        "message": "Mengutip encode yang dapat dicetak",
+        "description": "Function name for Quoted printable encode"
+    },
+    "function_escapeshellarg": {
+        "message": "Escapeshellarg",
+        "description": "Function name for Escapeshellarg"
+    },
+    "function_base64_encode": {
+        "message": "Encode Base64",
+        "description": "Function name for Base64 encode"
+    },
+    "function_base64_decode": {
+        "message": "Decode Base64",
+        "description": "Function name for Base64 decode"
+    },
+    "function_unserialize": {
+        "message": "Unserialize",
+        "description": "Function name for Unserialize"
+    },
+    "function_leet_decode": {
+        "message": "Decode L33T",
+        "description": "Function name for L33T Decode"
+    },
+    "function_leet_encode": {
+        "message": "Encode L33T",
+        "description": "Function name for L33T Encode"
+    },
+    "function_reverse_text": {
+        "message": "Teks Terbalik",
+        "description": "Function name for Reverse Text"
+    },
+    "message_copied_to_clipboard": {
+        "message": "Pesan telah disalin ke clipboard!",
+        "description": "message when text was successfully copied to the clipboard"
+    },
+    "copy_last_conversion_to_clipboard": {
+        "message": "Salin konversi terakhir ke clipboard",
+        "description": ""
+    },
+    "options_saved": {
+        "message": "Opsi disimpan.",
+        "description": "Success message when the user settings where successfully saved"
+    }
+}
