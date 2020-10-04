@@ -1,6 +1,10 @@
 CHANGELOG
 =============================
 
+* 4.6.0
+  * Added Turkish translations
+  * Added Greek translations
+  * Added Spanish translations
 * 4.5.0
   * Added French translations
   * Added Russian translations
