@@ -1,0 +1,154 @@
+{
+    "extName": {
+        "message": "d3coder",
+        "description": "Bővítmény neve"
+    },
+    "extDescription": {
+        "message": "Kódoló/Dekódoló beépülő modul több típusú kódoláshoz pl. base64, rot13 vagy UNIX időbélyeg konverzió",
+        "description": "A bővítmény rövid leírása"
+    },
+    "settings": {
+        "message": "beállítások",
+        "description": "A bővítmény beállításai párbeszédpanel címe"
+    },
+    "message_type": {
+        "message": "Üzenet típusok",
+        "description": "Hogyan lesz a konvertált szöveg megjelenítve"
+    },
+    "type_alert": {
+        "message": "alert() használata",
+        "description": "Beállítás, amely engedélyezi az üzenetek megjelenítését egy alert dobozban"
+    },
+    "type_console": {
+        "message": "Logolás a konzolra",
+        "description": "Beállítás, amely engedélyezi az üzenetek megjelenítését a JS konzolban"
+    },
+    "type_html": {
+        "message": "HTML elem hozzáadása az oldal alján",
+        "description": "Beállítás, amely engedélyezi az üzenetek megjelenítését egy az oldal alján hozzáadott HTML elemben"
+    },
+    "type_inplace": {
+        "message": "Használja a kijelölést, és cserélje a szöveget helyben",
+        "description": "Beállítás, amely engedélyezzi az üzenetek megjelenítését az eredeti szöveg helyett"
+    },
+    "copy_results_to_clipboard": {
+        "message": "Másolja az eredményt a vágólapra konvertálás után (figyelem, ez felülírhatja a meglévő adatokat a vágólapon, használd óvatosan!)",
+        "description": "A jelölőnégyzet címkéje a beállításokban, amely engedélyezi a vágólapra másolást a konvertálás után"
+    },
+    "activate_functions": {
+        "message": "Funkciók aktiválása",
+        "description": "A beállítások egy pontjának a címe, amely (de)aktiválja a (de)kódoló funkciókat"
+    },
+    "activate_functions_description": {
+        "message": "Ki/bekapcsolhatók a különböző funkciók a kontextus menüben",
+        "description": "A beállítások egy pontjának a leírása, amely (de)aktiválja a (de)kódoló funkciókat"
+    },
+    "function_rot13": {
+        "message": "ROT13",
+        "description": "ROT13 funkció neve"
+    },
+    "function_timestamp": {
+        "message": "Időbélyeg konverzió",
+        "description": "Funkció neve UNIX időbélyeg konverzióhoz"
+    },
+    "function_bin2hex": {
+        "message": "bin2hex",
+        "description": "bin2hex funkció neve"
+    },
+    "function_bin2txt": {
+        "message": "bin2txt",
+        "description": "bin2txt  funkció neve"
+    },
+    "function_ascii2hex": {
+        "message": "ASCII-ból Hex",
+        "description": "ASCII-ból Hex funkció neve"
+    },
+    "function_hex2ascii": {
+        "message": "Hex-ből ASCII",
+        "description": "Hex-ből ASCII funkció neve"
+    },
+    "function_html_entity_decode": {
+        "message": "HTML entitás dekódolása",
+        "description": "HTML entitás dekódolása funkció neve"
+    },
+    "function_html_entities": {
+        "message": "HTML entitások",
+        "description": "HTML entitások funkció neve"
+    },
+    "function_uri_encode": {
+        "message": "URI kódolás",
+        "description": "URI kódolás funkció neve"
+    },
+    "function_uri_decode": {
+        "message": "URI dekódolás",
+        "description": "URI dekódolás funkció neve"
+    },
+    "function_htmlspecialchars": {
+        "message": "HTML speciális karakterek kódolása",
+        "description": "HTML speciális karakterek kódolása funkció neve"
+    },
+    "function_htmlspecialchars_decode": {
+        "message": "HTML speciális karakterek dekódolása",
+        "description": "HTML speciális karakterek dekódolása funkció neve"
+    },
+    "function_md5": {
+        "message": "MD5",
+        "description": "MD5 funkció neve"
+    },
+    "function_sha1": {
+        "message": "SHA1",
+        "description": "SHA1 funkció neve"
+    },
+    "function_crc32": {
+        "message": "CRC32",
+        "description": "CRC32 funkció neve"
+    },
+    "function_quoted_printable_decode": {
+        "message": "Quoted printable dekódolás",
+        "description": "Quoted printable dekódolás funkció neve"
+    },
+    "function_quoted_printable_encode": {
+        "message": "Quoted printable kódolás",
+        "description": "Quoted printable kódolás funkció neve"
+    },
+    "function_escapeshellarg": {
+        "message": "Escapeshellarg",
+        "description": "Escapeshellarg funkció neve"
+    },
+    "function_base64_encode": {
+        "message": "Base64 kódolás",
+        "description": "Base64 kódolás funkció neve"
+    },
+    "function_base64_decode": {
+        "message": "Base64 dekódolás",
+        "description": "Base64 dekódolás funkció neve"
+    },
+    "function_unserialize": {
+        "message": "Unserialize",
+        "description": "Unserialize funkció neve"
+    },
+    "function_leet_decode": {
+        "message": "L33T dekódolás",
+        "description": "L33T dekódolás funkció neve"
+    },
+    "function_leet_encode": {
+        "message": "L33T kódolás",
+        "description": "L33T kódolás funkció neve"
+    },
+    "function_reverse_text": {
+        "message": "Fordított szöveg",
+        "description": "Fordított szöveg funkció neve"
+    },
+    "message_copied_to_clipboard": {
+        "message": "Üzenet a vágólapra másolva!",
+        "description": "üzenet a szöveg sikeres vágólapra másolásakor"
+    },
+    "copy_last_conversion_to_clipboard": {
+        "message": "Az utolsó konverzió másolása a vágólapra",
+        "description": ""
+    },
+    "options_saved": {
+        "message": "Beállítások mentve",
+        "description": "Sikeres üzenet, mikor a felhasználó beállításai sikeresen mentésre kerültek"
+    }
+}
