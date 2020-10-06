@@ -1,0 +1,154 @@
+{
+    "extName": {
+        "message": "d3coder",
+        "description": "Ime ekstenzije"
+    },
+    "extDescription": {
+        "message": "Enkoding/Dekoding dodatak za različite tipove enkodiranja kao što su base64, rot13 ili unix timestamp konverzija",
+        "description": "Kratki opis ekstenzije"
+    },
+    "settings": {
+        "message": "Postavke",
+        "description": "Naslov prozora za postavke ekstenzije"
+    },
+    "message_type": {
+        "message": "Tip poruke",
+        "description": "Način prikaza konvertiranog teksta"
+    },
+    "type_alert": {
+        "message": "Korištenje alert()",
+        "description": "Omogućuje prikaz poruka u prozoru upozorenja"
+    },
+    "type_console": {
+        "message": "Logiraj u konzolu",
+        "description": "Omogućuje prikaz poruka u JS konzoli"
+    },
+    "type_html": {
+        "message": "Dodavanje HTML elementa na dno mrežne stranice",
+        "description": "Omogućuje prikaz poruke unutar HTML elementa koji je ubačen na mrežnu stranicu"
+    },
+    "type_inplace": {
+        "message": "Iskoristi selekciju i zamjeni tekst 'na-mjestu' (in-place)",
+        "description": "Postavke koje omogućuju prikaz poruka kao zamjenu za izvorni tekst"
+    },
+    "copy_results_to_clipboard": {
+        "message": "Kopiraj rezultat u međuspremnik poslije konverzije (obrati pozornost da će to prepisati postojeće podatke u međuspremniku, koristi sa oprezom!)",
+        "description": "Labela na potvrdnom okviru (checkbox) koja omogućava kopiranje u međuspremnik poslije konverzije u postavkama"
+    },
+    "activate_functions": {
+        "message": "Aktiviraj funkcije",
+        "description": "Naslov dijela postavki koje (de)aktiviraju funkcije za dekodiranje/enkodiranje"
+    },
+    "activate_functions_description": {
+        "message": "Možeš uključiti/isključiti različite funkcije u kontekstnom izborniku",
+        "description": "Opis dijela postavki koje (de)aktiviraju funkcije za dekodiranje/enkodiranje"
+    },
+    "function_rot13": {
+        "message": "ROT13",
+        "description": "Ime funkcije za ROT13"
+    },
+    "function_timestamp": {
+        "message": "Timestamp konverzija",
+        "description": "Ime funkcije za UNIX Timestamp konverziju"
+    },
+    "function_bin2hex": {
+        "message": "bin2hex",
+        "description": "Ime funkcije za bin2hex"
+    },
+    "function_bin2txt": {
+        "message": "bin2txt",
+        "description": "Ime funkcije za bin2txt"
+    },
+    "function_ascii2hex": {
+        "message": "ASCII u Hex",
+        "description": "Ime funkcije za ASCII u Hex"
+    },
+    "function_hex2ascii": {
+        "message": "Hex u ASCII",
+        "description": "Ime funkcije za Hex u ASCII"
+    },
+    "function_html_entity_decode": {
+        "message": "Dekodiranje HTML entiteta",
+        "description": "Ime funkcije za dekodiranje HTML entiteta"
+    },
+    "function_html_entities": {
+        "message": "HTML entiteti",
+        "description": "Ime funkcije za HTML entitete"
+    },
+    "function_uri_encode": {
+        "message": "URI enkodiranje",
+        "description": "Ime funkcije za URI enkodiranje"
+    },
+    "function_uri_decode": {
+        "message": "URI dekodiranje",
+        "description": "Ime funkcije za URI dekodiranje"
+    },
+    "function_htmlspecialchars": {
+        "message": "Enkodiranje posebnih HTML znakova",
+        "description": "Ime funkcije za enkodiranje posebnih HTML znakova"
+    },
+    "function_htmlspecialchars_decode": {
+        "message": "Dekodiranje posebnih HTML znakova",
+        "description": "Ime funkcije za dekodiranje posebnih HTML znakova"
+    },
+    "function_md5": {
+        "message": "MD5",
+        "description": "Ime funkcije za MD5"
+    },
+    "function_sha1": {
+        "message": "SHA1",
+        "description": "Ime funkcije za SHA1"
+    },
+    "function_crc32": {
+        "message": "CRC32",
+        "description": "Ime funkcije za CRC32"
+    },
+    "function_quoted_printable_decode": {
+        "message": "Quoted printable dekodiranje",
+        "description": "Ime funkcije za Quoted printable dekodiranje"
+    },
+    "function_quoted_printable_encode": {
+        "message": "Quoted printable enkodiranje",
+        "description": "Ime funkcije za Quoted printable enkodiranje"
+    },
+    "function_escapeshellarg": {
+        "message": "Escapeshellarg",
+        "description": "Ime funkcije za Escapeshellarg"
+    },
+    "function_base64_encode": {
+        "message": "Base64 enkodiranje",
+        "description": "Ime funkcije za Base64 enkodiranje"
+    },
+    "function_base64_decode": {
+        "message": "Base64 dekodiranje",
+        "description": "Ime funkcije za Base64 dekodiranje"
+    },
+    "function_unserialize": {
+        "message": "Unserialize",
+        "description": "Ime funkcije za Unserialize"
+    },
+    "function_leet_decode": {
+        "message": "L33T dekodiranje",
+        "description": "Ime funkcije za L33T dekodiranje"
+    },
+    "function_leet_encode": {
+        "message": "L33T enkodiranje",
+        "description": "Ime funkcije za L33T enkodiranje"
+    },
+    "function_reverse_text": {
+        "message": "Reverse Text",
+        "description": "Ime funkcije za Reverse Text"
+    },
+    "message_copied_to_clipboard": {
+        "message": "Poruka kopirana u međuspremnik!",
+        "description": "Poruka koja se prikazuje kada je tekst uspješno kopiran u međuspremnik."
+    },
+    "copy_last_conversion_to_clipboard": {
+        "message": "Kopiraj posljednju konverziju u međuspremnik",
+        "description": "Poruka koja se prikazuje kada se posljednja konverzija uspješno kopira u međuspremnik"
+    },
+    "options_saved": {
+        "message": "Opcije pohranjene.",
+        "description": "Poruka uspjeha kada se postavke korisnika uspješno pohrane."
+    }
+}
