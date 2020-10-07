@@ -1,0 +1,154 @@
+{
+    "extName": {
+        "message": "d3coder",
+        "description": "Name of the extension"
+    },
+    "extDescription": {
+        "message": "Плагін для кодування/декодування різноманітних видів кодувань, таких як: base64, rot13 або перетворення часових міток unix",
+        "description": "Short description of the extension"
+    },
+    "settings": {
+        "message": "налаштування",
+        "description": "Title of the settings dialog for the extension"
+    },
+    "message_type": {
+        "message": "Тип повідомлення",
+        "description": "How the converted text will be displayed"
+    },
+    "type_alert": {
+        "message": "Використовуючи alert()",
+        "description": "Setting that enables the messages to be displayed in an alert box"
+    },
+    "type_console": {
+        "message": "Логувати до консолі",
+        "description": "Setting that enables the messages to be displayed in the JS console"
+    },
+    "type_html": {
+        "message": "Додаючи HTML-елемент в нижній частині сайту",
+        "description": "Setting that enables the messages to be displayed in a HTML element inserted into the page"
+    },
+    "type_inplace": {
+        "message": "Використовувати виділення та замінювати текст на місці",
+        "description": "Setting that enables the messages to be displayed as replacement of the original text"
+    },
+    "copy_results_to_clipboard": {
+        "message": "Після перетворення копіювати результати до буферу обміну (пам’ятайте, що це може замінити дані у вашому буфері обміну, тому використовуйте з обережністю!)",
+        "description": "Label of the checkbox that enables clipboard-copy post-conversion in the settings"
+    },
+    "activate_functions": {
+        "message": "Функції",
+        "description": "Title of the part of the settings that (in)activates de/encoding functions"
+    },
+    "activate_functions_description": {
+        "message": "Ви можете вмикати та вимикати окремі функції в контекстному меню.",
+        "description": "Description for the part of the settings that (in)activates de/encoding functions"
+    },
+    "function_rot13": {
+        "message": "ROT13",
+        "description": "Function name for ROT13"
+    },
+    "function_timestamp": {
+        "message": "Перетворення часової мітки UNIX",
+        "description": "Function name for UNIX Timestamp conversion"
+    },
+    "function_bin2hex": {
+        "message": "bin2hex",
+        "description": "Function name for bin2hex"
+    },
+    "function_bin2txt": {
+        "message": "bin2txt",
+        "description": "Function name for bin2txt"
+    },
+    "function_ascii2hex": {
+        "message": "ASCII до Hex",
+        "description": "Function name for ASCII to Hex"
+    },
+    "function_hex2ascii": {
+        "message": "Hex до ASCII",
+        "description": "Function name for Hex to ASCII"
+    },
+    "function_html_entity_decode": {
+        "message": "Декодувати HTML-сутності",
+        "description": "Function name for HTML entity decode"
+    },
+    "function_html_entities": {
+        "message": "HTML-сутності",
+        "description": "Function name for HTML entities"
+    },
+    "function_uri_encode": {
+        "message": "Кодувати URI",
+        "description": "Function name for URI encode"
+    },
+    "function_uri_decode": {
+        "message": "Декодувати URI",
+        "description": "Function name for URI decode"
+    },
+    "function_htmlspecialchars": {
+        "message": "Кодувати спеціальні символи HTML",
+        "description": "Function name for HTML special chars encode"
+    },
+    "function_htmlspecialchars_decode": {
+        "message": "Декодувати спеціальні символи HTML",
+        "description": "Function name for HTML special chars decode"
+    },
+    "function_md5": {
+        "message": "MD5",
+        "description": "Function name for MD5"
+    },
+    "function_sha1": {
+        "message": "SHA1",
+        "description": "Function name for SHA1"
+    },
+    "function_crc32": {
+        "message": "CRC32",
+        "description": "Function name for CRC32"
+    },
+    "function_quoted_printable_decode": {
+        "message": "Декодувати Quoted printable",
+        "description": "Function name for Quoted printable decode"
+    },
+    "function_quoted_printable_encode": {
+        "message": "Кодувати Quoted printable",
+        "description": "Function name for Quoted printable encode"
+    },
+    "function_escapeshellarg": {
+        "message": "Escapeshellarg",
+        "description": "Function name for Escapeshellarg"
+    },
+    "function_base64_encode": {
+        "message": "Кодувати Base64",
+        "description": "Function name for Base64 encode"
+    },
+    "function_base64_decode": {
+        "message": "Декодувати Base64",
+        "description": "Function name for Base64 decode"
+    },
+    "function_unserialize": {
+        "message": "Десеріалізувати",
+        "description": "Function name for Unserialize"
+    },
+    "function_leet_decode": {
+        "message": "Декодувати L33T",
+        "description": "Function name for L33T Decode"
+    },
+    "function_leet_encode": {
+        "message": "Кодувати L33T",
+        "description": "Function name for L33T Encode"
+    },
+    "function_reverse_text": {
+        "message": "Зворотний текст",
+        "description": "Function name for Reverse Text"
+    },
+    "message_copied_to_clipboard": {
+        "message": "Повідомлення скопійовано до буферу обміну!",
+        "description": "message when text was successfully copied to the clipboard"
+    },
+    "copy_last_conversion_to_clipboard": {
+        "message": "Копіювати останнє перетворення до буферу обміну",
+        "description": ""
+    },
+    "options_saved": {
+        "message": "Налаштування збережено.",
+        "description": "Success message when the user settings where successfully saved"
+    }
+}
