@@ -1,6 +1,19 @@
 CHANGELOG
 =============================
-
+* 4.7.0
+  * Added Bengali translation
+  * Added Bulgarian translation
+  * Added Chinese(zh_CN) translation
+  * Added Chinese(zh_TW) translation
+  * Added Croatian translation
+  * Added Czech translation
+  * Added Danish translation
+  * Added Hindi translation
+  * Added Hungarian translation
+  * Added Indonesian translation
+  * Added Japanese translation
+  * Added Kanada translation
+  * Added Ukrainian translation
 * 4.6.0
   * Added Turkish translations
   * Added Greek translations
