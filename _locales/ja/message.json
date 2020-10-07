@@ -68,7 +68,7 @@
     "description": "Function name for Hex to ASCII"
   },
   "function_html_entity_decode": {
-    "message": "HTMLエンティティデコード",
+    "message": "HTMLエンティティのデコード",
     "description": "Function name for HTML entity decode"
   },
   "function_html_entities": {
@@ -136,7 +136,7 @@
     "description": "Function name for L33T Encode"
   },
   "function_reverse_text": {
-    "message": "Reverse Text",
+    "message": "テキストの反転",
     "description": "Function name for Reverse Text"
   },
   "message_copied_to_clipboard": {
