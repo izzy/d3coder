@@ -1,0 +1,154 @@
+{
+    "extName": {
+        "message": "d3coder",
+        "description": "Name of the extension"
+    },
+    "extDescription": {
+        "message": "提供編碼/解碼功能的套件，支持 base64，rot13 或 unix timestamp 編碼轉換",
+        "description": "Short description of the extension"
+    },
+    "settings": {
+        "message": "設定",
+        "description": "Title of the settings dialog for the extension"
+    },
+    "message_type": {
+        "message": "訊息類型",
+        "description": "How the converted text will be displayed"
+    },
+    "type_alert": {
+        "message": "使用 alert()",
+        "description": "Setting that enables the messages to be displayed in an alert box"
+    },
+    "type_console": {
+        "message": "紀錄到主控台",
+        "description": "Setting that enables the messages to be displayed in the JS console"
+    },
+    "type_html": {
+        "message": "在網頁底部添加一個 HTML 元素",
+        "description": "Setting that enables the messages to be displayed in a HTML element inserted into the page"
+    },
+    "type_inplace": {
+        "message": "使用選擇並直接替換內容",
+        "description": "Setting that enables the messages to be displayed as replacement of the original text"
+    },
+    "copy_results_to_clipboard": {
+        "message": "在轉換後將結果複製到剪貼簿中（注意！這可能會覆蓋剪貼簿中原有的資料）",
+        "description": "Label of the checkbox that enables clipboard-copy post-conversion in the settings"
+    },
+    "activate_functions": {
+        "message": "啟用功能",
+        "description": "Title of the part of the settings that (in)activates de/encoding functions"
+    },
+    "activate_functions_description": {
+        "message": "你可以在主選單中開啟或關閉不同的功能。",
+        "description": "Description for the part of the settings that (in)activates de/encoding functions"
+    },
+    "function_rot13": {
+        "message": "迴轉 13 位（ROT-13）",
+        "description": "Function name for ROT13"
+    },
+    "function_timestamp": {
+        "message": "UNIX 時間戳轉換（Unix Timestamp Conversion）",
+        "description": "Function name for UNIX Timestamp conversion"
+    },
+    "function_bin2hex": {
+        "message": "二進位制轉換十六進位制（Binary to Hexadecimal）",
+        "description": "Function name for bin2hex"
+    },
+    "function_bin2txt": {
+        "message": "二進位制轉換純文字格式（Binary to TXT）",
+        "description": "Function name for bin2txt"
+    },
+    "function_ascii2hex": {
+        "message": "ASCII 碼轉換十六進位制（ASCII to Hexadecimal）",
+        "description": "Function name for ASCII to Hex"
+    },
+    "function_hex2ascii": {
+        "message": "十六進位制轉換 ASCII 碼（Hexadecimal to ASCII）",
+        "description": "Function name for Hex to ASCII"
+    },
+    "function_html_entity_decode": {
+        "message": "HTML 實體解碼（HTML Entity Decode）",
+        "description": "Function name for HTML entity decode"
+    },
+    "function_html_entities": {
+        "message": "HTML 實體（HTML Entity）",
+        "description": "Function name for HTML entities"
+    },
+    "function_uri_encode": {
+        "message": "URI 編碼（URI Encode）",
+        "description": "Function name for URI encode"
+    },
+    "function_uri_decode": {
+        "message": "URI 解碼（URI Decode）",
+        "description": "Function name for URI decode"
+    },
+    "function_htmlspecialchars": {
+        "message": "HTML 特殊字元編碼",
+        "description": "Function name for HTML special chars encode"
+    },
+    "function_htmlspecialchars_decode": {
+        "message": "HTML 特殊字元解碼",
+        "description": "Function name for HTML special chars decode"
+    },
+    "function_md5": {
+        "message": "MD5",
+        "description": "Function name for MD5"
+    },
+    "function_sha1": {
+        "message": "SHA1",
+        "description": "Function name for SHA1"
+    },
+    "function_crc32": {
+        "message": "CRC32",
+        "description": "Function name for CRC32"
+    },
+    "function_quoted_printable_decode": {
+        "message": "可列印字元參照解碼（Quoted Printable Decode）",
+        "description": "Function name for Quoted printable decode"
+    },
+    "function_quoted_printable_encode": {
+        "message": "可列印字元參照編碼（Quoted Printable Encode）",
+        "description": "Function name for Quoted printable encode"
+    },
+    "function_escapeshellarg": {
+        "message": "Escapeshellarg 轉譯",
+        "description": "Function name for Escapeshellarg"
+    },
+    "function_base64_encode": {
+        "message": "Base64 編碼（Base64 Encode）",
+        "description": "Function name for Base64 encode"
+    },
+    "function_base64_decode": {
+        "message": "Base64 解碼（Base64 Decode）",
+        "description": "Function name for Base64 decode"
+    },
+    "function_unserialize": {
+        "message": "反序列化",
+        "description": "Function name for Unserialize"
+    },
+    "function_leet_decode": {
+        "message": "L33T 解碼（L33T Decode）",
+        "description": "Function name for L33T Decode"
+    },
+    "function_leet_encode": {
+        "message": "L33T 編碼（L33T Encode）",
+        "description": "Function name for L33T Encode"
+    },
+    "function_reverse_text": {
+        "message": "反轉文本",
+        "description": "Function name for Reverse Text"
+    },
+    "message_copied_to_clipboard": {
+        "message": "訊息已複製到剪貼簿！",
+        "description": "message when text was successfully copied to the clipboard"
+    },
+    "copy_last_conversion_to_clipboard": {
+        "message": "將最後一次的轉換結果複製到剪貼簿中",
+        "description": ""
+    },
+    "options_saved": {
+        "message": "選項已儲存。",
+        "description": "Success message when the user settings where successfully saved"
+    }
+}
