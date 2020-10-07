@@ -1,0 +1,46 @@
+{
+    "extName": {
+        "message": "d3coder",
+        "description": "Name of the extension"
+    },
+    "extDescription": {
+        "message": "Encoding/Decoding Plugin for various types of encoding like base64, rot13 or unix timestamp conversion",
+        "description": "Short description of the extension"
+    },
+    "settings": {
+        "message": "اعدادات",
+        "description": "Title of the settings dialog for the extension"
+    },
+    "message_type": {
+        "message": "نوع الرساله",
+        "description": "How the converted text will be displayed"
+    },
+    "type_alert": {
+        "message": "استعمال التنبيه",
+        "description": "Setting that enables the messages to be displayed in an alert box"
+    },
+    "copy_results_to_clipboard": {
+        "message": "نسخ النتائج الى لوحه المفاتيح",
+        "description": "Label of the checkbox that enables clipboard-copy post-conversion in the settings"
+    },
+    "activate_functions": {
+        "message": "تفعيل الدالات",
+        "description": "Title of the part of the settings that (in)activates de/encoding functions"
+    },
+    "function_reverse_text": {
+        "message": "عكس النص",
+        "description": "Function name for Reverse Text"
+    },
+    "message_copied_to_clipboard": {
+        "message": "!تم نسخ الرساله الى لوحه المفاتيح",
+        "description": "message when text was successfully copied to the clipboard"
+    },
+    "copy_last_conversion_to_clipboard": {
+        "message": "نسخ اخر رساله الى لوحة المفاتيح",
+        "description": ""
+    },
+    "options_saved": {
+        "message": "تم حفظ الاعدادات.",
+        "description": "Success message when the user settings where successfully saved"
+    }
+}
