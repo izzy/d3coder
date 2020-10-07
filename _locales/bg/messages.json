@@ -1,0 +1,154 @@
+{
+    "extName": {
+        "message": "d3coder",
+        "description": "Име на разширението"
+    },
+    "extDescription": {
+        "message": "Encoding/Decoding Plugin за различни типове кодиране като base64, rot13 или unix timestamp преобразуване",
+        "description": "Кратко описание на разширението"
+    },
+    "settings": {
+        "message": "Настройки",
+        "description": "Заглавие на диалоговия прозорец за настройки за разширението"
+    },
+    "message_type": {
+        "message": "Тип съобщение",
+        "description": "Как ще изглежда преобразуваният текст"
+    },
+    "type_alert": {
+        "message": "Използване на alert()",
+        "description": "Настройка, която позволява съобщенията да се показват в полето за предупреждение"
+    },
+    "type_console": {
+        "message": "Запиши в конзолата",
+        "description": "Настройка, която позволява съобщенията да се показват в JS конзолата"
+    },
+    "type_html": {
+        "message": "Добавяне на HTML елемент в долната част на сайта",
+        "description": "Настройка, която позволява съобщенията да се показват в HTML елемент, вмъкнат в страницата"
+    },
+    "type_inplace": {
+        "message": "Използвайте селекцията и заменете текста на това място",
+        "description": "Настройка, която позволява съобщенията да се показват като заместител на оригиналния текст"
+    },
+    "copy_results_to_clipboard": {
+        "message": "Копирайте резултатите в клипборда след преобразуване (имайте предвид, че това може да замени данните в клипборда, така че използвайте внимателно!)",
+        "description": "Етикет на квадратчето за отметка, което позволява копиране на клипборда след копиране в настройките"
+    },
+    "activate_functions": {
+        "message": "Активиране на функции",
+        "description": "Заглавие на частта от настройките, която (де)активира функции за декодиране / кодиране"
+    },
+    "activate_functions_description": {
+        "message": "Можете да включвате и изключвате различните функции в контекстното меню.",
+        "description": "Описание на частта от настройките, която (де)активира функции за декодиране / кодиране"
+    },
+    "function_rot13": {
+        "message": "ROT13",
+        "description": "Име на функция за ROT13"
+    },
+    "function_timestamp": {
+        "message": "Timestamp преобразуване",
+        "description": "Име на функция за преобразуване на UNIX Timestamp"
+    },
+    "function_bin2hex": {
+        "message": "bin2hex",
+        "description": "Име на функция за bin2hex"
+    },
+    "function_bin2txt": {
+        "message": "bin2txt",
+        "description": "Име на функция за bin2txt"
+    },
+    "function_ascii2hex": {
+        "message": "ASCII към Hex",
+        "description": "Име на функция за ASCII към Hex"
+    },
+    "function_hex2ascii": {
+        "message": "Hex към ASCII",
+        "description": "Име на функция за Hex към ASCII"
+    },
+    "function_html_entity_decode": {
+        "message": "Декодиране на HTML обект",
+        "description": "Име на функция за декодиране на HTML обект"
+    },
+    "function_html_entities": {
+        "message": "HTML обекти",
+        "description": "Име на функция за HTML обекти"
+    },
+    "function_uri_encode": {
+        "message": "URI кодиране",
+        "description": "Име на функция за URI кодиране"
+    },
+    "function_uri_decode": {
+        "message": "URI декодиране",
+        "description": "Име на функция за URI декодиране"
+    },
+    "function_htmlspecialchars": {
+        "message": "Кодиране на специални символи в HTML",
+        "description": "Име на функция за кодиране на специални символи в HTML"
+    },
+    "function_htmlspecialchars_decode": {
+        "message": "Декодиране на специални символи в HTML",
+        "description": "Име на функция за декодиране на специални символи в HTML"
+    },
+    "function_md5": {
+        "message": "MD5",
+        "description": "Име на функция за MD5"
+    },
+    "function_sha1": {
+        "message": "SHA1",
+        "description": "Име на функция за SHA1"
+    },
+    "function_crc32": {
+        "message": "CRC32",
+        "description": "Име на функция за CRC32"
+    },
+    "function_quoted_printable_decode": {
+        "message": "Quoted printable декодиране",
+        "description": "Име на функция за Quoted printable декодиране"
+    },
+    "function_quoted_printable_encode": {
+        "message": "Quoted printable кодиране",
+        "description": "Име на функция за Quoted printable кодиране"
+    },
+    "function_escapeshellarg": {
+        "message": "Escapeshellarg",
+        "description": "Име на функцията за Escapeshellarg"
+    },
+    "function_base64_encode": {
+        "message": "Base64 кодиране",
+        "description": "Име на функцията за Base64 кодиране"
+    },
+    "function_base64_decode": {
+        "message": "Base64 декодиране",
+        "description": "Име на функцията за Base64 декодиране"
+    },
+    "function_unserialize": {
+        "message": "Unserialize",
+        "description": "Име на функцията за Unserialize"
+    },
+    "function_leet_decode": {
+        "message": "L33T декодиране",
+        "description": "Име на функцията за L33T декодиране"
+    },
+    "function_leet_encode": {
+        "message": "L33T кодиране",
+        "description": "Име на функцията за L33T кодиране"
+    },
+    "function_reverse_text": {
+        "message": "Обратен текст",
+        "description": "Име на функция за обратен текст"
+    },
+    "message_copied_to_clipboard": {
+        "message": "Съобщението е копирано в клипборда!",
+        "description": "Съобщение при успешно копиране на текст в клипборда"
+    },
+    "copy_last_conversion_to_clipboard": {
+        "message": "Копирайте последното преобразуване в клипборда",
+        "description": ""
+    },
+    "options_saved": {
+        "message": "Настройките са запазени.",
+        "description": "Съобщение за успех, когато потребителските настройки са успешно запазени"
+    }
+}
