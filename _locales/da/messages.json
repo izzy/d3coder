@@ -1,0 +1,154 @@
+{
+    "extName": {
+        "message": "d3coder",
+        "description": "Navnet på extensionen"
+    },
+    "extDescription": {
+        "message": "Encoding/Decoding plugin for forskellige typer af encodings såsom base65, rot13 eller unix tidsstempel konvertering",
+        "description": "Kort beskrivelse af extensionen"
+    },
+    "settings": {
+        "message": "Indstillinger",
+        "description": "Titlen på indstillings dialogen for extensionen"
+    },
+    "message_type": {
+        "message": "Besked type",
+        "description": "Hvordan den konverterede tekst vil blive vist"
+    },
+    "type_alert": {
+        "message": "Bruger alert()",
+        "description": "Indstilling der gør det muligt for beskederne at blive vist i en alert box"
+    },
+    "type_console": {
+        "message": "Log til konsolen",
+        "description": "Indstilling der gør det muligt for beskederne at blive vist i JS konsolen"
+    },
+    "type_html": {
+        "message": "Læg et HTML element til bunden af siden",
+        "description": "Indstilling der gør det muligt for beskerne at blive vist i et HTML element indsat på siden"
+    },
+    "type_inplace": {
+        "message": "Brug det valgte og erstat teksten på stedet",
+        "description": "Indstilling der gør det muligt for beskerne at blive som en erstatning af den orginale text"
+    },
+    "copy_results_to_clipboard": {
+        "message": "Kopier resultater fra udklipsholder efter konvertering (vær opmærksom på at dette kan overskrive data i din udklipsholder, så brug med omhu)",
+        "description": "Mærkat på checkboxen der aktivere udklipsholder-kopier efter-konvertering i indstillingen"
+    },
+    "activate_functions": {
+        "message": "Aktiver funktioner",
+        "description": "Titlen på den del af indstillingerne der (de)aktivere de/encoding funktionerne"
+    },
+    "activate_functions_description": {
+        "message": "Du kan slå de forskellige funktiner i context menuen til og fra",
+        "description": "Beskrivelse af den del af indstillingerne der (de)aktivere de/encoding funktionerne"
+    },
+    "function_rot13": {
+        "message": "ROT13",
+        "description": "Funktions navnet for ROT13"
+    },
+    "function_timestamp": {
+        "message": "Tidsstempel konvertering",
+        "description": "Funktions navnet for UNIX Timestamp conversion"
+    },
+    "function_bin2hex": {
+        "message": "bin2hex",
+        "description": "Funktions navnet for bin2hex"
+    },
+    "function_bin2txt": {
+        "message": "bin2txt",
+        "description": "Funktions navnet for bin2txt"
+    },
+    "function_ascii2hex": {
+        "message": "ASCII til Hex",
+        "description": "Funktions navnet for ASCII to Hex"
+    },
+    "function_hex2ascii": {
+        "message": "Hex til ASCII",
+        "description": "Funktions navnet for Hex to ASCII"
+    },
+    "function_html_entity_decode": {
+        "message": "HTML entity decode",
+        "description": "Funktions navnet for HTML entity decode"
+    },
+    "function_html_entities": {
+        "message": "HTML entities",
+        "description": "Funktions navnet for HTML entities"
+    },
+    "function_uri_encode": {
+        "message": "URI encode",
+        "description": "Funktions navnet for URI encode"
+    },
+    "function_uri_decode": {
+        "message": "URI decode",
+        "description": "Funktions navnet for URI decode"
+    },
+    "function_htmlspecialchars": {
+        "message": "HTML special chars encode",
+        "description": "Funktions navnet for HTML special chars encode"
+    },
+    "function_htmlspecialchars_decode": {
+        "message": "HTML special chars decode",
+        "description": "Funktions navnet for HTML special chars decode"
+    },
+    "function_md5": {
+        "message": "MD5",
+        "description": "Funktions navnet for MD5"
+    },
+    "function_sha1": {
+        "message": "SHA1",
+        "description": "Funktions navnet for SHA1"
+    },
+    "function_crc32": {
+        "message": "CRC32",
+        "description": "Funktions navnet for CRC32"
+    },
+    "function_quoted_printable_decode": {
+        "message": "Quoted printable decode",
+        "description": "Funktions navnet for Quoted printable decode"
+    },
+    "function_quoted_printable_encode": {
+        "message": "Quoted printable encode",
+        "description": "Funktions navnet for Quoted printable encode"
+    },
+    "function_escapeshellarg": {
+        "message": "Escapeshellarg",
+        "description": "Funktions navnet for Escapeshellarg"
+    },
+    "function_base64_encode": {
+        "message": "Base64 encode",
+        "description": "Funktions navnet for Base64 encode"
+    },
+    "function_base64_decode": {
+        "message": "Base64 decode",
+        "description": "Funktions navnet for Base64 decode"
+    },
+    "function_unserialize": {
+        "message": "Unserialize",
+        "description": "Funktions navnet for Unserialize"
+    },
+    "function_leet_decode": {
+        "message": "L33T Decode",
+        "description": "Funktions navnet for L33T Decode"
+    },
+    "function_leet_encode": {
+        "message": "L33T Encode",
+        "description": "Funktions navnet for L33T Encode"
+    },
+    "function_reverse_text": {
+        "message": "Spejlvende Text",
+        "description": "Funktions navnet for Reverse Text"
+    },
+    "message_copied_to_clipboard": {
+        "message": "Besked kopieret til udklipsholder!",
+        "description": "Beskeden da teksten var kopieret til udklipsholderen succesfuld"
+    },
+    "copy_last_conversion_to_clipboard": {
+        "message": "Kopier sidste konvertering til udklipsholder",
+        "description": ""
+    },
+    "options_saved": {
+        "message": "Indstilling gemt",
+        "description": "Succes besked når bruger indstillingerne blev gemt sucessfuldt"
+    }
+}
