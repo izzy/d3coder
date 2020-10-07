@@ -1,0 +1,154 @@
+{
+  "extName": {
+    "message": "d3coder",
+    "description": "Name of the extension"
+  },
+  "extDescription": {
+    "message": "ಬೇಸ್ 64, ರಾಟ್ 13 ಅಥವಾ ಯುನಿಕ್ಸ್ ಟೈಮ್‌ಸ್ಟ್ಯಾಂಪ್ ಪರಿವರ್ತನೆಯಂತಹ ವಿವಿಧ ರೀತಿಯ ಎನ್‌ಕೋಡಿಂಗ್‌ಗಾಗಿ ಎನ್‌ಕೋಡಿಂಗ್ / ಡಿಕೋಡಿಂಗ್ ಪ್ಲಗಿನ್",
+    "description": "Short description of the extension"
+  },
+  "settings": {
+    "message": "ಸಂಯೋಜನೆಗಳು",
+    "description": "Title of the settings dialog for the extension"
+  },
+  "message_type": {
+    "message": "ಸಂದೇಶ ಪ್ರಕಾರ",
+    "description": "How the converted text will be displayed"
+  },
+  "type_alert": {
+    "message": "ಎಚ್ಚರಿಕೆ ಬಳಸುವುದು ()",
+    "description": "Setting that enables the messages to be displayed in an alert box"
+  },
+  "type_console": {
+    "message": "ಕನ್ಸೋಲ್‌ಗೆ ಲಾಗ್ ಇನ್ ಮಾಡಿ",
+    "description": "Setting that enables the messages to be displayed in the JS console"
+  },
+  "type_html": {
+    "message": "ಸೈಟ್ನ ಕೆಳಭಾಗದಲ್ಲಿ HTML ಅಂಶವನ್ನು ಸೇರಿಸಲಾಗುತ್ತಿದೆ",
+    "description": "Setting that enables the messages to be displayed in a HTML element inserted into the page"
+  },
+  "type_inplace": {
+    "message": "ಆಯ್ಕೆಯನ್ನು ಬಳಸಿ ಮತ್ತು ಪಠ್ಯವನ್ನು ಸ್ಥಳದಲ್ಲಿ ಬದಲಾಯಿಸಿ",
+    "description": "Setting that enables the messages to be displayed as replacement of the original text"
+  },
+  "copy_results_to_clipboard": {
+    "message": "ಪರಿವರ್ತನೆಯ ನಂತರ ಫಲಿತಾಂಶಗಳನ್ನು ಕ್ಲಿಪ್‌ಬೋರ್ಡ್‌ಗೆ ನಕಲಿಸಿ (ಇದು ನಿಮ್ಮ ಕ್ಲಿಪ್‌ಬೋರ್ಡ್‌ನಲ್ಲಿನ ಡೇಟಾವನ್ನು ಅತಿಕ್ರಮಿಸುತ್ತದೆ ಎಂದು ತಿಳಿದಿರಲಿ, ಆದ್ದರಿಂದ ಎಚ್ಚರಿಕೆಯಿಂದ ಬಳಸಿ!)",
+    "description": "Label of the checkbox that enables clipboard-copy post-conversion in the settings"
+  },
+  "activate_functions": {
+    "message": "ಕಾರ್ಯಗಳನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಿ",
+    "description": "Title of the part of the settings that (in)activates de/encoding functions"
+  },
+  "activate_functions_description": {
+    "message": "ಸಂದರ್ಭ ಮೆನುವಿನಲ್ಲಿ ನೀವು ವಿಭಿನ್ನ ಕಾರ್ಯಗಳನ್ನು ಆನ್ ಮತ್ತು ಆಫ್ ಮಾಡಬಹುದು.",
+    "description": "Description for the part of the settings that (in)activates de/encoding functions"
+  },
+  "function_rot13": {
+    "message": "ROT13",
+    "description": "Function name for ROT13"
+  },
+  "function_timestamp": {
+    "message": "ಟೈಮ್‌ಸ್ಟ್ಯಾಂಪ್ ಪರಿವರ್ತನೆ",
+    "description": "Function name for UNIX Timestamp conversion"
+  },
+  "function_bin2hex": {
+    "message": "bin2hex",
+    "description": "Function name for bin2hex"
+  },
+  "function_bin2txt": {
+    "message": "bin2txt",
+    "description": "Function name for bin2txt"
+  },
+  "function_ascii2hex": {
+    "message": "ಎಎಸ್ಸಿಐಐ ಟು ಹೆಕ್ಸ್",
+    "description": "Function name for ASCII to Hex"
+  },
+  "function_hex2ascii": {
+    "message": "ಎಎಸ್ಸಿಐಐಗೆ ಹೆಕ್ಸ್",
+    "description": "Function name for Hex to ASCII"
+  },
+  "function_html_entity_decode": {
+    "message": "HTML ಅಸ್ತಿತ್ವದ ಡಿಕೋಡ್",
+    "description": "Function name for HTML entity decode"
+  },
+  "function_html_entities": {
+    "message": "HTML ಘಟಕಗಳು",
+    "description": "Function name for HTML entities"
+  },
+  "function_uri_encode": {
+    "message": "ಯುಆರ್ಐ ಎನ್ಕೋಡ್",
+    "description": "Function name for URI encode"
+  },
+  "function_uri_decode": {
+    "message": "ಯುಆರ್ಐ ಡಿಕೋಡ್",
+    "description": "Function name for URI decode"
+  },
+  "function_htmlspecialchars": {
+    "message": "HTML ವಿಶೇಷ ಅಕ್ಷರಗಳು ಎನ್ಕೋಡ್",
+    "description": "Function name for HTML special chars encode"
+  },
+  "function_htmlspecialchars_decode": {
+    "message": "HTML ವಿಶೇಷ ಅಕ್ಷರಗಳು ಡಿಕೋಡ್",
+    "description": "Function name for HTML special chars decode"
+  },
+  "function_md5": {
+    "message": "ಎಂಡಿ 5",
+    "description": "Function name for MD5"
+  },
+  "function_sha1": {
+    "message": "SHA1",
+    "description": "Function name for SHA1"
+  },
+  "function_crc32": {
+    "message": "ಸಿಆರ್ಸಿ 32",
+    "description": "Function name for CRC32"
+  },
+  "function_quoted_printable_decode": {
+    "message": "ಉಲ್ಲೇಖಿಸಬಹುದಾದ ಮುದ್ರಿಸಬಹುದಾದ ಡಿಕೋಡ್",
+    "description": "Function name for Quoted printable decode"
+  },
+  "function_quoted_printable_encode": {
+    "message": "ಉಲ್ಲೇಖಿಸಬಹುದಾದ ಮುದ್ರಿಸಬಹುದಾದ ಎನ್‌ಕೋಡ್",
+    "description": "Function name for Quoted printable encode"
+  },
+  "function_escapeshellarg": {
+    "message": "ಎಸ್ಕೇಪ್ಶೆಲ್ಲಾರ್ಗ್",
+    "description": "Function name for Escapeshellarg"
+  },
+  "function_base64_encode": {
+    "message": "ಬೇಸ್ 64 ಎನ್ಕೋಡ್",
+    "description": "Function name for Base64 encode"
+  },
+  "function_base64_decode": {
+    "message": "ಬೇಸ್ 64 ಡಿಕೋಡ್",
+    "description": "Function name for Base64 decode"
+  },
+  "function_unserialize": {
+    "message": "ಅನ್ಸೆರಿಯಲೈಸ್ ಮಾಡಿ",
+    "description": "Function name for Unserialize"
+  },
+  "function_leet_decode": {
+    "message": "ಎಲ್ 33 ಟಿ ಡಿಕೋಡ್",
+    "description": "Function name for L33T Decode"
+  },
+  "function_leet_encode": {
+    "message": "ಎಲ್ 33 ಟಿ ಎನ್ಕೋಡ್",
+    "description": "Function name for L33T Encode"
+  },
+  "function_reverse_text": {
+    "message": "ರಿವರ್ಸ್ ಟೆಕ್ಸ್ಟ್",
+    "description": "Function name for Reverse Text"
+  },
+  "message_copied_to_clipboard": {
+    "message": "ಕ್ಲಿಪ್ ಬೋರ್ಡ್‌ಗೆ ಸಂದೇಶವನ್ನು ನಕಲಿಸಲಾಗಿದೆ!",
+    "description": "message when text was successfully copied to the clipboard"
+  },
+  "copy_last_conversion_to_clipboard": {
+    "message": "ಕೊನೆಯ ಪರಿವರ್ತನೆಯನ್ನು ಕ್ಲಿಪ್‌ಬೋರ್ಡ್‌ಗೆ ನಕಲಿಸಿ",
+    "description": ""
+  },
+  "options_saved": {
+    "message": "ಆಯ್ಕೆಗಳನ್ನು ಉಳಿಸಲಾಗಿದೆ.",
+    "description": "Success message when the user settings where successfully saved"
+  }
+}
