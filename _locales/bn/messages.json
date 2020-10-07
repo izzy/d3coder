@@ -1,0 +1,154 @@
+{
+    "extName": {
+        "message": "d3coder",
+        "description": "Name of the extension"
+    },
+    "extDescription": {
+        "message": "বেস 64, রট 13 বা ইউনিক্স টাইমস্ট্যাম্প রূপান্তর যেমন এনকোডিংয়ের বিভিন্ন ধরণের জন্য এনকোডিং / ডিকোডিং প্লাগইন",
+        "description": "Short description of the extension"
+    },
+    "settings": {
+        "message": "সেটিংস",
+        "description": "Title of the settings dialog for the extension"
+    },
+    "message_type": {
+        "message": "বার্তা প্রকার",
+        "description": "How the converted text will be displayed"
+    },
+    "type_alert": {
+        "message": "ব্যবহার alert()",
+        "description": "Setting that enables the messages to be displayed in an alert box"
+    },
+    "type_console": {
+        "message": "কনসোলে লগইন করুন",
+        "description": "Setting that enables the messages to be displayed in the JS console"
+    },
+    "type_html": {
+        "message": "সাইটের নীচে একটি HTML উপাদান যুক্ত করা",
+        "description": "Setting that enables the messages to be displayed in a HTML element inserted into the page"
+    },
+    "type_inplace": {
+        "message": "নির্বাচনটি ব্যবহার করুন এবং স্থানটিতে পাঠ্যটি প্রতিস্থাপন করুন",
+        "description": "Setting that enables the messages to be displayed as replacement of the original text"
+    },
+    "copy_results_to_clipboard": {
+        "message": "রূপান্তরের পরে ক্লিপবোর্ডে ফলাফলগুলি অনুলিপি করুন (সচেতন হন যে এটি আপনার ক্লিপবোর্ডের ডেটা ওভাররাইড করতে পারে, তাই সতর্কতার সাথে ব্যবহার করুন!)",
+        "description": "Label of the checkbox that enables clipboard-copy post-conversion in the settings"
+    },
+    "activate_functions": {
+        "message": "সক্রিয় ক্রিয়াকলাপ",
+        "description": "Title of the part of the settings that (in)activates de/encoding functions"
+    },
+    "activate_functions_description": {
+        "message": "আপনি প্রসঙ্গ মেনুতে বিভিন্ন ফাংশনটি চালু এবং বন্ধ করতে পারেন।",
+        "description": "Description for the part of the settings that (in)activates de/encoding functions"
+    },
+    "function_rot13": {
+        "message": "ROT13",
+        "description": "Function name for ROT13"
+    },
+    "function_timestamp": {
+        "message": "টাইমস্ট্যাম্প রূপান্তর",
+        "description": "Function name for UNIX Timestamp conversion"
+    },
+    "function_bin2hex": {
+        "message": "bin2hex",
+        "description": "Function name for bin2hex"
+    },
+    "function_bin2txt": {
+        "message": "bin2txt",
+        "description": "Function name for bin2txt"
+    },
+    "function_ascii2hex": {
+        "message": "ASCII to Hex",
+        "description": "Function name for ASCII to Hex"
+    },
+    "function_hex2ascii": {
+        "message": "Hex to ASCII",
+        "description": "Function name for Hex to ASCII"
+    },
+    "function_html_entity_decode": {
+        "message": "HTML সত্তা ডিকোড",
+        "description": "Function name for HTML entity decode"
+    },
+    "function_html_entities": {
+        "message": "HTML সত্তা",
+        "description": "Function name for HTML entities"
+    },
+    "function_uri_encode": {
+        "message": "URI এনকোড",
+        "description": "Function name for URI encode"
+    },
+    "function_uri_decode": {
+        "message": "URI ডিকোড",
+        "description": "Function name for URI decode"
+    },
+    "function_htmlspecialchars": {
+        "message": "HTML বিশেষ অক্ষর এনকোড",
+        "description": "Function name for HTML special chars encode"
+    },
+    "function_htmlspecialchars_decode": {
+        "message": "HTML বিশেষ অক্ষর ডিকোড",
+        "description": "Function name for HTML special chars decode"
+    },
+    "function_md5": {
+        "message": "MD5",
+        "description": "Function name for MD5"
+    },
+    "function_sha1": {
+        "message": "SHA1",
+        "description": "Function name for SHA1"
+    },
+    "function_crc32": {
+        "message": "CRC32",
+        "description": "Function name for CRC32"
+    },
+    "function_quoted_printable_decode": {
+        "message": "উদ্ধৃত মুদ্রণযোগ্য ডিকোড",
+        "description": "Function name for Quoted printable decode"
+    },
+    "function_quoted_printable_encode": {
+        "message": "উদ্ধৃত মুদ্রণযোগ্য এনকোড",
+        "description": "Function name for Quoted printable encode"
+    },
+    "function_escapeshellarg": {
+        "message": "এস্কেপশেল্লার্গ",
+        "description": "Function name for Escapeshellarg"
+    },
+    "function_base64_encode": {
+        "message": "বেস 64 এনকোডেড",
+        "description": "Function name for Base64 encode"
+    },
+    "function_base64_decode": {
+        "message": "বেস 64 ডিকোড",
+        "description": "Function name for Base64 decode"
+    },
+    "function_unserialize": {
+        "message": "আনসিরিয়ালাইজ করুন",
+        "description": "Function name for Unserialize"
+    },
+    "function_leet_decode": {
+        "message": "L33T ডিকোড",
+        "description": "Function name for L33T Decode"
+    },
+    "function_leet_encode": {
+        "message": "L33T এনকোড",
+        "description": "Function name for L33T Encode"
+    },
+    "function_reverse_text": {
+        "message": "বিপরীত পাঠ্য",
+        "description": "Function name for Reverse Text"
+    },
+    "message_copied_to_clipboard": {
+        "message": "ক্লিপ বোর্ডে বার্তা অনুলিপি করা হয়েছে!",
+        "description": "message when text was successfully copied to the clipboard"
+    },
+    "copy_last_conversion_to_clipboard": {
+        "message": "ক্লিপবোর্ডে সর্বশেষ রূপান্তর অনুলিপি করুন",
+        "description": ""
+    },
+    "options_saved": {
+        "message": "বিকল্পগুলি সংরক্ষিত।",
+        "description": "Success message when the user settings where successfully saved"
+    }
+}
