@@ -68,7 +68,7 @@
         "description": "Function name for Hex to ASCII"
     },
     "function_html_entity_decode": {
-        "message": "HTML entity decode",
+        "message": "ถอดรหัส HTML entity",
         "description": "Function name for HTML entity decode"
     },
     "function_html_entities": {
@@ -76,19 +76,19 @@
         "description": "Function name for HTML entities"
     },
     "function_uri_encode": {
-        "message": "URI encode",
+        "message": "เข้ารหัส URI",
         "description": "Function name for URI encode"
     },
     "function_uri_decode": {
-        "message": "URI decode",
+        "message": "ถอดรหัส URI",
         "description": "Function name for URI decode"
     },
     "function_htmlspecialchars": {
-        "message": "HTML special chars encode",
+        "message": "เข้ารหัสตัวอักษร HTML พิเศษ",
         "description": "Function name for HTML special chars encode"
     },
     "function_htmlspecialchars_decode": {
-        "message": "HTML special chars decode",
+        "message": "ถอดรหัสตัวอักษร HTML พิเศษ",
         "description": "Function name for HTML special chars decode"
     },
     "function_md5": {
