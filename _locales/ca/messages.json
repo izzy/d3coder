@@ -1,0 +1,154 @@
+{
+    "extName": {
+        "message": "d3coder",
+        "description": "Name of the extension"
+    },
+    "extDescription": {
+        "message": "Plugin de Codificació/Decodificació per a diferents tipus de codificació com base64, rot13 o unix",
+        "description": "Short description of the extension"
+    },
+    "settings": {
+        "message": "Configuració",
+        "description": "Title of the settings dialog for the extension"
+    },
+    "message_type": {
+        "message": "Tipus de Missatge",
+        "description": "How the converted text will be displayed"
+    },
+    "type_alert": {
+        "message": "Utilitzant alert()",
+        "description": "Setting that enables the messages to be displayed in an alert box"
+    },
+    "type_console": {
+        "message": "Enviar a consola",
+        "description": "Setting that enables the messages to be displayed in the JS console"
+    },
+    "type_html": {
+        "message": "Afegir un element HTML al final de la pàgina",
+        "description": "Setting that enables the messages to be displayed in a HTML element inserted into the page"
+    },
+    "type_inplace": {
+        "message": "Utilitzar la selecció i reemplaci el text del seu lloc",
+        "description": "Setting that enables the messages to be displayed as replacement of the original text"
+    },
+    "copy_results_to_clipboard": {
+        "message": "Copiar els resultats al portapapers després de la conversió (tindre en compte que aixo pot anular les dades del seu portapapers, Utilitzar amb precaució!)",        
+        "description": "Label of the checkbox that enables clipboard-copy post-conversion in the settings"
+    },
+    "activate_functions": {
+        "message": "Activar Funcions",
+        "description": "Title of the part of the settings that (in)activates de/encoding functions"
+    },
+    "activate_functions_description": {
+        "message": "Es pot activar i desactivar les diferents funcions del menú contextual",
+        "description": "Description for the part of the settings that (in)activates de/encoding functions"
+    },
+    "function_rot13": {
+        "message": "ROT13",
+        "description": "Function name for ROT13"
+    },
+    "function_timestamp": {
+        "message": "Conversió Timestamp",
+        "description": "Function name for UNIX Timestamp conversion"
+    },
+    "function_bin2hex": {
+        "message": "bin2hex",
+        "description": "Function name for bin2hex"
+    },
+    "function_bin2txt": {
+        "message": "bin2txt",
+        "description": "Function name for bin2txt"
+    },
+    "function_ascii2hex": {
+        "message": "ASCII a Hex",
+        "description": "Function name for ASCII to Hex"
+    },
+    "function_hex2ascii": {
+        "message": "Hex a ASCII",
+        "description": "Function name for Hex to ASCII"
+    },
+    "function_html_entity_decode": {
+        "message": "Decodificar entitat HTML ",
+        "description": "Function name for HTML entity decode"
+    },
+    "function_html_entities": {
+        "message": "Entitats HTML",
+        "description": "Function name for HTML entities"
+    },
+    "function_uri_encode": {
+        "message": "Codificació URI",
+        "description": "Function name for URI encode"
+    },
+    "function_uri_decode": {
+        "message": "Decodificació URI",
+        "description": "Function name for URI decode"
+    },
+    "function_htmlspecialchars": {
+        "message": "Codificació de caracters especials HTML",
+        "description": "Function name for HTML special chars encode"
+    },
+    "function_htmlspecialchars_decode": {
+        "message": "Decodificació de caracters especials a HTML",
+        "description": "Function name for HTML special chars decode"
+    },
+    "function_md5": {
+        "message": "MD5",
+        "description": "Function name for MD5"
+    },
+    "function_sha1": {
+        "message": "SHA1",
+        "description": "Function name for SHA1"
+    },
+    "function_crc32": {
+        "message": "CRC32",
+        "description": "Function name for CRC32"
+    },
+    "function_quoted_printable_decode": {
+        "message": "Decodificació de Citat imprimible",
+        "description": "Function name for Quoted printable decode"
+    },
+    "function_quoted_printable_encode": {
+        "message": "Codificació de Citat imprimible",
+        "description": "Function name for Quoted printable encode"
+    },
+    "function_escapeshellarg": {
+        "message": "Escapeshellarg",
+        "description": "Function name for Escapeshellarg"
+    },
+    "function_base64_encode": {
+        "message": "Codificació Base64",
+        "description": "Function name for Base64 encode"
+    },
+    "function_base64_decode": {
+        "message": "Decodificació Base64",
+        "description": "Function name for Base64 decode"
+    },
+    "function_unserialize": {
+        "message": "Deserialitzar",
+        "description": "Function name for Unserialize"
+    },
+    "function_leet_decode": {
+        "message": "Decodificació L33T",
+        "description": "Function name for L33T Decode"
+    },
+    "function_leet_encode": {
+        "message": "Codificació L33T",
+        "description": "Function name for L33T Encode"
+    },
+    "function_reverse_text": {
+        "message": "Invertir text",
+        "description": "Function name for Reverse Text"
+    },
+    "message_copied_to_clipboard": {
+        "message": "Missatge copiat al portapapers!",
+        "description": "message when text was successfully copied to the clipboard"
+    },
+    "copy_last_conversion_to_clipboard": {
+        "message": "Copiar l'última conversió al portapapers",
+        "description": ""
+    },
+    "options_saved": {
+        "message": "Opcions guardades.",
+        "description": "Success message when the user settings where successfully saved"
+    }
+}
