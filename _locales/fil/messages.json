@@ -136,8 +136,8 @@
         "description": "Pangalan ng function para sa L33T Encode"
     },
     "function_reverse_text": {
-        "message": "Reverse Text",
-        "description": "Pangalan ng function para sa Reverse Text"
+        "message": "I-reverse ang Text",
+        "description": "Pangalan ng function para sa pag Reverse ng Text"
     },
     "message_copied_to_clipboard": {
         "message": "Ang mensahe ay na kopya na sa clip board!",
@@ -148,7 +148,7 @@
         "description": ""
     },
     "options_saved": {
-        "message": "Options saved.",
+        "message": "I-save ang Options.",
         "description": "Mensahe kapag ang user settings ay nai-save na"
     }
 }
