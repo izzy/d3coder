@@ -1,0 +1,155 @@
+
+{
+    "extName": {
+        "message": "d3coder",
+        "description": "Nama peluasan"
+    },
+    "extDescription": {
+        "message": "Pengekodan / Penyahkodan Plugin untuk pelbagai jenis pengekodan seperti penukaran cap waktu base64, rot13 atau unix",
+        "description": "Penerangan ringkas mengenai peluasan"
+    },
+    "settings": {
+        "message": "tetapan",
+        "description": "Tajuk dialog tetapan untuk peluasan"
+    },
+    "message_type": {
+        "message": "Jenis Mesej",
+        "description": "Bagaimana teks yang ditukar akan dipaparkan"
+    },
+    "type_alert": {
+        "message": "Menggunakan amaran()",
+        "description": "Pengaturan yang membolehkan mesej ditampilkan dalam kotak amaran"
+    },
+    "type_console": {
+        "message": "Log ke konsol",
+        "description": "Tetapan yang membolehkan mesej dipaparkan di konsol JS"
+    },
+    "type_html": {
+        "message": "Menambah elemen HTML ke bahagian bawah laman web",
+        "description": "Pengaturan yang membolehkan mesej ditampilkan dalam elemen HTML yang dimasukkan ke dalam halaman"
+    },
+    "type_inplace": {
+        "message": "Gunakan pilihan dan ganti teks di tempat",
+        "description": "Pengaturan yang membolehkan mesej ditampilkan sebagai pengganti teks asal"
+    },
+    "copy_results_to_clipboard": {
+        "message": "Salin hasil ke papan keratan selepas penukaran (ketahuilah bahawa ini mungkin menggantikan data di papan keratan anda, jadi gunakan dengan berhati-hati!)",
+        "description": "Label kotak pilihan yang membolehkan pasca penukaran salinan papan klip dalam tetapan"
+    },
+    "activate_functions": {
+        "message": "Aktifkan Fungsi",
+        "description": "Tajuk bahagian tetapan yang (in) mengaktifkan fungsi de / encoding"
+    },
+    "activate_functions_description": {
+        "message": "Anda boleh menghidupkan dan mematikan fungsi yang berbeza dalam menu konteks.",
+        "description": "Keterangan untuk bahagian tetapan yang (in) mengaktifkan fungsi de / encoding"
+    },
+    "function_rot13": {
+        "message": "ROT13",
+        "description": "Nama fungsi untuk ROT13"
+    },
+    "function_timestamp": {
+        "message": "Penukaran cap waktu",
+        "description": "Nama fungsi untuk penukaran Cap Waktu UNIX"
+    },
+    "function_bin2hex": {
+        "message": "bin2hex",
+        "description": "Nama fungsi untuk bin2hex"
+    },
+    "function_bin2txt": {
+        "message": "bin2txt",
+        "description": "Nama fungsi untuk bin2txt"
+    },
+    "function_ascii2hex": {
+        "message": "ASCII ke Hex",
+        "description": "Nama fungsi untuk ASCII ke Hex"
+    },
+    "function_hex2ascii": {
+        "message": "Hex ke ASCII",
+        "description": "Nama fungsi untuk Hex ke ASCII"
+    },
+    "function_html_entity_decode": {
+        "message": "Decode entiti HTML",
+        "description": "Nama fungsi untuk penyahkodan entiti HTML"
+    },
+    "function_html_entities": {
+        "message": "Entiti HTML",
+        "description": "Nama fungsi untuk entiti HTML"
+    },
+    "function_uri_encode": {
+        "message": "Pengekodan URI",
+        "description": "Nama fungsi untuk pengekodan URI"
+    },
+    "function_uri_decode": {
+        "message": "Penyahkodan URI",
+        "description": "Nama fungsi untuk penyahkodan URI"
+    },
+    "function_htmlspecialchars": {
+        "message": "Pengekodan watak khas HTML",
+        "description": "Nama fungsi untuk pengkodan watak khas HTML"
+    },
+    "function_htmlspecialchars_decode": {
+        "message": "Decode watak khas HTML",
+        "description": "Nama fungsi untuk penyahkod watak khas HTML"
+    },
+    "function_md5": {
+        "message": "MD5",
+        "description": "Nama fungsi untuk MD5"
+    },
+    "function_sha1": {
+        "message": "SHA1",
+        "description": "Nama fungsi untuk SHA1"
+    },
+    "function_crc32": {
+        "message": "CRC32",
+        "description": "Nama fungsi untuk CRC32"
+    },
+    "function_quoted_printable_decode": {
+        "message": "Nyatakan decode yang boleh dicetak",
+        "description": "Nama fungsi untuk decode yang boleh dicetak Dipetik"
+    },
+    "function_quoted_printable_encode": {
+        "message": "Kod yang boleh dicetak dipetik",
+        "description": "Nama fungsi untuk pengekodan yang boleh dicetak Dipetik"
+    },
+    "function_escapeshellarg": {
+        "message": "Escapeshellarg",
+        "description": "Nama fungsi untuk Escapeshellarg"
+    },
+    "function_base64_encode": {
+        "message": "Pengekod Base64",
+        "description": "Nama fungsi untuk pengekod Base64"
+    },
+    "function_base64_decode": {
+        "message": "Penyahkod Base64",
+        "description": "Nama fungsi untuk penyahkodan Base64"
+    },
+    "function_unserialize": {
+        "message": "Unserialize",
+        "description": "Nama fungsi untuk Unserialize"
+    },
+    "function_leet_decode": {
+        "message": "Dekod L33T",
+        "description": "Nama fungsi untuk L33T Decode"
+    },
+    "function_leet_encode": {
+        "message": "Pengekodan L33T",
+        "description": "Nama fungsi untuk L33T Encode"
+    },
+    "function_reverse_text": {
+        "message": "Teks Balik",
+        "description": "Nama fungsi untuk Teks Terbalik"
+    },
+    "message_copied_to_clipboard": {
+        "message": "Mesej disalin ke papan keratan!",
+        "description": "mesej apabila teks berjaya disalin ke papan keratan"
+    },
+    "copy_last_conversion_to_clipboard": {
+        "message": "Salin penukaran terakhir ke papan keratan",
+        "description": ""
+    },
+    "options_saved": {
+        "message": "Pilihan disimpan.",
+        "description": "Mesej kejayaan apabila tetapan pengguna berjaya disimpan"
+    }
+}
