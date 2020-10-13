@@ -1,0 +1,154 @@
+{
+    "extName": {
+        "message": "d3coder",
+        "description": "Pangalan ng extensyon"
+    },
+    "extDescription": {
+        "message": "Encoding o Decoding Plugin para sa iba'y ibang tipo ng encoding tulad ng base64, rot13 o unix timestamp conversyon",
+        "description": "Short description of the extension"
+    },
+    "settings": {
+        "message": "Mga settings",
+        "description": "Title ng mga settings dialog para sa extensyon"
+    },
+    "message_type": {
+        "message": "Tipo ng mensahe",
+        "description": "Paano ma i-didisplay ang na-covert na text"
+    },
+    "type_alert": {
+        "message": "Gamit ang alert()",
+        "description": "Setting para ma-display ang mga mensahe sa alert box"
+    },
+    "type_console": {
+        "message": "Mag Log sa console",
+        "description": "Setting para ma-display ang mga mensahe sa JS console"
+    },
+    "type_html": {
+        "message": "Magdagdag ng HTML element sa dulo ng site",
+        "description": "Setting para ma-display ang mga mensahe sa HTML element na ininsert sa page"
+    },
+    "type_inplace": {
+        "message": "Gamitin ang selekshon at palitan ang text in-place",
+        "description": "Setting para ma-display ang mga mensahe bilang kapalit ng orihinal na text"
+    },
+    "copy_results_to_clipboard": {
+        "message": "Kopyahin ang mga resulta sa clipboard pag tapos ng conbersyon (Tandaan na maaari nitong ma-override ang data sa iyong clipboard, gamitin ng maingat!)",
+        "description": "Label ng checkbox para ma ineybol ang clipboard-copy post-conversion sa settings"
+    },
+    "activate_functions": {
+        "message": "I-activate ang mga Functions",
+        "description": "Taytel ng bahagi ng settings na (in)activates de/encoding functions"
+    },
+    "activate_functions_description": {
+        "message": "Pwede mong i-on at i-off ang mga functions sa context menu.",
+        "description": "Paglalarawan sa parte ng settings na nag (in)activates de/encoding functions"
+    },
+    "function_rot13": {
+        "message": "ROT13",
+        "description": "Pangalan ng function para sa ROT13"
+    },
+    "function_timestamp": {
+        "message": "Timestamp Konbersyon",
+        "description": "Pangalan ng function para sa UNIX Timestamp conversion"
+    },
+    "function_bin2hex": {
+        "message": "bin2hex",
+        "description": "Pangalan ng function para sa bin2hex"
+    },
+    "function_bin2txt": {
+        "message": "bin2txt",
+        "description": "Pangalan ng function para sa bin2txt"
+    },
+    "function_ascii2hex": {
+        "message": "ASCII to Hex",
+        "description": "Pangalan ng function para sa ASCII to Hex"
+    },
+    "function_hex2ascii": {
+        "message": "Hex to ASCII",
+        "description": "Pangalan ng function para sa Hex to ASCII"
+    },
+    "function_html_entity_decode": {
+        "message": "HTML entity decode",
+        "description": "Pangalan ng function para sa HTML entity decode"
+    },
+    "function_html_entities": {
+        "message": "HTML entities",
+        "description": "Pangalan ng function para sa HTML entities"
+    },
+    "function_uri_encode": {
+        "message": "URI encode",
+        "description": "Pangalan ng function para sa URI encode"
+    },
+    "function_uri_decode": {
+        "message": "URI decode",
+        "description": "Pangalan ng function para sa URI decode"
+    },
+    "function_htmlspecialchars": {
+        "message": "HTML special chars encode",
+        "description": "Pangalan ng function para sa HTML special chars encode"
+    },
+    "function_htmlspecialchars_decode": {
+        "message": "HTML special chars decode",
+        "description": "Pangalan ng function para sa HTML special chars decode"
+    },
+    "function_md5": {
+        "message": "MD5",
+        "description": "Pangalan ng function para sa MD5"
+    },
+    "function_sha1": {
+        "message": "SHA1",
+        "description": "Pangalan ng function para sa SHA1"
+    },
+    "function_crc32": {
+        "message": "CRC32",
+        "description": "Function name for CRC32"
+    },
+    "function_quoted_printable_decode": {
+        "message": "Quoted printable decode",
+        "description": "Pangalan ng function para sa Quoted printable decode"
+    },
+    "function_quoted_printable_encode": {
+        "message": "Quoted printable encode",
+        "description": "Pangalan ng function para sa Quoted printable encode"
+    },
+    "function_escapeshellarg": {
+        "message": "Escapeshellarg",
+        "description": "Pangalan ng function para sa Escapeshellarg"
+    },
+    "function_base64_encode": {
+        "message": "Base64 encode",
+        "description": "Pangalan ng function para sa Base64 encode"
+    },
+    "function_base64_decode": {
+        "message": "Base64 decode",
+        "description": "Pangalan ng function para sa Base64 decode"
+    },
+    "function_unserialize": {
+        "message": "Unserialize",
+        "description": "Pangalan ng function para sa Unserialize"
+    },
+    "function_leet_decode": {
+        "message": "L33T Decode",
+        "description": "Pangalan ng function para sa L33T Decode"
+    },
+    "function_leet_encode": {
+        "message": "L33T Encode",
+        "description": "Pangalan ng function para sa L33T Encode"
+    },
+    "function_reverse_text": {
+        "message": "Reverse Text",
+        "description": "Pangalan ng function para sa Reverse Text"
+    },
+    "message_copied_to_clipboard": {
+        "message": "Ang mensahe ay na kopya na sa clip board!",
+        "description": "Mensahe kapag ang text ay na kopya na sa clipboard"
+    },
+    "copy_last_conversion_to_clipboard": {
+        "message": "Kopyahin ang huling Konbersyon sa clipboard",
+        "description": ""
+    },
+    "options_saved": {
+        "message": "Options saved.",
+        "description": "Mensahe kapag ang user settings ay nai-save na"
+    }
+}
