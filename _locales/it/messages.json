@@ -20,23 +20,23 @@
     "description": "Setting that enables the messages to be displayed in an alert box"
   },
   "type_console": {
-    "message": "Log alla console",
+    "message": "Log nella console",
     "description": "Setting that enables the messages to be displayed in the JS console"
   },
   "type_html": {
-    "message": "L'aggiunta di un elemento HTML per la parte inferiore del sito",
+    "message": "Aggiungendo un elemento HTML nella parte inferiore del sito",
     "description": "Setting that enables the messages to be displayed in a HTML element inserted into the page"
   },
   "type_inplace": {
-    "message": "Utilizzare la selezione e sostituire il testo sul posto",
+    "message": "Utilizzando la selezione e sostituendo il testo al suo posto",
     "description": "Setting that enables the messages to be displayed as replacement of the original text"
   },
   "copy_results_to_clipboard": {
-    "message": "Copia i risultati negli appunti dopo la conversione (tieni presente che ciò potrebbe sovrascrivere i dati negli appunti, quindi usali con cautela!)",
+    "message": "Copia i risultati negli appunti dopo la conversione (tieni presente che ciò potrebbe sovrascrivere i dati negli appunti, quindi usa questa impostazione con cautela!)",
     "description": "Label of the checkbox that enables clipboard-copy post-conversion in the settings"
   },
   "activate_functions": {
-    "message": "Attiva le Funzioni",
+    "message": "Attiva Funzioni",
     "description": "Title of the part of the settings that (in)activates de/encoding functions"
   },
   "activate_functions_description": {
@@ -60,11 +60,11 @@
     "description": "Function name for bin2txt"
   },
   "function_ascii2hex": {
-    "message": "ASCII a Hex",
+    "message": "ASCII ad Hex",
     "description": "Function name for ASCII to Hex"
   },
   "function_hex2ascii": {
-    "message": "Hex a ASCII",
+    "message": "Hex ad ASCII",
     "description": "Function name for Hex to ASCII"
   },
   "function_html_entity_decode": {
@@ -72,7 +72,7 @@
     "description": "Function name for HTML entity decode"
   },
   "function_html_entities": {
-    "message": "Entità HTML",
+    "message": "Codifica entità HTML",
     "description": "Function name for HTML entities"
   },
   "function_uri_encode": {
@@ -84,11 +84,11 @@
     "description": "Function name for URI decode"
   },
   "function_htmlspecialchars": {
-    "message": "I caratteri speciali HTML codificano",
+    "message": "Codifica caratteri speciali HTML",
     "description": "Function name for HTML special chars encode"
   },
   "function_htmlspecialchars_decode": {
-    "message": "I caratteri speciali HTML decodifican",
+    "message": "Decodifica caratteri speciali HTML",
     "description": "Function name for HTML special chars decode"
   },
   "function_md5": {
@@ -104,11 +104,11 @@
     "description": "Function name for CRC32"
   },
   "function_quoted_printable_decode": {
-    "message": "Decodifica stampabile quotata",
+    "message": "Decodifica quoted printable",
     "description": "Function name for Quoted printable decode"
   },
   "function_quoted_printable_encode": {
-    "message": "Codifica stampabile quotata",
+    "message": "Codifica quoted printable",
     "description": "Function name for Quoted printable encode"
   },
   "function_escapeshellarg": {
@@ -136,7 +136,7 @@
     "description": "Function name for L33T Encode"
   },
   "function_reverse_text": {
-    "message": "Testo Inverso",
+    "message": "Inverti Testo",
     "description": "Function name for Reverse Text"
   },
   "message_copied_to_clipboard": {
