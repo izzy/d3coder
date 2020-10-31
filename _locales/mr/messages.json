@@ -1,0 +1,154 @@
+{
+    "extName": {
+        "message": "d3coder",
+        "description": "Name of the extension"
+    },
+    "extDescription": {
+        "message": "base64, rot13 किंवा unix timestamp रूपांतरण अशा विविध प्रकारच्या एन्कोडिंग / डिकोडिंग साठी प्लगइन",
+        "description": "Short description of the extension"
+    },
+    "settings": {
+        "message": "सेटिंग्स",
+        "description": "Title of the settings dialog for the extension"
+    },
+    "message_type": {
+        "message": "संदेशाचा प्रकार",
+        "description": "How the converted text will be displayed"
+    },
+    "type_alert": {
+        "message": "alert() वापरत आहोत",
+        "description": "Setting that enables the messages to be displayed in an alert box"
+    },
+    "type_console": {
+        "message": "कन्सोलवर नोंद (लॉग) करा",
+        "description": "Setting that enables the messages to be displayed in the JS console"
+    },
+    "type_html": {
+        "message": "साइटच्या तळाशी एक HTML element जोडत आहोत",
+        "description": "Setting that enables the messages to be displayed in a HTML element inserted into the page"
+    },
+    "type_inplace": {
+        "message": "सिलेक्शन केलेल्या ठिकाणी मजकूर पुनर्स्थित करा",
+        "description": "Setting that enables the messages to be displayed as replacement of the original text"
+    },
+    "copy_results_to_clipboard": {
+        "message": "रूपांतरणानंतर क्लिपबोर्डवर परिणाम कॉपी करा (हे लक्षात घ्या की हे आपल्या क्लिपबोर्डमधील डेटा ओव्हरराइड करेल, म्हणून सावधगिरीने वापरा!)",
+        "description": "Label of the checkbox that enables clipboard-copy post-conversion in the settings"
+    },
+    "activate_functions": {
+        "message": "फंक्शन्सना कार्यान्वित करा",
+        "description": "Title of the part of the settings that (in)activates de/encoding functions"
+    },
+    "activate_functions_description": {
+        "message": "आपण कॉन्टेक्स्ट मेन्यूमधील भिन्न कार्ये चालू किंवा बंद करू शकता.",
+        "description": "Description for the part of the settings that (in)activates de/encoding functions"
+    },
+    "function_rot13": {
+        "message": "ROT13",
+        "description": "Function name for ROT13"
+    },
+    "function_timestamp": {
+        "message": "Timestamp रुपांतरण",
+        "description": "Function name for UNIX Timestamp conversion"
+    },
+    "function_bin2hex": {
+        "message": "bin2hex",
+        "description": "Function name for bin2hex"
+    },
+    "function_bin2txt": {
+        "message": "bin2txt",
+        "description": "Function name for bin2txt"
+    },
+    "function_ascii2hex": {
+        "message": "ASCII ते Hex",
+        "description": "Function name for ASCII to Hex"
+    },
+    "function_hex2ascii": {
+        "message": "Hex ते ASCII",
+        "description": "Function name for Hex to ASCII"
+    },
+    "function_html_entity_decode": {
+        "message": "HTML entity डिकोड",
+        "description": "Function name for HTML entity decode"
+    },
+    "function_html_entities": {
+        "message": "HTML entities",
+        "description": "Function name for HTML entities"
+    },
+    "function_uri_encode": {
+        "message": "URI एन्कोड",
+        "description": "Function name for URI encode"
+    },
+    "function_uri_decode": {
+        "message": "URI डिकोड",
+        "description": "Function name for URI decode"
+    },
+    "function_htmlspecialchars": {
+        "message": "HTML special chars एन्कोड",
+        "description": "Function name for HTML special chars encode"
+    },
+    "function_htmlspecialchars_decode": {
+        "message": "HTML special chars डिकोड",
+        "description": "Function name for HTML special chars decode"
+    },
+    "function_md5": {
+        "message": "MD5",
+        "description": "Function name for MD5"
+    },
+    "function_sha1": {
+        "message": "SHA1",
+        "description": "Function name for SHA1"
+    },
+    "function_crc32": {
+        "message": "CRC32",
+        "description": "Function name for CRC32"
+    },
+    "function_quoted_printable_decode": {
+        "message": "Quoted printable डिकोड",
+        "description": "Function name for Quoted printable decode"
+    },
+    "function_quoted_printable_encode": {
+        "message": "Quoted printable एन्कोड",
+        "description": "Function name for Quoted printable encode"
+    },
+    "function_escapeshellarg": {
+        "message": "Escapeshellarg",
+        "description": "Function name for Escapeshellarg"
+    },
+    "function_base64_encode": {
+        "message": "Base64 एन्कोड",
+        "description": "Function name for Base64 encode"
+    },
+    "function_base64_decode": {
+        "message": "Base64 डिकोड",
+        "description": "Function name for Base64 decode"
+    },
+    "function_unserialize": {
+        "message": "Unserialize",
+        "description": "Function name for Unserialize"
+    },
+    "function_leet_decode": {
+        "message": "L33T डिकोड",
+        "description": "Function name for L33T Decode"
+    },
+    "function_leet_encode": {
+        "message": "L33T एन्कोड",
+        "description": "Function name for L33T Encode"
+    },
+    "function_reverse_text": {
+        "message": "मजकूर उलट करा",
+        "description": "Function name for Reverse Text"
+    },
+    "message_copied_to_clipboard": {
+        "message": "संदेश क्लिपबोर्डवर कॉपी केला!",
+        "description": "Message when text was successfully copied to the clipboard"
+    },
+    "copy_last_conversion_to_clipboard": {
+        "message": "क्लिपबोर्डवर मागील रूपांतर कॉपी करा",
+        "description": ""
+    },
+    "options_saved": {
+        "message": "पर्याय जतन केले.",
+        "description": "Success message when the user settings where successfully saved"
+    }
+}
