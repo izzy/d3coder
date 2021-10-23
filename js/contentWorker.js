@@ -147,7 +147,7 @@ D3content = {
 
     logConsole: function(text) 
     {
-	    console.log(D3content.base64_decode(text));
+	    console.log(text);
     },
 	base64_decode: function (data) {
 	    var b64 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
