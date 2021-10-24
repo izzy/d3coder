@@ -43,9 +43,21 @@
     "message": "Możesz włączyć i wyłączyć poszczególne funkcje w menu kontekstowym",
     "description": "Description for the part of the settings that (in)activates de/encoding functions"
   },
+  "function_rot13": {
+    "message": "ROT13",
+    "description": "Function name for ROT13"
+  },
   "function_timestamp": {
     "message": "Konwersja czasu uniksowego",
     "description": "Function name for UNIX Timestamp conversion"
+  },
+  "function_bin2hex": {
+    "message": "bin2hex",
+    "description": "Function name for bin2hex"
+  },
+  "function_bin2txt": {
+    "message": "bin2txt",
+    "description": "Function name for bin2txt"
   },
   "function_ascii2hex": {
     "message": "ASCCI do Xex",
@@ -54,6 +66,74 @@
   "function_hex2ascii": {
     "message": "Hex do ASCII",
     "description": "Function name for Hex to ASCII"
+  },
+  "function_html_entity_decode": {
+    "message": "Dekodowanie elementu HTML",
+    "description": "Function name for HTML entity decode"
+  },
+  "function_html_entities": {
+      "message": "Elementy HTML",
+      "description": "Function name for HTML entities"
+  },
+  "function_uri_encode": {
+      "message": "Enkodowanie URI",
+      "description": "Function name for URI encode"
+  },
+  "function_uri_decode": {
+      "message": "Dekodowanie URI",
+      "description": "Function name for URI decode"
+  },
+  "function_htmlspecialchars": {
+      "message": "Enkodowanie znaków specjalnych HTML'a",
+      "description": "Function name for HTML special chars encode"
+  },
+  "function_htmlspecialchars_decode": {
+      "message": "Dekodowanie znaków specjalnych HTML'a",
+      "description": "Function name for HTML special chars decode"
+  },
+  "function_md5": {
+      "message": "MD5",
+      "description": "Function name for MD5"
+  },
+  "function_sha1": {
+      "message": "SHA1",
+      "description": "Function name for SHA1"
+  },
+  "function_crc32": {
+      "message": "CRC32",
+      "description": "Function name for CRC32"
+  },
+  "function_quoted_printable_decode": {
+      "message": "Dekodowanie Quoted-Printable",
+      "description": "Function name for Quoted printable decode"
+  },
+  "function_quoted_printable_encode": {
+      "message": "Enkodowanie Quoted-Printable",
+      "description": "Function name for Quoted printable encode"
+  },
+  "function_escapeshellarg": {
+      "message": "Escapeshellarg",
+      "description": "Function name for Escapeshellarg"
+  },
+  "function_base64_encode": {
+      "message": "Enkodowanie Base64",
+      "description": "Function name for Base64 encode"
+  },
+  "function_base64_decode": {
+      "message": "Dekodowanie Base64",
+      "description": "Function name for Base64 decode"
+  },
+  "function_unserialize": {
+      "message": "Odserializuj",
+      "description": "Function name for Unserialize"
+  },
+  "function_leet_decode": {
+      "message": "Dekodowanie L33T",
+      "description": "Function name for L33T Decode"
+  },
+  "function_leet_encode": {
+      "message": "Enkodowanie L33T",
+      "description": "Function name for L33T Encode"
   },
   "function_reverse_text": {
     "message": "Odwróć tekst",
