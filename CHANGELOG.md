@@ -1,5 +1,9 @@
 CHANGELOG
 =============================
+* 4.9.0
+  * Upgraded quoted printable decode to newer version
+* 4.8.0
+  * Upgraded unserialize to newer version
 * 4.7.0
   * Added Bengali translation
   * Added Bulgarian translation
