@@ -1,5 +1,7 @@
 CHANGELOG
 =============================
+* 5.0.0
+  * Upgrade to Extension Manifest v3
 * 4.9.0
   * Upgraded quoted printable decode to newer version
 * 4.8.0
