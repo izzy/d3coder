@@ -67,33 +67,6 @@ function upgrade() {
         }
 
         console.log("Upgrade: New install or upgrade, checking local storage");
-
-        if (localStorage.getItem('message_type')) {
-          console.log("Upgrade: Found data in localStorage, starting upgrade");
-          clipboardSave = localStorage.getItem("message_automatic_clipboardcopy") == 1 ? true : false;
-          messageType = localStorage.getItem("message_type") ? localStorage.getItem("message_type") : "inplace";
-
-          // Fix for #25 when upgrading from an earlier version and having
-          // notifications set as message type
-          if(messageType == "notification") messageType = "inplace";
-          
-          for (option of D3menu.checkboxes) {
-            checkboxes[option] = localStorage.getItem(option) == 1 ? true : false;
-          }
-          
-          chrome.storage.sync.set(
-            {
-              checkboxes: checkboxes,
-              clipboardSave: clipboardSave,
-              messageType: messageType,
-              version: version
-            }, function(){
-              console.log("Upgrade: Saved converted values");
-              restore_options();
-          });
-        } else {
-          console.log("Upgrade: Couldn't find any values in localStorage");
-        }
     });
 }
 

@@ -1,47 +1,51 @@
-/** 
- * @version 1.0
- * @author Izzy Kulbe <github@unikorn.me>
- * @copyright (c) 2010 - 2018 Izzy Kulbe
- */
-#D3-inject 
-{
-	z-index:				1000;
-	position:				fixed;
-	width:					100%;
-	height:					200px;
-	bottom:					0;
-	left:					0;
-	background: 			lightgrey;
-	border-top: 			1px solid grey;
-	overflow: 				auto;
-	-webkit-box-shadow:		0px 0px 30px #000;
-	text-align:             left !important;
+#D3-inject {
+    z-index: 1000;
+    position: fixed;
+    width: 100%;
+    height: 200px;
+    bottom: 0;
+    left: 0;
+    background: lightgrey;
+    border-top: 1px solid grey;
+    overflow: auto;
+    -webkit-box-shadow: 0px 0px 30px #000;
+    text-align: left !important;
 }
 
-#D3-inject-close
-{
-	z-index:				1100;
-    float:                  right;
-    margin-right:           30px;
-    cursor:                 pointer;
+#D3-inject-close {
+    z-index: 1100;
+    float: right;
+    margin-right: 30px;
+    cursor: pointer;
 }
 
-#D3-inject-heading
-{
-	font-size: 				15px;
+#D3-inject-heading {
+    font-size: 1rem;
 }
 
-#D3-inject, #D3-inject-heading, #D3-inject-close, .D3-inject-heading
-{
-	color:					black !important;	
+.D3-inject-heading {
+    font-size: 1rem;
+}
+
+#D3-inject,
+#D3-inject-heading,
+#D3-inject-close,
+.D3-inject-heading {
+    color: black !important;
+    margin: 0;
+    padding: .5rem;
 }
 
 .D3-inject-text {
-    word-wrap:              break-word;
+    word-wrap: break-word;
+    background-color: #CCC;
+    border: 1px solid #999;
+    border-radius: 2px;
+    margin: .3rem .5rem .5rem;
 }
 
 div.handle {
-    background: #333 ;
+    background: #333;
     z-index: 2;
     position: absolute;
 }
@@ -52,8 +56,9 @@ div.handle.vertical {
     cursor: row-resize;
     z-index: 1;
     background-position: center -19px;
-	left: 0;
+    left: 0;
 }
+
 #D3-inject_handle {
     bottom: 200px;
     z-index: 1002;
