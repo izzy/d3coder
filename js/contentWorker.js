@@ -35,11 +35,13 @@ D3content = {
             closeElem.id        = 'D3-inject-close';
             closeElem.innerText = 'CLOSE [X]';
 
-            document.body.appendChild(resizeHandle);
             document.body.appendChild(infoDiv);
+            document.getElementById('D3-inject').appendChild(resizeHandle);
             document.getElementById('D3-inject').appendChild(closeElem);
             document.getElementById('D3-inject').appendChild(heading);
             document.getElementById('D3-inject').appendChild(hr);
+            
+            document.body.style.marginBottom = document.defaultView.getComputedStyle(document.getElementById('D3-inject')).height;
 
             document.getElementById('D3-inject-close').addEventListener('click', function(){
                 document.getElementById('D3-inject_handle').parentNode.removeChild(document.getElementById('D3-inject_handle'));                
@@ -62,6 +64,7 @@ D3content = {
                         y + 'px';
                     document.getElementById('D3-inject_handle').style.bottom =
                         y + 'px';
+                    document.body.style.marginBottom = y + 'px';
                 }
 
                 function stopDrag(e) {

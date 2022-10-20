@@ -1,3 +1,61 @@
+@media (prefers-color-scheme: dark) {
+
+    #D3-inject,
+    #D3-inject-heading,
+    #D3-inject-close,
+    .D3-inject-heading {
+        color: #DDD !important;
+    }
+
+    #D3-inject {
+        background: #202124;
+        /* border-top: 1px solid #DDD; */
+    }
+
+    .D3-inject-text {
+        background-color: #444;
+        border: 1px solid #999;
+        color: #CCC;
+    }
+
+    #D3-inject > hr {
+        border-bottom: 1px solid #999;
+    }
+
+    #D3-inject_handle {
+        background: #333;
+    }
+    
+}
+
+@media (prefers-color-scheme: light) {
+
+    #D3-inject,
+    #D3-inject-heading,
+    #D3-inject-close,
+    .D3-inject-heading {
+        color: #010409 !important;
+    }
+
+    #D3-inject {
+        background: #CCC;
+        /* border-top: 1px solid grey; */
+    }
+
+    .D3-inject-text {
+        background-color: #CCC;
+        border: 1px solid #999;
+    }
+    
+    #D3-inject > hr {
+        border-bottom: 1px solid #444;
+    }
+
+    #D3-inject_handle {
+        background: #888;
+    }
+}
+
 #D3-inject {
     z-index: 1000;
     position: fixed;
@@ -5,11 +63,13 @@
     height: 200px;
     bottom: 0;
     left: 0;
-    background: lightgrey;
-    border-top: 1px solid grey;
     overflow: auto;
-    -webkit-box-shadow: 0px 0px 30px #000;
+    box-shadow: 0px 0px 30px #000;
     text-align: left !important;
+}
+
+#D3-inject > hr {
+    margin: 0.3rem;
 }
 
 #D3-inject-close {
@@ -31,36 +91,29 @@
 #D3-inject-heading,
 #D3-inject-close,
 .D3-inject-heading {
-    color: black !important;
     margin: 0;
     padding: .5rem;
 }
 
 .D3-inject-text {
-    word-wrap: break-word;
-    background-color: #CCC;
-    border: 1px solid #999;
-    border-radius: 2px;
+    white-space: break-spaces;
+    border-radius: 0.2rem;
     margin: .3rem .5rem .5rem;
+    padding: 0.4rem;
+    width: 96%;
+    overflow: auto;
 }
 
-div.handle {
-    background: #333;
+#D3-inject_handle {
     z-index: 2;
+    bottom: 200px;
+    z-index: 1002;
     position: absolute;
-}
-
-div.handle.vertical {
     width: 100%;
     height: 9px;
     cursor: row-resize;
     z-index: 1;
     background-position: center -19px;
     left: 0;
-}
-
-#D3-inject_handle {
-    bottom: 200px;
-    z-index: 1002;
-    position: fixed;
+    top: 0;
 }
