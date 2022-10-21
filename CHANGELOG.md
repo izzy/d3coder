@@ -1,5 +1,7 @@
 CHANGELOG
 =============================
+* 5.0.1
+  * Added light/dark mode style to injected div
 * 5.0.0
   * Upgrade to Extension Manifest v3
 * 4.9.0
