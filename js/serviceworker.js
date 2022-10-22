@@ -4,29 +4,32 @@ console.log("Successfully loaded D3 lib");
 importScripts("/js/D3.js");
 console.log("Successfully loaded D3 main");
 
-chrome.runtime.onInstalled.addListener(() => {
+importScripts("/js/browser-polyfill.min.js");
+console.log("Successfully loaded browser-polyfill");
+
+browser.runtime.onInstalled.addListener(() => {
     D3.checkInstall(D3.createContextMenu());
 });
 
-chrome.storage.onChanged.addListener((changes, namespace) => {
+browser.storage.onChanged.addListener((changes, namespace) => {
     D3.createContextMenu();
 });
 
-chrome.runtime.onMessage.addListener(
+browser.runtime.onMessage.addListener(
     (request, sender, sendResponse) => {
         console.log([request, sender, sendResponse]);
 
         if (request.command == "doCopy") {
             var responseStatus = D3.copyToClipboard(D3.lastMessage);
-            sendResponse({status: [chrome.i18n.getMessage("message_copied_to_clipboard"), responseStatus] });
+            sendResponse({status: [browser.i18n.getMessage("message_copied_to_clipboard"), responseStatus] });
         } else if (request.command == "setContextMenuTitle") {
-            chrome.contextMenus.update(contextMenuId, {title: request.message});
+            browser.contextMenus.update(contextMenuId, {title: request.message});
         } else {
             sendResponse({});
         }
 });
 
-chrome.contextMenus.onClicked.addListener(
+browser.contextMenus.onClicked.addListener(
     (info, tab) => {
         menuId = info.menuItemId;
 
@@ -37,10 +40,10 @@ chrome.contextMenus.onClicked.addListener(
 
         // Menu item for the extension's settings page
         if (menuId === 'd3coder-settings') {
-            chrome.runtime.openOptionsPage();
+            browser.runtime.openOptionsPage();
         // Menu for selected/editable text
         } else if (fn_selection === true && fn_normalized in D3lib) {
-            chrome.storage.sync.get(null, (items) => {
+            browser.storage.sync.get(null).then((items) => {
                 D3.createPopup(
                     D3.translate(`function_${fn_normalized}`),
                     D3lib[fn_normalized](info.selectionText),
