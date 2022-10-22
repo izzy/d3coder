@@ -1,5 +1,7 @@
 CHANGELOG
 =============================
+* 5.1.0
+  * Added browser polyfill in preparation for Firefox compatibility
 * 5.0.2
   * Added light/dark mode style to settings
   * Slight style improvements for settings

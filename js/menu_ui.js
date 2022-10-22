@@ -9,7 +9,7 @@ let localizeHtmlPage = function(){
 
     let valStrH = obj.innerHTML.toString();
     let valNewH = valStrH.replace(/__MSG_(\w+)__/g, function(match, v1) {
-      return v1 ? chrome.i18n.getMessage(v1) : "";
+      return v1 ? browser.i18n.getMessage(v1) : "";
     });
 
     if(valNewH != valStrH)
@@ -25,7 +25,7 @@ var D3menu = {
     * 
     * @var String
     */
-  version: "4.0.0",
+  version: "5.1.0",
   
   /**
     * list all functions. Needed to upgrade from older versions
@@ -60,7 +60,7 @@ var D3menu = {
 function upgrade() {
     var clipboardSave, checkboxes = {}, version = D3menu.version;
 
-    chrome.storage.sync.get({version: false}, function(items) {
+    browser.storage.sync.get({version: false}).then((items) => {
         if (items.version) {
             console.log("Upgrade: D3coder version " + version + " found.");
             return;
@@ -79,16 +79,16 @@ function save_options() {
       checkboxes[option.id] = document.getElementById(option.id).checked == true ? true : false;
     }
   
-    chrome.storage.sync.set(
+    browser.storage.sync.set(
       {
         checkboxes: checkboxes,
         messageType: messageType,
         clipboardSave: clipboardSave,
         version: D3menu.version
-      }, function() {
+      }).then(() => {
         console.log("Save: Options saved to storage");
         var status = document.getElementById('status');
-        status.textContent = chrome.i18n.getMessage('options_saved');
+        status.textContent = browser.i18n.getMessage('options_saved');
         status.style.display = "block";
         status.style.opacity = 1;
         setTimeout(function() {
@@ -99,15 +99,15 @@ function save_options() {
   }
 
 // Restores select box and checkbox state using the preferences
-// stored in chrome.storage.
+// stored in browser.storage / chrome.storage.
 function restore_options() {
   console.log("Restore: Starting restore");
-  chrome.storage.sync.get({
+  browser.storage.sync.get({
     checkboxes: [],
     messageType: 'message',
     clipboardSave: false,
     version: 0
-  }, function(items) {
+  }).then((items) => {
     console.log("Restore: Loaded these items:");
     console.log("Restore: Checkboxes", items.checkboxes);
     console.log("Restore: Message Type", items.messageType);

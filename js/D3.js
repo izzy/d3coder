@@ -6,7 +6,7 @@ async function getCurrentTab() {
 		active: true,
 		currentWindow: true
 	};
-	let [tab] = await chrome.tabs.query(queryOptions);
+	let [tab] = await browser.tabs.query(queryOptions);
 	return tab;
 }
 
@@ -22,7 +22,7 @@ var D3 = {
 	 * 
 	 * @var String
 	 */
-	version: "5.0.0",
+	version: "5.1.0",
 
 	/**
 	 * Tabs that already had the content worker script injected
@@ -65,7 +65,7 @@ var D3 = {
 	lastMessage: '',
 
 	checkInstall: function (callback) {
-		chrome.storage.sync.get(null, function (items) {
+		browser.storage.sync.get(null).then((items) => {
 			console.log("Check Install: Start");
 			update = {};
 			if (!items["messageType"]) {
@@ -89,7 +89,7 @@ var D3 = {
 				update["version"] = D3.version;
 			}
 
-			chrome.storage.sync.set(update, function () {
+			browser.storage.sync.set(update).then(() => {
 				console.log("Installed decoder version " + D3.version);
 			});
 		});
@@ -104,13 +104,13 @@ var D3 = {
 
 		// Inject the content scripts once at the start
 		if (!(tabId in D3.injected_tabs)) {
-			await chrome.scripting.insertCSS({
+			await browser.scripting.insertCSS({
 				target: {
 					tabId: tabId
 				},
 				files: ["styles/content.css"]
 			});
-			await chrome.scripting.executeScript({
+			await browser.scripting.executeScript({
 				target: {
 					tabId: tabId
 				},
@@ -125,7 +125,7 @@ var D3 = {
 					console.log(['d3coder:: FUNCTION:' + title, text]);
 				};
 
-				chrome.scripting.executeScript({
+				browser.scripting.executeScript({
 					target: {
 						tabId: tabId
 					},
@@ -139,7 +139,7 @@ var D3 = {
 					alert(title + '\n\n' + text);
 				};
 
-				chrome.scripting.executeScript({
+				browser.scripting.executeScript({
 					target: {
 						tabId: tabId
 					},
@@ -153,7 +153,7 @@ var D3 = {
 					D3content.createDiv(title, text);
 				};
 
-				chrome.scripting.executeScript({
+				browser.scripting.executeScript({
 					target: {
 						tabId: tabId
 					},
@@ -168,7 +168,7 @@ var D3 = {
 					D3content.replaceText(text);
 				};
 
-				chrome.scripting.executeScript({
+				browser.scripting.executeScript({
 					target: {
 						tabId: tabId
 					},
@@ -193,7 +193,7 @@ var D3 = {
 		}
 
 		getCurrentTab().then(function (tab) {
-			chrome.scripting.executeScript({
+			browser.scripting.executeScript({
 				target: {
 					tabId: tab.id
 				},
@@ -232,14 +232,12 @@ var D3 = {
 		};
 
 		function clearMenu() {
-			console.log(D3.menuIds);
 			for (id in D3.menuIds) {
 				if (id && D3.menuIds[id] != null) {
-					chrome.contextMenus.remove(D3.menuIds[id]);
+					browser.contextMenus.remove(D3.menuIds[id]);
 				}
 				D3.menuIds[id] = null;
 			}
-			console.log(D3.menuIds);
 		}
 
 		function createMenu(items, name) {
@@ -253,20 +251,19 @@ var D3 = {
 					"id": "d3coder-selection-" + function_list[name][1]
 				};
 				try {
-					D3.menuIds[name] = chrome.contextMenus.create(menu);
+					D3.menuIds[name] = browser.contextMenus.create(menu);
 				} catch (e) {
-					console.log(e);
+					console.log(["Error creating menu", e]);
 				}
 			} else if (items.checkboxes[name] == false) {
 				if (D3.menuIds[name]) {
-					// console.log("Menu: Removing " + D3.menuIds[name]);
-					chrome.contextMenus.remove(D3.menuIds[name]);
+					browser.contextMenus.remove(D3.menuIds[name]);
 					D3.menuIds[name] = null;
 				}
 			}
 		}
 
-		chrome.storage.sync.get(null, function (items) {
+		browser.storage.sync.get(null).then((items) => {
 			clearMenu();
 
 			for (itemName in items.checkboxes) {
@@ -282,7 +279,7 @@ var D3 = {
 				}
 
 				try {
-					D3.menuIds["options"] = chrome.contextMenus.create(menu);
+					D3.menuIds["options"] = browser.contextMenus.create(menu);
 				} catch (e) {
 					console.log(e);
 				}
@@ -293,6 +290,6 @@ var D3 = {
 	translate: function (name) {
 		let e_msg = "Could not translate " + name;
 
-		return chrome.i18n.getMessage(name) || e_msg;
+		return browser.i18n.getMessage(name) || e_msg;
 	}
 };
