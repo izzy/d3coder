@@ -2,6 +2,17 @@
 
 Google Chrome encoding/decoding plugin for various types of encoding like 
 base64, rot13 or unix timestamp conversion.
+
+## Installation
+
+You can find the extension in both the [chrome web store](https://chrome.google.com/webstore/detail/d3coder/gncnbkghencmkfgeepfaonmegemakcol) as well as on the [Edge Add-Ons site](https://microsoftedge.microsoft.com/addons/detail/d3coder/aoahkgomfkgnhngkoooepnmdfmngcohk)
+
+This should cover most Chromium-based browser that support web stores.
+
+### Firefox
+
+Due to the lack of support for Extension Manifest v3 Firefox is currently not supported.
+
 ## Changelog
 
 The full changelog can be found in [CHANGELOG.md](CHANGELOG.md)
