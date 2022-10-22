@@ -1,5 +1,8 @@
 CHANGELOG
 =============================
+* 5.1.1
+  * Fixed a bug where some translations would not be retrieved properly
+  * Fixed a bug where the Timestamp to Date function would sometimes return [object Object]
 * 5.1.0
   * Added browser polyfill in preparation for Firefox compatibility
 * 5.0.2

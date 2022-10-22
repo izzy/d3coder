@@ -21,13 +21,17 @@ browser.runtime.onMessage.addListener(
 
         if (request.command == "doCopy") {
             var responseStatus = D3.copyToClipboard(D3.lastMessage);
-            sendResponse({status: [browser.i18n.getMessage("message_copied_to_clipboard"), responseStatus] });
+            sendResponse({
+                status: [browser.i18n.getMessage("message_copied_to_clipboard"), responseStatus]
+            });
         } else if (request.command == "setContextMenuTitle") {
-            browser.contextMenus.update(contextMenuId, {title: request.message});
+            browser.contextMenus.update(contextMenuId, {
+                title: request.message
+            });
         } else {
             sendResponse({});
         }
-});
+    });
 
 browser.contextMenus.onClicked.addListener(
     (info, tab) => {
@@ -35,17 +39,19 @@ browser.contextMenus.onClicked.addListener(
 
         // Get just the name and a boolean for editable text
         let fn_normalized = menuId.replace(/d3coder-(selection-|)/, "");
-        let fn_name = menuId.replace(/d3coder-(selection-|)function_/, "")
+
+        let fn_name = Object.entries(D3.function_list).find(fn => fn[1].includes(fn_normalized))[1][0];
+
         let fn_selection = menuId.includes("-selection-");
 
         // Menu item for the extension's settings page
         if (menuId === 'd3coder-settings') {
             browser.runtime.openOptionsPage();
-        // Menu for selected/editable text
+            // Menu for selected/editable text
         } else if (fn_selection === true && fn_normalized in D3lib) {
             browser.storage.sync.get(null).then((items) => {
                 D3.createPopup(
-                    D3.translate(`function_${fn_normalized}`),
+                    D3.translate(`${fn_name}`),
                     D3lib[fn_normalized](info.selectionText),
                     items["messageType"],
                     items["clipboardSave"],

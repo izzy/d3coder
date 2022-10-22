@@ -52,7 +52,7 @@ var D3lib = {
 
         var dateObject = new Date();
         dateObject.setTime(timestamp * 1000);
-        return dateObject;
+        return dateObject.toString();
     },
 
     crc32: function (str) {

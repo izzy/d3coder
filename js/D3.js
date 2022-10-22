@@ -203,34 +203,34 @@ var D3 = {
 		});
 	},
 
-	createContextMenu: function () {
-		const function_list = {
-			'functions_rot13': ['function_rot13', "rot13decode"],
-			'functions_timestamp': ['function_timestamp', "timestampToDate"],
-			'functions_bin2hex': ['function_bin2hex', "bin2hex"],
-			'functions_bin2txt': ['function_bin2txt', "bin2txt"],
-			'functions_txt2hex': ['function_ascii2hex', "txt2hex"],
-			'functions_hex2txt': ['function_hex2ascii', "hex2txt"],
-			'functions_uri_encode': ['function_uri_encode', "uri_encode"],
-			'functions_uri_decode': ['function_uri_decode', "uri_decode"],
-			'functions_htmlentities': ['function_html_entities', "htmlentities"],
-			'functions_html_entity_decode': ['function_html_entity_decode', "html_entity_decode"],
-			'functions_htmlspecialchars': ['function_htmlspecialchars', "htmlspecialchars"],
-			'functions_htmlspecialchars_decode': ['function_htmlspecialchars_decode', "htmlspecialchars_decode"],
-			'functions_md5': ['function_md5', "md5"],
-			'functions_sha1': ['function_sha1', "sha1"],
-			'functions_crc32': ['function_crc32', "crc32"],
-			'functions_quoted_printable_decode': ['function_quoted_printable_decode', "quoted_printable_decode"],
-			'functions_quoted_printable_encode': ['function_quoted_printable_encode', "quoted_printable_encode"],
-			'functions_escapeshellarg': ['function_escapeshellarg', "escapeshellarg"],
-			'functions_base64_encode': ['function_base64_encode', "base64_encode"],
-			'functions_base64_decode': ['function_base64_decode', "base64_decode"],
-			'functions_unserialize': ['function_unserialize', "unserialize"],
-			'functions_leet_encode': ['function_leet_encode', "leetEncode"],
-			'functions_leet_decode': ['function_leet_decode', "leetDecode"],
-			'functions_reverse': ['function_reverse_text', "reverseText"],
-		};
+	function_list: {
+		'functions_rot13': ['function_rot13', "rot13decode"],
+		'functions_timestamp': ['function_timestamp', "timestampToDate"],
+		'functions_bin2hex': ['function_bin2hex', "bin2hex"],
+		'functions_bin2txt': ['function_bin2txt', "bin2txt"],
+		'functions_txt2hex': ['function_ascii2hex', "txt2hex"],
+		'functions_hex2txt': ['function_hex2ascii', "hex2txt"],
+		'functions_uri_encode': ['function_uri_encode', "uri_encode"],
+		'functions_uri_decode': ['function_uri_decode', "uri_decode"],
+		'functions_htmlentities': ['function_html_entities', "htmlentities"],
+		'functions_html_entity_decode': ['function_html_entity_decode', "html_entity_decode"],
+		'functions_htmlspecialchars': ['function_htmlspecialchars', "htmlspecialchars"],
+		'functions_htmlspecialchars_decode': ['function_htmlspecialchars_decode', "htmlspecialchars_decode"],
+		'functions_md5': ['function_md5', "md5"],
+		'functions_sha1': ['function_sha1', "sha1"],
+		'functions_crc32': ['function_crc32', "crc32"],
+		'functions_quoted_printable_decode': ['function_quoted_printable_decode', "quoted_printable_decode"],
+		'functions_quoted_printable_encode': ['function_quoted_printable_encode', "quoted_printable_encode"],
+		'functions_escapeshellarg': ['function_escapeshellarg', "escapeshellarg"],
+		'functions_base64_encode': ['function_base64_encode', "base64_encode"],
+		'functions_base64_decode': ['function_base64_decode', "base64_decode"],
+		'functions_unserialize': ['function_unserialize', "unserialize"],
+		'functions_leet_encode': ['function_leet_encode', "leetEncode"],
+		'functions_leet_decode': ['function_leet_decode', "leetDecode"],
+		'functions_reverse': ['function_reverse_text', "reverseText"],
+	},
 
+	createContextMenu: function () {
 		function clearMenu() {
 			for (id in D3.menuIds) {
 				if (id && D3.menuIds[id] != null) {
@@ -246,9 +246,9 @@ var D3 = {
 			if (items.checkboxes[name] == true && !D3.menuIds[name]) {
 				// Menu for selected text
 				menu = {
-					"title": D3.translate(function_list[name][0]),
+					"title": D3.translate(D3.function_list[name][0]),
 					"contexts": ["selection", "editable"],
-					"id": "d3coder-selection-" + function_list[name][1]
+					"id": "d3coder-selection-" + D3.function_list[name][1]
 				};
 				try {
 					D3.menuIds[name] = browser.contextMenus.create(menu);
