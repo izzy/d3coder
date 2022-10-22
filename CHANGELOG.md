@@ -1,5 +1,8 @@
 CHANGELOG
 =============================
+* 5.0.2
+  * Added light/dark mode style to settings
+  * Slight style improvements for settings
 * 5.0.1
   * Added light/dark mode style to injected div
 * 5.0.0

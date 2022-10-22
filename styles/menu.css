@@ -1,25 +1,90 @@
+@media (prefers-color-scheme: dark) {
+    :root {
+        --d3-bg: #292a2d;
+        --d3-fg: #e8e8e8;
+        --d3-cb-bg: #e8e8e8;
+        --d3-cb-fg: #292a2d;
+        --d3-h1: #d0d0d0;
+        --d3-accent: #8bffd8;
+        --d3-status-bg: #292929;
+        --d3-status-fg: #aaffaa;
+        --d3-status-border: 1px solid #525252;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --d3-bg: #fff;
+        --d3-fg: #292a2d;
+        --d3-cb-bg: #fff;
+        --d3-cb-fg: #292a2d;
+        --d3-h1: #5c6166;
+        --d3-accent: #15bb84;
+        --d3-status-bg: #f0f0f0;
+        --d3-status-fg: #21740c;
+        --d3-status-border: 1px solid #707070;
+    }
+}
+
+body {
+    font-family: Roboto, 'Segoe UI', Tahoma,;
+    font-weight: inherit;
+    font-size: inherit;
+    cursor: inherit;
+    line-height: inherit;
+    margin-bottom: 2rem;
+    background-color: var(--d3-bg);
+    color: var(--d3-fg);
+    font-size: 81.25%;
+}
+
+a {
+    text-decoration: none;
+    color: var(--d3-accent);
+}
+
+blockquote {
+    border-left: 0.25rem solid var(--d3-accent);
+    padding-left: 1rem;
+    margin-left: 2rem;
+    margin-right: 0;
+}
+
 h1 {
-    color:          rgb(92, 97, 102);
-    font-size:      1.5em;
-    font-weight:    normal;
-    line-height:    1;
-    margin:         20px 5px;
+    font-size: 1.5em;
+    font-weight: normal;
+    line-height: 1;
+    margin: 0.6rem 0.4rem;
+    color: var(--d3-h1);
+}
+
+select {
+    padding: 0.5rem 1rem;
+    margin: 0;
+    width: 100%;
+    background-color: var(--d3-cb-bg);
+    color: var(--d3-cb-fg);
 }
 
 #status {
     position: fixed;
+    z-index: 1000;
     left: auto;
     bottom: 15px;
-    background: rgba(0, 0, 0, .6);
-    color: #aaffaa;
     width: 90%;
-    padding: 10px;
+    padding: 0.5rem 0 0.7rem 0;
     text-align: center;
-    font-weight: bold;
     font-size: 150%;
     opacity: 0;
-    transition-duration: 800ms;
-    border-radius: 5px;
+    transition-duration: 1000ms;
+    border: var(--d3-status-border);
+    background: var(--d3-status-bg);
+    color: var(--d3-status-fg);
+}
+
+.inputs label,
+select {
+    cursor: pointer;
 }
 
 .inputs label {
@@ -29,9 +94,11 @@ h1 {
 }
 
 .inputs label:hover {
-    color: #336633;
     transition-duration: 400ms;
+    color: var(--d3-status-fg);
 }
-#options > div > div, #options > div > p {
+
+#options>div>div,
+#options>div>p {
     padding: 5px 20px 5px 15px;
 }
